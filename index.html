@@ -7,7 +7,7 @@
   <meta name="description" content="Vueltito es la app gratis para tiendas y negocios de barrio: vende tocando la foto, anota el fiado y cuadra la caja, también sin internet.">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <meta name="theme-color" content="#064e3b">
+  <meta name="theme-color" content="#f2f5f3">
   <meta property="og:title" content="Vueltito, la caja de tu negocio">
   <meta property="og:description" content="Vende tocando la foto, anota el fiado y cuadra la caja. Gratis y también sin internet.">
   <meta property="og:image" content="https://castrodeveloper12-coder.github.io/vento-page/assets/icon-512.png">
@@ -15,8 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=Kalam&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/home.css">
 </head>
-<body>
+<body class="home">
   <header class="topbar">
     <div class="wrap">
       <a class="brand" href="index.html"><span class="brand-tile"><img src="assets/mark.svg" alt=""></span>Vueltito</a>
@@ -25,123 +26,118 @@
         <a href="#precio">Precio</a>
         <a href="privacy-policy.html">Privacidad</a>
       </nav>
+      <a class="pill" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">Descargar</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="stage-hero">
       <div class="wrap">
-        <div>
-          <h1 class="display">Vende, anota el fiado y cuadra la caja.</h1>
-          <p class="lead">Vueltito es la app gratis para tiendas, almacenes y negocios de barrio. Tu inventario con fotos, tus clientes de confianza y la caja del día, en el celular.</p>
-          <div class="actions">
-            <a class="btn btn-amber" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
-              Descargar en Google Play
-            </a>
-            <a class="btn btn-ghost" href="#funciones">Ver qué hace</a>
-          </div>
-          <p class="fine">Funciona sin internet. Antes se llamaba Vento.</p>
+        <h1>La caja de tu negocio.</h1>
+        <p class="sub">Vende tocando la foto, anota el fiado y cuadra la caja. Gratis, también sin internet.</p>
+        <div class="actions">
+          <a class="btn-round" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">Descargar gratis</a>
+          <a class="link-more" href="#funciones">Ver qué hace ›</a>
         </div>
+      </div>
 
-        <div class="ticket" role="img" aria-label="Recibo de ejemplo: arroz, aceite y pan por 7.780 pesos; pagó con 10.000 y el vuelto es 2.220">
-          <span class="tag">Gratis</span>
-          <div class="ticket-head"><strong>Venta 128</strong><span>10:42 a. m.</span></div>
-          <ul class="ledger">
-            <li><span class="label">Arroz 1 kg</span><span class="value">$1.990</span></li>
-            <li><span class="label">Aceite 900 ml</span><span class="value">$4.590</span></li>
-            <li><span class="label">Pan, 6 unidades</span><span class="value">$1.200</span></li>
-            <li class="total quiet"><span class="label">Total</span><span class="value">$7.780</span></li>
-            <li><span class="label">Pagó con</span><span class="value">$10.000</span></li>
-            <li class="total"><span class="label">Vuelto</span><span class="value">$2.220</span></li>
-          </ul>
+      <div class="counter" aria-label="Vueltito en un teléfono, rodeado de productos con su precio">
+        <div class="device">
+          <img src="assets/capturas/vender.jpg" alt="Pantalla Vender de Vueltito con los productos en fotos y el total de la venta">
+        </div>
+        <div class="shelf-row">
+          <div class="item"><img src="assets/productos/00_arroz.jpg" alt=""><span class="tag">$1.890</span><div class="name">Arroz blanco 1 kg</div></div>
+          <div class="item"><img src="assets/productos/02_huevos.jpg" alt=""><span class="tag">$3.290</span><div class="name">Huevos, bandeja de 10</div></div>
+          <div class="item"><img src="assets/productos/09_bananos.jpg" alt=""><span class="tag">$1.490/kg</span><div class="name">Plátanos</div></div>
+          <div class="item"><img src="assets/productos/01_aceite.jpg" alt=""><span class="tag">$3.490</span><div class="name">Aceite 900 ml</div></div>
+          <div class="item"><img src="assets/productos/04_pan.jpg" alt=""><span class="tag">$250</span><div class="name">Pan amasado</div></div>
+          <div class="item"><img src="assets/productos/07_cola.jpg" alt=""><span class="tag">$2.190</span><div class="name">Bebida cola 1,5 L</div></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="funciones">
+    <section class="bento-wrap" id="funciones">
       <div class="wrap">
-        <h2 class="display">Lo que pasa en tu mostrador, anotado</h2>
-        <p class="intro">Hecha para el ritmo de una tienda: cobrar rápido, saber qué falta y no perder la cuenta de lo que te deben.</p>
+        <h2>Lo que pasa en tu mostrador, anotado.</h2>
 
-        <div class="feature">
-          <div>
-            <h3 class="display">Cobra tocando la foto</h3>
-            <p>Tus productos aparecen con su foto y su precio, como en la vitrina. Tocas los que se lleva el cliente, cobras y la app te dice cuánto dar de vuelto. Si algo se está acabando, te avisa.</p>
-          </div>
-          <div class="feature-art" aria-hidden="true">
-            <div class="shelf">
-              <div class="item"><div class="photo" style="background:#fff1d6">Ar<span class="price">$1.990</span></div><div class="name">Arroz 1 kg</div></div>
-              <div class="item"><div class="photo" style="background:#e6f4ee">Ac<span class="price">$4.590</span></div><div class="name">Aceite 900 ml</div></div>
-              <div class="item"><div class="photo" style="background:#fce7e7">Hu<span class="price">$3.990</span></div><div class="name">Huevos, 12</div></div>
-              <div class="item"><div class="photo" style="background:#e3eefc">Le<span class="price">$1.150</span></div><div class="name">Leche 1 l</div></div>
-              <div class="item"><div class="photo" style="background:#f3eadf">Pa<span class="price">$200</span></div><div class="name">Pan, unidad</div></div>
-              <div class="item"><div class="photo" style="background:#ede7f6">Ca<span class="price">$3.490</span></div><div class="name">Café 250 g</div></div>
+        <div class="bento">
+          <article class="tile wide">
+            <h3>Cobra tocando la foto.</h3>
+            <p>Tocas lo que se lleva el cliente, cobras y la app te dice cuánto dar de vuelto. También con código de barras y por kilo.</p>
+            <div class="mini-shelf" aria-hidden="true">
+              <figure><img src="assets/productos/03_leche.jpg" alt=""><figcaption>$1.190</figcaption></figure>
+              <figure><img src="assets/productos/05_cafe.jpg" alt=""><figcaption>$3.990</figcaption></figure>
+              <figure><img src="assets/productos/10_tomates.jpg" alt=""><figcaption>$1.990/kg</figcaption></figure>
+              <figure><img src="assets/productos/11_atun.jpg" alt=""><figcaption>$1.690</figcaption></figure>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <div class="feature">
-          <div>
-            <h3 class="display">El fiado, anotado y cobrado</h3>
-            <p>Cada cliente tiene su cuenta: lo que se llevó, lo que abonó y lo que debe. Cuando toca cobrar, le mandas un recordatorio por WhatsApp con un toque.</p>
-          </div>
-          <div class="feature-art" aria-hidden="true">
-            <div class="ticket-head"><strong>Doña Rosa</strong><span>Cupo $20.000</span></div>
-            <ul class="ledger">
-              <li><span class="label">Lunes, pan y leche</span><span class="value">$2.350</span></li>
-              <li><span class="label">Miércoles, arroz y huevos</span><span class="value">$5.980</span></li>
-              <li><span class="label">Abonó el jueves</span><span class="value">$5.000</span></li>
+          <article class="tile">
+            <h3>El fiado, anotado.</h3>
+            <p>Cada cliente con su cuenta y su cupo.</p>
+            <ul class="ledger" aria-label="Cuenta de Doña Rosa">
+              <li><span class="label">Pan y leche</span><span class="value">$2.350</span></li>
+              <li><span class="label">Arroz y huevos</span><span class="value">$5.980</span></li>
+              <li><span class="label">Abonó</span><span class="value">$5.000</span></li>
               <li class="total"><span class="label">Debe</span><span class="value">$3.330</span></li>
             </ul>
-            <p class="note">le avisé por WhatsApp</p>
-          </div>
-        </div>
+            <span class="chip">Recordar por WhatsApp</span>
+          </article>
 
-        <div class="feature">
-          <div>
-            <h3 class="display">La caja cuadra sola</h3>
-            <p>Abres la caja con lo que hay en el cajón. La app suma las ventas en efectivo, los abonos y los gastos, y al cerrar te dice si cuadra, si sobra o si falta.</p>
-          </div>
-          <div class="feature-art" aria-hidden="true">
-            <ul class="ledger">
-              <li><span class="label">Abriste con</span><span class="value">$20.000</span></li>
-              <li><span class="label">Ventas en efectivo</span><span class="value">$86.450</span></li>
-              <li><span class="label">Abonos de fiado</span><span class="value">$5.000</span></li>
-              <li><span class="label">Gastos</span><span class="value">−$12.000</span></li>
-              <li class="total"><span class="label">Debe haber</span><span class="value">$99.450</span></li>
-            </ul>
-            <div class="cash-result">Contaste $99.450: cuadra</div>
-          </div>
+          <article class="tile tint">
+            <h3>La caja cuadra sola.</h3>
+            <p>Suma ventas, abonos y gastos, y al cerrar te dice si sobra o falta.</p>
+            <div class="big-word">Cuadra<small>Contaste $99.450 y debía haber $99.450</small></div>
+          </article>
+
+          <article class="tile">
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2l20 20"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 5.2-2.8"/><path d="M14.8 10.2A10 10 0 0 1 19 12.9"/><path d="M1.4 9a15 15 0 0 1 4.3-2.6"/><path d="M10.7 5A15 15 0 0 1 22.6 9"/><path d="M12 20h.01"/></svg>
+            <h3>Sin internet, igual vendes.</h3>
+            <p>Cuando vuelve la señal, tus datos se respaldan cifrados en la nube.</p>
+          </article>
+
+          <article class="tile">
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>
+            <h3>Con tu huella o tu PIN.</h3>
+            <p>Solo tú entras a tu caja. Tus respaldos se cifran en tu teléfono.</p>
+          </article>
+
+          <article class="tile">
+            <h3>Te avisa qué pedir.</h3>
+            <p>Cada venta descuenta del inventario y sabes qué se está acabando.</p>
+            <div class="big-word" style="color: var(--amber-ink)">3<small>productos para pedir</small></div>
+          </article>
+
+          <article class="tile wide deep tablet-tile">
+            <div>
+              <h3>En la tablet, es tu caja.</h3>
+              <p>Los productos a un lado y la venta del cliente siempre a la vista. El inventario, los clientes y los reportes, en dos columnas.</p>
+            </div>
+            <div class="tablet">
+              <img src="assets/capturas/tablet-caja.jpg" alt="Vueltito en una tablet en modo caja, con los productos y la venta actual">
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="precio" style="padding-top: 0">
+    <section class="closing" id="precio">
       <div class="wrap">
-        <h2 class="display">Gratis de verdad</h2>
-        <p class="intro">Sin límite de productos ni de ventas. La versión gratis se mantiene con anuncios pequeños que nunca interrumpen una venta.</p>
-        <div class="plain">
+        <h2>Gratis. De verdad.</h2>
+        <p class="sub">Sin límite de productos ni de ventas. La versión gratis tiene anuncios pequeños que nunca interrumpen una venta.</p>
+        <div class="plans">
           <div>
-            <h3 class="display">Gratis</h3>
-            <p>Ventas, inventario con fotos, fiados, gastos, caja, reportes y respaldo en la nube. Funciona sin internet: si se cae la señal, sigues vendiendo.</p>
+            <h3>Gratis</h3>
+            <p class="price">$0, para siempre</p>
+            <p>Ventas, inventario con fotos, fiados, gastos, caja, reportes y respaldo en la nube.</p>
           </div>
           <div>
-            <h3 class="display">Premium</h3>
-            <p>Lo mismo, sin anuncios y con reportes avanzados. Lo activas cuando quieras desde la app y lo cancelas en Google Play.</p>
+            <h3>Premium</h3>
+            <p class="price">Desde la app</p>
+            <p>Todo lo anterior, sin anuncios y con reportes avanzados. Lo cancelas cuando quieras en Google Play.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section cta">
-      <div class="wrap">
-        <h2 class="display">Prueba Vueltito en tu negocio</h2>
-        <p>Es gratis y se instala en un minuto. Tus datos se quedan en tu teléfono, con un respaldo cifrado en la nube.</p>
-        <a class="btn btn-amber" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
-          Descargar en Google Play
-        </a>
+        <a class="btn-round" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">Descargar Vueltito</a>
       </div>
     </section>
   </main>
