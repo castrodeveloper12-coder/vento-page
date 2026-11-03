@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vento - Guía: Seguridad (PIN y Biométrica)</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .step { margin: 18px 0; }
+    .mock-frame { border: 1px solid #d1d5db; border-radius: 20px; background: linear-gradient(180deg,#f9fafb,#f3f4f6); padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .phone-top { height: 12px; width: 140px; background:#e5e7eb; border-radius: 6px; margin: 0 auto 10px; }
+    .screen { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:14px; }
+    .screen h4 { margin-top:0 }
+    .hint { font-size: 14px; color:#6b7280 }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px; }
+    .warning-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px; }
+    .highlight-box { background: #f0f9ff; border: 1px solid #2AB7CA; border-radius: 8px; padding: 14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔒 Guía de uso: Seguridad (PIN y Biométrica)</h1>
+      <div class="breadcrumb"> <a href="../index.html">Inicio</a> › <a href="index.html">Guías</a> › Seguridad (PIN y Biométrica)</div>
+      <p class="hint">PIN local (no respaldado) y autenticación biométrica opcional.</p>
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a href="../index.html">🏠 Inicio</a></p>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h3>Índice</h3>
+        <ul>
+          <li><a href="#pin">1) PIN</a></li>
+          <li><a href="#bio">2) Biometría</a></li>
+        </ul>
+      </aside>
+      <main class="content">
+
+    <section class="step" id="pin">
+      <h2>1) PIN</h2>
+      <div class="grid">
+        <div class="mock-frame"><div class="phone-top"></div><div class="screen">
+          <h4>Configurar PIN</h4>
+          <ul>
+            <li>4 dígitos (requerido)</li>
+            <li>No se respalda ni restaura</li>
+            <li>Se solicita al abrir la app</li>
+          </ul>
+        </div></div>
+        <div><div class="warning-box"><strong>Nota:</strong> si restauras la BD en otro dispositivo, define un PIN nuevo.</div></div>
+      </div>
+    </section>
+
+    <section class="step" id="bio">
+      <h2>2) Biometría</h2>
+      <div class="grid">
+        <div class="mock-frame"><div class="phone-top"></div><div class="screen">
+          <h4>Autenticación biométrica</h4>
+          <ul>
+            <li>Huella digital / Face ID (si el dispositivo lo soporta)</li>
+            <li>Activación desde Ajustes</li>
+            <li>Fallback a PIN</li>
+          </ul>
+        </div></div>
+        <div><div class="highlight-box"><strong>Tip:</strong> activa biometría para ingresar más rápido.</div></div>
+      </div>
+    </section>
+
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a class="prev-btn" href="suscripcion-premium.html">← Anterior: Suscripción Premium</a><a class="next-btn" href="configuracion-avanzada.html">Siguiente guía: Configuración Avanzada →</a></p>
+
+      </main>
+    </div>
+
+  </div>
+  <a href="#pin" class="back-to-top" title="Ir al inicio">↑</a>
+</body>
+</html>
+

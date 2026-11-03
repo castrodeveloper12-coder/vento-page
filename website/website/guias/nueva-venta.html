@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vento - Guía: Nueva Venta</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .step { margin: 18px 0; }
+    .mock-frame { border: 1px solid #d1d5db; border-radius: 20px; background: linear-gradient(180deg,#f9fafb,#f3f4f6); padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .phone-top { height: 12px; width: 140px; background:#e5e7eb; border-radius: 6px; margin: 0 auto 10px; }
+    .screen { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:14px; }
+    .screen h4 { margin-top:0 }
+    .hint { font-size: 14px; color:#6b7280 }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px; }
+    .badge { font-size: 12px; padding: 4px 8px; border-radius: 6px; background:#eef2ff; color:#4338ca; }
+    .warning-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px; }
+    .highlight-box { background: #f0f9ff; border: 1px solid #2AB7CA; border-radius: 8px; padding: 14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛒 Guía de uso: Nueva Venta</h1>
+      <div class="breadcrumb"> <a href="../index.html">Inicio</a> › <a href="index.html">Guías</a> › Nueva Venta</div>
+      <p class="hint">Flujo de venta en 3 pasos: productos → cliente/pago → resumen con IVA.</p>
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a href="../index.html">🏠 Inicio</a></p>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h3>Índice</h3>
+        <ul>
+          <li><a href="#productos">1) Productos</a></li>
+          <li><a href="#cliente">2) Cliente y pago</a></li>
+          <li><a href="#resumen">3) Resumen</a></li>
+          <li><a href="#confirmar">4) Confirmar</a></li>
+        </ul>
+      </aside>
+      <main class="content">
+
+    <section class="step" id="productos">
+      <h2>1) Selección de productos</h2>
+      <div class="grid">
+        <div>
+          <div class="device" aria-label="Mock de pantalla">
+            <div class="notch"></div>
+            <div class="appbar">
+              <span class="appbar-title">Selecciona productos</span>
+            </div>
+            <div class="device-content">
+              <input class="search" placeholder="Buscar productos" />
+              <div class="list">
+                <div class="item"><div class="thumb"></div><div><div class="item-title">Camiseta básica</div><div class="item-sub">Stock: 12</div></div><button class="btn-icon">+</button></div>
+                <div class="item"><div class="thumb"></div><div><div class="item-title">Pantalón denim</div><div class="item-sub">Stock: 5</div></div><button class="btn-icon">+</button></div>
+                <div class="item"><div class="thumb"></div><div><div class="item-title">Zapatillas</div><div class="item-sub">Stock: 7</div></div><button class="btn-icon">+</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <strong>Tips:</strong>
+            <ul>
+              <li>Usa el filtro para categorías con más rotación</li>
+              <li>Verifica stock bajo desde la tarjeta del producto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="cliente">
+      <h2>2) Cliente y método de pago</h2>
+      <div class="grid">
+        <div>
+          <div class="device" aria-label="Mock de pantalla">
+            <div class="notch"></div>
+            <div class="appbar">
+              <span class="appbar-title">Cliente y pago</span>
+            </div>
+            <div class="device-content">
+              <div class="field">
+                <label>Cliente</label>
+                <input class="input" placeholder="Selecciona o crea un cliente" />
+              </div>
+              <div class="field">
+                <label>Método de pago</label>
+                <div class="radio-group">
+                  <label class="radio"><input type="radio" name="pay" checked /> Efectivo</label>
+                  <label class="radio"><input type="radio" name="pay" /> Tarjeta</label>
+                  <label class="radio"><input type="radio" name="pay" /> Crédito</label>
+                </div>
+              </div>
+              <p class="hint">El pago a Crédito requiere cliente con crédito activo y cupo disponible.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="warning-box">
+            <strong>Importante:</strong>
+            <ul>
+              <li>No permite continuar con carrito vacío</li>
+              <li>Método de pago obligatorio</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="resumen">
+      <h2>3) Resumen con IVA</h2>
+      <div class="grid">
+        <div>
+          <div class="device" aria-label="Mock de pantalla">
+            <div class="notch"></div>
+            <div class="appbar">
+              <span class="appbar-title">Resumen</span>
+            </div>
+            <div class="device-content">
+              <div class="list">
+                <div class="item"><div class="thumb"></div><div><div class="item-title">Camiseta</div><div class="item-sub">x1 · €100,00</div></div></div>
+                <div class="item"><div class="thumb"></div><div><div class="item-title">Zapatillas</div><div class="item-sub">x1 · €50,00</div></div></div>
+              </div>
+              <div class="totals">
+                <div class="row space-between"><span class="muted">Subtotal</span><span>€ 150,00</span></div>
+                <div class="row space-between"><span class="muted">IVA (21%)</span><span>€ 31,50</span></div>
+                <div class="row space-between"><span>Total</span><span>€ 181,50</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <strong>Consejo:</strong> revisa el total y el detalle de IVA antes de confirmar.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="confirmar">
+      <h2>4) Confirmar venta</h2>
+      <p>Presiona “Confirmar”. Si hay sesión de caja abierta, la venta se asocia automáticamente.</p>
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a class="prev-btn" href="configuracion-inicial.html">← Anterior: Configuración Inicial</a><a class="next-btn" href="gastos.html">Siguiente guía: Gastos →</a></p>
+    </section>
+
+      </main>
+    </div>
+
+  </div>
+  <a href="#productos" class="back-to-top" title="Ir al inicio">↑</a>
+</body>
+</html>
+

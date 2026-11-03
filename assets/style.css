@@ -1,0 +1,830 @@
+/* Vueltito: mismos colores, letras y piezas que la app (lib/theme/app_theme.dart) */
+:root {
+  --ink: #0e1a14;
+  --emerald: #047857;
+  --emerald-deep: #064e3b;
+  --amber: #f59e0b;
+  --amber-ink: #92400e;
+  --price-tag: #fde047;
+  --highlight: #fcd34d;
+  --paper: #f2f5f3;
+  --tint: #e3eee8;
+  --muted: #5b6b63;
+  --rule: #dde5e0;
+  --white: #ffffff;
+  --radius: 18px;
+  --display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--emerald);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--emerald-deep);
+}
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.wrap {
+  width: min(1120px, 100% - 32px);
+  margin-inline: auto;
+}
+
+.display {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 48;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.num {
+  font-family: var(--display);
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+}
+
+/* ── Barra superior ───────────────────────────────────────────── */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(242, 245, 243, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+}
+
+.brand-tile {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: var(--white);
+  border: 1px solid var(--rule);
+}
+
+.brand-tile img {
+  width: 28px;
+  height: 28px;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+}
+
+.topbar nav a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.topbar nav a:hover {
+  color: var(--emerald);
+}
+
+/* ── Botones ──────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 14px;
+  font-family: var(--display);
+  font-weight: 750;
+  font-size: 18px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-amber {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+.btn-amber:hover {
+  background: #fbbf24;
+  color: var(--ink);
+}
+
+.btn-ghost {
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+}
+
+.btn-ghost:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ── Portada ──────────────────────────────────────────────────── */
+
+.hero {
+  background: var(--emerald-deep);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-block: 72px 80px;
+}
+
+.hero h1 {
+  margin: 0 0 20px;
+  font-size: clamp(42px, 6.4vw, 76px);
+}
+
+.hero .lead {
+  margin: 0 0 32px;
+  max-width: 34ch;
+  font-size: 20px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero .fine {
+  margin: 18px 0 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* El recibo: lo que pasa en el mostrador, con el vuelto resaltado */
+.ticket {
+  position: relative;
+  justify-self: center;
+  width: min(380px, 100%);
+  padding: 28px 28px 32px;
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 6px 6px 0 0;
+  transform: rotate(2deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
+}
+
+/* Borde dentado del recibo */
+.ticket::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 12px;
+  background: radial-gradient(circle at 10px -2px, transparent 10px, var(--white) 10.5px) 0 0 / 20px 12px repeat-x;
+}
+
+.ticket-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.ticket-head strong {
+  font-family: var(--display);
+  font-size: 20px;
+  color: var(--ink);
+}
+
+.ticket .tag {
+  position: absolute;
+  top: -18px;
+  right: -14px;
+  padding: 6px 14px;
+  background: var(--price-tag);
+  border-radius: 10px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 18px;
+  transform: rotate(-8deg);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* ── Libreta: renglones con puntos guía ───────────────────────── */
+
+.ledger {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ledger li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 0;
+}
+
+.ledger li::after {
+  content: "";
+  order: 1;
+  flex: 1;
+  min-width: 24px;
+  border-bottom: 2px dotted #b9c9c1;
+  transform: translateY(-5px);
+}
+
+.ledger .label {
+  order: 0;
+}
+
+.ledger .value {
+  order: 2;
+  font-family: var(--display);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ledger .total {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 4px double var(--ink);
+  font-weight: 700;
+}
+
+.ledger .total .value {
+  padding: 0 8px;
+  background: var(--highlight);
+  border-radius: 6px;
+  font-size: 20px;
+}
+
+.ledger .total.quiet .value {
+  padding: 0;
+  background: none;
+}
+
+.ledger .total::after {
+  border-color: transparent;
+}
+
+/* ── Secciones de la portada ──────────────────────────────────── */
+
+.section {
+  padding-block: 88px;
+}
+
+.section h2 {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 4.4vw, 48px);
+}
+
+.section .intro {
+  margin: 0 0 48px;
+  max-width: 58ch;
+  font-size: 19px;
+  color: var(--muted);
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding-block: 40px;
+  border-top: 1px solid var(--rule);
+}
+
+.feature:nth-of-type(even) .feature-art {
+  order: -1;
+}
+
+.feature h3 {
+  margin: 0 0 12px;
+  font-size: clamp(26px, 3.2vw, 34px);
+}
+
+.feature p {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--muted);
+}
+
+.feature-art {
+  padding: 28px;
+  background: var(--white);
+  border-radius: var(--radius);
+}
+
+/* Cuadrícula de productos como en Vender */
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 14px;
+}
+
+.shelf .item {
+  position: relative;
+}
+
+.shelf .photo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 26px;
+  color: rgba(4, 120, 87, 0.75);
+}
+
+.shelf .price {
+  position: absolute;
+  right: -6px;
+  bottom: -10px;
+  padding: 3px 9px;
+  color: var(--ink);
+  background: var(--price-tag);
+  border-radius: 8px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 14px;
+  transform: rotate(-6deg);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.shelf .name {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.note {
+  font-family: "Kalam", cursive;
+  color: var(--amber-ink);
+  font-size: 19px;
+}
+
+.cash-result {
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--tint);
+  color: var(--emerald);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 22px;
+}
+
+/* Precio y sin internet */
+.plain {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.plain > div {
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.plain h3 {
+  margin: 0 0 8px;
+  font-size: 26px;
+}
+
+.plain p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cta {
+  background: var(--emerald-deep);
+  color: var(--white);
+  text-align: center;
+}
+
+.cta h2 {
+  margin-inline: auto;
+  max-width: 18ch;
+}
+
+.cta p {
+  margin: 0 auto 32px;
+  max-width: 46ch;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 19px;
+}
+
+/* ── Páginas legales ──────────────────────────────────────────── */
+
+.doc-head {
+  padding-block: 56px 32px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.doc-head h1 {
+  margin: 0 0 12px;
+  font-size: clamp(36px, 5.4vw, 60px);
+}
+
+.doc-head p {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.doc {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 56px;
+  padding-block: 40px 96px;
+}
+
+.toc {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  font-size: 15px;
+}
+
+.toc p {
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 22px;
+  color: var(--muted);
+}
+
+.toc li {
+  padding: 3px 0;
+}
+
+.toc a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--emerald);
+  text-decoration: underline;
+}
+
+.prose {
+  max-width: 68ch;
+}
+
+.prose h2 {
+  margin: 56px 0 12px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose h3 {
+  margin: 28px 0 6px;
+  font-size: 18px;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 16px;
+}
+
+.prose li {
+  margin-bottom: 6px;
+}
+
+/* "En pocas palabras": la política resumida en renglones de libreta */
+.summary {
+  margin: 0 0 48px;
+  padding: 24px 28px;
+  background: var(--white);
+  border-radius: var(--radius);
+}
+
+.summary h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.summary .ledger li {
+  padding: 8px 0;
+}
+
+.summary .ledger .value {
+  font-family: var(--body);
+  font-weight: 600;
+  white-space: normal;
+  text-align: right;
+}
+
+.data-table {
+  width: 100%;
+  margin: 8px 0 24px;
+  border-collapse: collapse;
+  font-size: 15px;
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+
+.data-table th {
+  background: var(--tint);
+  font-weight: 700;
+}
+
+.data-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.callout {
+  margin: 24px 0;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: #fef3c7;
+  color: var(--amber-ink);
+}
+
+.callout strong {
+  color: var(--ink);
+}
+
+.steps {
+  counter-reset: step;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  position: relative;
+  margin: 0 0 14px;
+  padding: 16px 18px 16px 64px;
+  background: var(--white);
+  border-radius: 14px;
+}
+
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--emerald);
+  color: var(--white);
+  font-family: var(--display);
+  font-weight: 800;
+}
+
+.contact {
+  margin-top: 48px;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--emerald-deep);
+  color: var(--white);
+}
+
+.contact h2 {
+  margin: 0 0 8px;
+  color: var(--white);
+}
+
+.contact p {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact a {
+  color: var(--price-tag);
+  font-weight: 700;
+  font-size: 19px;
+  word-break: break-all;
+}
+
+/* ── Pie ──────────────────────────────────────────────────────── */
+
+.footer {
+  padding-block: 40px;
+  border-top: 1px solid var(--rule);
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 32px;
+}
+
+.footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.footer a {
+  color: var(--ink);
+}
+
+/* ── Pantallas chicas ─────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .hero .wrap,
+  .feature,
+  .doc {
+    grid-template-columns: 1fr;
+  }
+
+  .hero .wrap {
+    padding-block: 48px 64px;
+    gap: 56px;
+  }
+
+  .feature {
+    gap: 24px;
+  }
+
+  .feature:nth-of-type(even) .feature-art {
+    order: 0;
+  }
+
+  .toc {
+    position: static;
+    padding: 18px 20px;
+    background: var(--white);
+    border-radius: 14px;
+  }
+
+  .doc {
+    gap: 32px;
+  }
+
+  .section {
+    padding-block: 64px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+
+  .topbar nav {
+    display: none;
+  }
+
+  .plain {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket {
+    transform: rotate(1deg);
+  }
+
+  /* La tabla de datos se lee como fichas en el teléfono */
+  .data-table,
+  .data-table tbody,
+  .data-table tr,
+  .data-table td {
+    display: block;
+  }
+
+  .data-table {
+    background: none;
+  }
+
+  .data-table thead {
+    display: none;
+  }
+
+  .data-table tr {
+    margin-bottom: 12px;
+    padding: 6px 16px;
+    background: var(--white);
+    border-radius: 14px;
+  }
+
+  .data-table td {
+    padding: 8px 0;
+  }
+
+  .data-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .data-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vento - Documentos Legales</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .nav-tabs {
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+        .nav-tab {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+        .nav-tab.active {
+            color: #2AB7CA;
+            border-bottom: 3px solid #2AB7CA;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .highlight-box {
+            background: #f0f9ff;
+            border: 1px solid #2AB7CA;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏛️ Vento - Documentos Legales</h1>
+            <p>Última actualización: 07 de Enero de 2025</p>
+            <p><strong>Desarrollado por Castro Developer</strong></p>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('privacy')">Política de Privacidad</button>
+            <button class="nav-tab" onclick="showTab('terms')">Términos y Condiciones</button>
+            <button class="nav-tab" onclick="showTab('guides')">Guías de uso</button>
+            <button class="nav-tab" onclick="showTab('contact')">Contacto y Soporte</button>
+        </nav>
+
+        <!-- POLÍTICA DE PRIVACIDAD -->
+        <div id="privacy" class="tab-content active">
+            <h2>📋 Política de Privacidad de Vento</h2>
+            
+            <div class="highlight-box">
+                <p><strong>🎯 Resumen Ejecutivo:</strong> Vento es una aplicación de gestión de inventario híbrida (offline/online) que respeta completamente su privacidad. Sus datos se almacenan localmente y solo se sincronizan con Firebase Storage cuando usted lo autoriza y hay conexión a internet.</p>
+            </div>
+
+            <h3>1. Información que Recopilamos</h3>
+            <p>Vento funciona con un sistema <strong>híbrido offline/online</strong>:</p>
+            <ul>
+                <li><strong>Datos Locales:</strong> Información del negocio, inventario, ventas, gastos, clientes y proveedores se almacenan localmente en su dispositivo</li>
+                <li><strong>Datos de Autenticación:</strong> Email y nombre para autenticación con Firebase Auth (opcional)</li>
+                <li><strong>Fotografías:</strong> Imágenes de productos y recibos almacenadas localmente y sincronizadas con Firebase Storage cuando hay conexión</li>
+            </ul>
+
+            <h3>2. Sistema de Almacenamiento Híbrido</h3>
+            <div class="highlight-box">
+                <h4>📱 Modo Offline:</h4>
+                <ul>
+                    <li>Todos los datos se almacenan localmente en su dispositivo</li>
+                    <li>La aplicación funciona completamente sin conexión a internet</li>
+                    <li>Usted tiene control total sobre sus datos</li>
+                </ul>
+                
+                <h4>☁️ Modo Online (Opcional):</h4>
+                <ul>
+                    <li>Sincronización automática con Firebase Storage cuando hay conexión</li>
+                    <li>Solo usuarios autenticados pueden acceder a sus datos en la nube</li>
+                    <li>Segregación completa por usuario - nadie más puede ver sus datos</li>
+                    <li>Limpieza automática de archivos locales después de sincronizar</li>
+                </ul>
+            </div>
+
+            <h3>3. Permisos de Cámara (android.permission.CAMERA)</h3>
+            <p>Solicitamos el permiso de cámara únicamente para:</p>
+            <ul>
+                <li><strong>Fotografía de Productos:</strong> Capturar imágenes para facilitar la identificación visual en el inventario</li>
+                <li><strong>Documentación de Gastos:</strong> Fotografiar recibos y comprobantes para registro de gastos</li>
+                <li><strong>Escaneo de Códigos de Barras:</strong> Identificación rápida de productos</li>
+            </ul>
+            
+            <div class="warning-box">
+                <p><strong>⚠️ Importante:</strong> El uso de la cámara es <strong>completamente opcional</strong>. La aplicación funciona perfectamente sin permisos de cámara.</p>
+            </div>
+
+            <h3>4. Protección de Datos y Privacidad</h3>
+            <ul>
+                <li><strong>Sin Terceros:</strong> No compartimos información con terceros no autorizados</li>
+                <li><strong>Sin Análisis:</strong> No recopilamos datos de uso para análisis</li>
+                <li><strong>Sin Tracking:</strong> No rastreamos su actividad personal</li>
+                <li><strong>Cifrado:</strong> Transmisión segura HTTPS cuando se sincroniza con Firebase</li>
+                <li><strong>Acceso Controlado:</strong> Solo usted puede acceder a sus datos mediante autenticación</li>
+            </ul>
+
+            <h3>5. Publicidad (Versión Gratuita)</h3>
+            <p>La versión gratuita utiliza Google AdMob:</p>
+            <ul>
+                <li>Anuncios no intrusivos en la parte inferior de la pantalla</li>
+                <li>Control de frecuencia para no afectar la experiencia</li>
+                <li>Solo datos anónimos para personalización</li>
+                <li>Puede desactivar la personalización desde configuración de AdMob</li>
+                <li>Sin publicidad para usuarios premium</li>
+            </ul>
+
+            <h3>6. Seguridad</h3>
+            <ul>
+                <li><strong>PIN de Seguridad:</strong> 4 dígitos configurables</li>
+                <li><strong>Autenticación Biométrica:</strong> Huella digital y Face ID (opcional)</li>
+                <li><strong>Almacenamiento Seguro:</strong> Datos encriptados localmente</li>
+                <li><strong>Respaldo Seguro:</strong> Firebase Storage con reglas de seguridad</li>
+            </ul>
+        </div>
+
+        <!-- TÉRMINOS Y CONDICIONES -->
+        <div id="terms" class="tab-content">
+            <h2>📜 Términos y Condiciones de Vento</h2>
+
+            <div class="warning-box">
+                <p><strong>🏢 Responsabilidad Exclusiva:</strong> El soporte, mantenimiento, actualizaciones y asistencia técnica de Vento son responsabilidad exclusiva de <strong>Castro Developer</strong>. Google, Google Play Store, Firebase y cualquier otra plataforma de terceros <strong>NO</strong> proporcionan soporte para esta aplicación.</p>
+            </div>
+
+            <h3>1. Aceptación de los Términos</h3>
+            <p>Al descargar, instalar y utilizar Vento, usted acepta estar sujeto a estos Términos y Condiciones. Si no está de acuerdo, no debe usar la aplicación.</p>
+
+            <h3>2. Descripción del Servicio</h3>
+            <p><strong>Vento</strong> es una aplicación móvil de gestión de inventario híbrida con las siguientes características:</p>
+            <ul>
+                <li>Gestión completa de inventario con fotografías opcionales</li>
+                <li>Control de ventas con cálculo automático de IVA</li>
+                <li>Registro de gastos con fotografías de recibos</li>
+                <li>Gestión de clientes y proveedores</li>
+                <li>Sistema de sesiones de caja diarias</li>
+                <li>Funcionamiento offline/online con sincronización automática</li>
+                <li>Sistema de suscripción premium</li>
+            </ul>
+
+            <h3>3. Uso de la Aplicación</h3>
+            <h4>Requisitos del Usuario:</h4>
+            <ul>
+                <li>Dispositivo móvil compatible (Android/iOS)</li>
+                <li>Espacio de almacenamiento suficiente</li>
+                <li>Responsabilidad sobre la seguridad de su dispositivo</li>
+                <li>Uso personal o comercial legítimo</li>
+            </ul>
+
+            <h4>Restricciones de Uso:</h4>
+            <ul>
+                <li><strong>Uso Prohibido:</strong> No puede usar la aplicación para actividades ilegales</li>
+                <li><strong>Modificación:</strong> No puede modificar, descompilar o ingeniería inversa</li>
+                <li><strong>Distribución:</strong> No puede distribuir copias sin autorización</li>
+                <li><strong>Interferencia:</strong> No puede interferir con el funcionamiento</li>
+            </ul>
+
+            <h3>4. Suscripción Premium</h3>
+            <ul>
+                <li><strong>Funciones Avanzadas:</strong> Reportes detallados, sin publicidad, soporte prioritario</li>
+                <li><strong>Procesador:</strong> Google Play Store / App Store</li>
+                <li><strong>Renovación:</strong> Automática hasta cancelación</li>
+                <li><strong>Cancelación:</strong> En cualquier momento desde configuración</li>
+            </ul>
+
+            <h3>5. Relación con Plataformas de Terceros</h3>
+            <div class="highlight-box">
+                <p><strong>Deslinde de Responsabilidad:</strong> Las siguientes entidades <strong>NO</strong> son responsables de Vento:</p>
+                <ul>
+                    <li><strong>Google LLC:</strong> No responsable del desarrollo, mantenimiento o soporte</li>
+                    <li><strong>Google Play Store:</strong> Solo actúa como plataforma de distribución</li>
+                    <li><strong>Firebase/Google Cloud:</strong> Solo servicios de infraestructura</li>
+                    <li><strong>AdMob:</strong> Solo servicios de publicidad</li>
+                    <li><strong>Fabricantes de Dispositivos:</strong> No responsables del funcionamiento</li>
+                </ul>
+            </div>
+
+            <h3>6. Seguridad y Responsabilidad</h3>
+            <h4>Su Responsabilidad:</h4>
+            <ul>
+                <li>Mantener su dispositivo seguro</li>
+                <li>Proteger su PIN de acceso</li>
+                <li>Realizar copias de seguridad regularmente</li>
+                <li>Usar la aplicación de manera responsable</li>
+            </ul>
+
+            <h4>Nuestra Responsabilidad:</h4>
+            <ul>
+                <li>Garantizar el funcionamiento correcto de la aplicación</li>
+                <li>Proporcionar actualizaciones de seguridad</li>
+                <li>Ofrecer asistencia técnica</li>
+                <li>Proteger su información según nuestra política</li>
+            </ul>
+
+            <h3>7. Limitaciones</h3>
+            <ul>
+                <li><strong>Sin Garantía:</strong> La aplicación se proporciona "tal como está"</li>
+                <li><strong>Sin Responsabilidad:</strong> No somos responsables por pérdida de datos</li>
+                <li><strong>Limitación:</strong> Responsabilidad limitada al monto pagado</li>
+            </ul>
+        </div>
+
+        <!-- CONTACTO Y SOPORTE -->
+        <div id="contact" class="tab-content">
+            <h2>📞 Contacto y Soporte</h2>
+
+            <div class="warning-box">
+                <h3>⚠️ CONTACTO EXCLUSIVO - MUY IMPORTANTE</h3>
+                <p><strong>Castro Developer</strong> es el único responsable de Vento. Para <strong>CUALQUIER</strong> consulta sobre la aplicación, contacte únicamente a Castro Developer.</p>
+                <p><strong>NO</strong> contacte a Google, Google Play, Firebase, o cualquier otra plataforma de terceros sobre Vento.</p>
+            </div>
+
+            <h3>🏢 Castro Developer - Único Responsable de Vento</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>📧 Soporte General:</strong> <a href="mailto:support@castrodeveloper.com">support@castrodeveloper.com</a></li>
+                    <li><strong>⚖️ Consultas Legales:</strong> <a href="mailto:legal@castrodeveloper.com">legal@castrodeveloper.com</a></li>
+                    <li><strong>🔒 Privacidad:</strong> <a href="mailto:privacy@castrodeveloper.com">privacy@castrodeveloper.com</a></li>
+                    <li><strong>🌐 Sitio Web:</strong> <a href="https://castrodeveloper.com" target="_blank">castrodeveloper.com</a></li>
+                    <li><strong>⏰ Horario:</strong> Lunes a Viernes, 9:00 AM - 6:00 PM</li>
+                    <li><strong>🗣️ Idiomas:</strong> Español e Inglés</li>
+                </ul>
+            </div>
+
+            <h3>🛠️ Tipos de Soporte Disponible</h3>
+            <ul>
+                <li><strong>🐛 Reportes de Errores:</strong> Reporte bugs con detalles específicos</li>
+                <li><strong>💡 Sugerencias:</strong> Ideas para mejoras y nuevas funciones</li>
+                <li><strong>🔐 Seguridad:</strong> Reporte vulnerabilidades de seguridad</li>
+                <li><strong>🔒 Privacidad:</strong> Consultas sobre manejo de datos</li>
+                <li><strong>💳 Suscripciones:</strong> Problemas con pagos y renovaciones</li>
+                <li><strong>📱 Instalación:</strong> Ayuda con instalación y configuración</li>
+                <li><strong>📚 Capacitación:</strong> Ayuda para usar las funciones de la app</li>
+            </ul>
+
+            <h3>⏱️ Tiempos de Respuesta</h3>
+            <ul>
+                <li><strong>Consultas Generales:</strong> Dentro de 48 horas hábiles</li>
+                <li><strong>Problemas Críticos:</strong> Dentro de 24 horas</li>
+                <li><strong>Usuarios Premium:</strong> Soporte prioritario</li>
+                <li><strong>Consultas Legales:</strong> Dentro de 72 horas</li>
+            </ul>
+
+            <h3>🚫 Limitación de Responsabilidad de Terceros</h3>
+            <p>Las siguientes entidades <strong>NO</strong> proporcionan soporte para Vento:</p>
+            <ul>
+                <li><strong>Google Play Store:</strong> Solo distribuye la aplicación</li>
+                <li><strong>Firebase/Google Cloud:</strong> Solo servicios de infraestructura</li>
+                <li><strong>Fabricantes de Dispositivos:</strong> Samsung, Huawei, etc.</li>
+                <li><strong>Sistemas Operativos:</strong> Android/iOS</li>
+                <li><strong>Proveedores de Internet:</strong> Solo conectividad</li>
+            </ul>
+
+            <h3>📋 Información Útil para Reportes</h3>
+            <p>Cuando contacte soporte, incluya:</p>
+            <ul>
+                <li>Versión de la aplicación</li>
+                <li>Modelo y versión del dispositivo</li>
+                <li>Descripción detallada del problema</li>
+                <li>Pasos para reproducir el error</li>
+                <li>Capturas de pantalla (si aplica)</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>🎯 Compromiso de Calidad</h3>
+                <p>En Castro Developer nos comprometemos a:</p>
+                <ul>
+                    <li>✅ Responder todas las consultas en tiempo y forma</li>
+                    <li>✅ Mantener la aplicación actualizada y segura</li>
+                    <li>✅ Escuchar y considerar sugerencias de usuarios</li>
+                    <li>✅ Proporcionar documentación clara y completa</li>
+                    <li>✅ Respetar completamente su privacidad</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- GUÍAS DE USO -->
+        <div id="guides" class="tab-content">
+            <h2>📚 Guías de uso</h2>
+            <p>Aprende a usar Vento paso a paso. Cada guía incluye pantallas de ejemplo (mocks) basadas en la UI real de la app y un flujo detallado por acciones.</p>
+
+            <div class="highlight-box">
+                <strong>Módulos disponibles</strong>
+                <ul>
+                    <li><a href="guias/configuracion-inicial.html" target="_blank">Configuración Inicial (PIN, Moneda, IVA)</a></li>
+                    <li><a href="guias/productos-variantes.html" target="_blank">Productos y Variantes</a></li>
+                    <li><a href="guias/nueva-venta.html" target="_blank">Nueva Venta</a></li>
+                    <li><a href="guias/gastos.html" target="_blank">Gastos</a></li>
+                    <li style="opacity:.6">Productos y Variantes (próximamente)</li>
+                    <li><a href="guias/clientes-proveedores.html" target="_blank">Clientes y Proveedores</a></li>
+                    <li><a href="guias/sesiones-caja.html" target="_blank">Sesiones de Caja</a></li>
+                    <li><a href="guias/respaldo-restauracion.html" target="_blank">Respaldos y Restauración</a></li>
+                    <li><a href="guias/paneles-dashboard.html" target="_blank">Paneles y Dashboard</a></li>
+                    <li><a href="guias/monedas-iva.html" target="_blank">Monedas e IVA</a></li>
+                    <li><a href="guias/autenticacion.html" target="_blank">Autenticación</a></li>
+                    <li><a href="guias/fotografias.html" target="_blank">Sistema de Fotografías</a></li>
+                    <li><a href="guias/creditos-cliente.html" target="_blank">Créditos por Cliente</a></li>
+                    <li><a href="guias/compras.html" target="_blank">Compras</a></li>
+                    <li><a href="guias/publicidad-admob.html" target="_blank">Publicidad (AdMob)</a></li>
+                    <li><a href="guias/suscripcion-premium.html" target="_blank">Suscripción Premium</a></li>
+                    <li><a href="guias/seguridad-pin-biometria.html" target="_blank">Seguridad (PIN y Biométrica)</a></li>
+                    <li><a href="guias/configuracion-avanzada.html" target="_blank">Configuración Avanzada</a></li>
+                    <li><a href="guias/actualizaciones.html" target="_blank">Gestión de Actualizaciones</a></li>
+                    <li><a href="guias/reportes-analisis.html" target="_blank">Reportes y Análisis</a></li>
+                    <li style="opacity:.6">Respaldos y Restauración (próximamente)</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #e0e0e0; text-align: center;">
+            <p><strong>Castro Developer</strong><br>
+            <em>Desarrollando soluciones innovadoras para su negocio</em></p>
+            <p style="font-size: 14px; color: #666;">
+                Última actualización: 07 de Enero de 2025 | Versión: 1.0.0<br>
+                © 2025 Castro Developer. Todos los derechos reservados.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Ocultar todas las pestañas
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Remover clase active de todos los botones
+            const buttons = document.querySelectorAll('.nav-tab');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            // Mostrar la pestaña seleccionada
+            document.getElementById(tabName).classList.add('active');
+            
+            // Activar el botón correspondiente
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

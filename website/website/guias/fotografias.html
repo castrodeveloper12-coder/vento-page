@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vento - Guía: Sistema de Fotografías</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .step { margin: 18px 0; }
+    .mock-frame { border: 1px solid #d1d5db; border-radius: 20px; background: linear-gradient(180deg,#f9fafb,#f3f4f6); padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .phone-top { height: 12px; width: 140px; background:#e5e7eb; border-radius: 6px; margin: 0 auto 10px; }
+    .screen { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:14px; }
+    .screen h4 { margin-top:0 }
+    .hint { font-size: 14px; color:#6b7280 }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px; }
+    .warning-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px; }
+    .highlight-box { background: #f0f9ff; border: 1px solid #2AB7CA; border-radius: 8px; padding: 14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📸 Guía de uso: Sistema de Fotografías</h1>
+      <div class="breadcrumb"> <a href="../index.html">Inicio</a> › <a href="index.html">Guías</a> › Sistema de Fotografías</div>
+      <p class="hint">Captura/galería, compresión, sincronización Firebase y estados localOnly/syncing/cloudOnly.</p>
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a href="../index.html">🏠 Inicio</a></p>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h3>Índice</h3>
+        <ul>
+          <li><a href="#add">1) Añadir fotos</a></li>
+          <li><a href="#sync">2) Sincronización</a></li>
+          <li><a href="#retry">3) Recuperación de errores</a></li>
+        </ul>
+      </aside>
+      <main class="content">
+
+    <section class="step" id="add">
+      <h2>1) Añadir fotos</h2>
+      <div class="grid">
+        <div class="mock-frame"><div class="phone-top"></div><div class="screen">
+          <h4>Captura/Galería</h4>
+          <ul>
+            <li>Toma fotos o selecciona múltiples imágenes</li>
+            <li>Grid con miniaturas</li>
+            <li>Eliminar/rehacer</li>
+          </ul>
+        </div></div>
+        <div><div class="highlight-box"><strong>Tip:</strong> usa buena iluminación para fotos claras.</div></div>
+      </div>
+    </section>
+
+    <section class="step" id="sync">
+      <h2>2) Sincronización</h2>
+      <div class="grid">
+        <div class="mock-frame"><div class="phone-top"></div><div class="screen">
+          <h4>Estados</h4>
+          <ul>
+            <li>localOnly: almacenado solo en dispositivo</li>
+            <li>syncing: subiendo a Firebase</li>
+            <li>cloudOnly: limpieza local tras subida</li>
+          </ul>
+        </div></div>
+        <div><div class="warning-box"><strong>Nota:</strong> requiere autenticación; reglas por UID en Storage.</div></div>
+      </div>
+    </section>
+
+    <section class="step" id="retry">
+      <h2>3) Recuperación de errores</h2>
+      <ul>
+        <li>Reintento manual si hubo fallo de red</li>
+        <li>Verifica permisos de cámara/galería</li>
+      </ul>
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a class="prev-btn" href="autenticacion.html">← Anterior: Autenticación</a><a class="next-btn" href="creditos-cliente.html">Siguiente guía: Créditos por Cliente →</a></p>
+    </section>
+
+      </main>
+    </div>
+
+  </div>
+  <a href="#add" class="back-to-top" title="Ir al inicio">↑</a>
+</body>
+</html>
+

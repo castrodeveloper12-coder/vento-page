@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vento - Guía: Productos y Variantes</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .step { margin: 18px 0; }
+    .mock-frame { border: 1px solid #d1d5db; border-radius: 20px; background: linear-gradient(180deg,#f9fafb,#f3f4f6); padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .phone-top { height: 12px; width: 140px; background:#e5e7eb; border-radius: 6px; margin: 0 auto 10px; }
+    .screen { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:14px; }
+    .screen h4 { margin-top:0 }
+    .hint { font-size: 14px; color:#6b7280 }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px; }
+    .badge { font-size: 12px; padding: 4px 8px; border-radius: 6px; background:#eef2ff; color:#4338ca; }
+    .warning-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px; }
+    .highlight-box { background: #f0f9ff; border: 1px solid #2AB7CA; border-radius: 8px; padding: 14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📦 Guía de uso: Productos y Variantes</h1>
+      <div class="breadcrumb"> <a href="../index.html">Inicio</a> › <a href="index.html">Guías</a> › Productos y Variantes</div>
+      <p class="hint">Crea productos, configura variantes padre/hijo, define IVA por producto y ajusta el SKU.</p>
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a href="../index.html">🏠 Inicio</a></p>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h3>Índice</h3>
+        <ul>
+          <li><a href="#crear">1) Crear producto</a></li>
+          <li><a href="#variantes">2) Configurar variantes</a></li>
+          <li><a href="#sku">3) SKU híbrido</a></li>
+          <li><a href="#detalle">4) Detalle de producto</a></li>
+          <li><a href="#errores">5) Errores comunes</a></li>
+        </ul>
+      </aside>
+      <main class="content">
+
+    <section class="step" id="crear">
+      <h2>1) Crear producto</h2>
+      <div class="grid">
+        <div class="mock-frame">
+          <div class="phone-top"></div>
+          <div class="screen">
+            <h4>Formulario de Producto</h4>
+            <ul>
+              <li>Nombre, precio base y categoría</li>
+              <li>IVA específico opcional (tasa + tipo: incluido/excluido/sin IVA)</li>
+              <li>Imágenes del producto</li>
+            </ul>
+            <p class="hint">Si no defines IVA específico, aplicará el IVA global del negocio.</p>
+          </div>
+        </div>
+        <div>
+          <div class="highlight-box"><strong>Consejo:</strong> Usa una foto clara para mejorar la selección en ventas.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="variantes">
+      <h2>2) Configurar variantes</h2>
+      <div class="grid">
+        <div class="mock-frame">
+          <div class="phone-top"></div>
+          <div class="screen">
+            <h4>Variantes (Padre/Hijo)</h4>
+            <ul>
+              <li>Tipos: Color, Talla, etc.</li>
+              <li>Valores: Rojo, Azul; S, M, L…</li>
+              <li>Generación de combinaciones</li>
+            </ul>
+            <p class="hint">Las variantes heredan categoría e IVA del padre (si no tienen configuración específica).</p>
+          </div>
+        </div>
+        <div>
+          <div class="warning-box"><strong>Nota:</strong> puedes editar stock y precio por variante si lo necesitas.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="sku">
+      <h2>3) SKU híbrido</h2>
+      <div class="grid">
+        <div class="mock-frame">
+          <div class="phone-top"></div>
+          <div class="screen">
+            <h4>SKU</h4>
+            <ul>
+              <li>SKU sugerido automático</li>
+              <li>Totalmente editable para compatibilidad con códigos existentes</li>
+              <li>Único por variante</li>
+            </ul>
+            <p class="hint">Puedes pegar un código de barras existente como SKU.</p>
+          </div>
+        </div>
+        <div>
+          <div class="highlight-box"><strong>Tip:</strong> define un patrón claro: PARENT-COLOR-TALLA.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="detalle">
+      <h2>4) Detalle de producto</h2>
+      <div class="grid">
+        <div class="mock-frame">
+          <div class="phone-top"></div>
+          <div class="screen">
+            <h4>Detalle</h4>
+            <ul>
+              <li>Tarjeta de inventario y stock</li>
+              <li>Tarjeta de precios e IVA (ver configuración efectiva)</li>
+              <li>Listado de variantes</li>
+            </ul>
+            <p class="hint">La tarjeta de IVA muestra si el producto usa IVA global o específico.</p>
+          </div>
+        </div>
+        <div>
+          <div class="highlight-box"><strong>Consejo:</strong> ajusta stock de variantes desde esta vista.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="errores">
+      <h2>5) Errores comunes</h2>
+      <ul>
+        <li>SKU duplicado: modifica el SKU antes de guardar.</li>
+        <li>Sin IVA válido: configura el IVA global si no usas IVA por producto.</li>
+        <li>Variantes sin valores: define al menos un valor por tipo para generar combinaciones.</li>
+      </ul>
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a class="prev-btn" href="gastos.html">← Anterior: Gastos</a><a class="next-btn" href="clientes-proveedores.html">Siguiente guía: Clientes y Proveedores →</a></p>
+    </section>
+
+      </main>
+    </div>
+
+  </div>
+  <a href="#crear" class="back-to-top" title="Ir al inicio">↑</a>
+</body>
+</html>
+

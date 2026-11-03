@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vento - Guía: Respaldos y Restauración</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .step { margin: 18px 0; }
+    .mock-frame { border: 1px solid #d1d5db; border-radius: 20px; background: linear-gradient(180deg,#f9fafb,#f3f4f6); padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    .phone-top { height: 12px; width: 140px; background:#e5e7eb; border-radius: 6px; margin: 0 auto 10px; }
+    .screen { background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:14px; }
+    .screen h4 { margin-top:0 }
+    .hint { font-size: 14px; color:#6b7280 }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px; }
+    .warning-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 14px; }
+    .highlight-box { background: #f0f9ff; border: 1px solid #2AB7CA; border-radius: 8px; padding: 14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🗄️ Guía de uso: Respaldos y Restauración</h1>
+      <div class="breadcrumb"> <a href="../index.html">Inicio</a> › <a href="index.html">Guías</a> › Respaldos y Restauración</div>
+      <p class="hint">Exportación/Importación local y respaldo/restauración en la nube (Firebase Storage).</p>
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a href="../index.html">🏠 Inicio</a></p>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h3>Índice</h3>
+        <ul>
+          <li><a href="#local">1) Respaldo local</a></li>
+          <li><a href="#nube">2) Respaldo en la nube</a></li>
+          <li><a href="#restore">3) Restauración</a></li>
+          <li><a href="#auto">4) Auto respaldo</a></li>
+          <li><a href="#errores">5) Errores comunes</a></li>
+        </ul>
+      </aside>
+      <main class="content">
+
+    <section class="step" id="local">
+      <h2>1) Respaldo local (JSON)</h2>
+      <div class="grid">
+        <div class="mock-frame"><div class="phone-top"></div><div class="screen">
+          <h4>Exportar</h4>
+          <ul>
+            <li>Generar archivo JSON consolidado</li>
+            <li>Guardar en almacenamiento local</li>
+            <li>Compartir/Respaldar externamente</li>
+          </ul>
+        </div></div>
+        <div><div class="highlight-box"><strong>Tip:</strong> conserva una copia externa segura.</div></div>
+      </div>
+    </section>
+
+    <section class="step" id="nube">
+      <h2>2) Respaldo en la nube (Firebase)</h2>
+      <div class="grid">
+        <div class="mock-frame"><div class="phone-top"></div><div class="screen">
+          <h4>Subir a Firebase</h4>
+          <ul>
+            <li>Requiere autenticación</li>
+            <li>Ruta segura por usuario (UID)</li>
+            <li>Último respaldo: fecha/hora visible</li>
+          </ul>
+        </div></div>
+        <div><div class="warning-box"><strong>Nota:</strong> con cifrado activado, los archivos usan prefijo ENC:1: y clave segura.</div></div>
+      </div>
+    </section>
+
+    <section class="step" id="restore">
+      <h2>3) Restauración</h2>
+      <div class="grid">
+        <div class="mock-frame"><div class="phone-top"></div><div class="screen">
+          <h4>Restaurar</h4>
+          <ul>
+            <li>Selecciona el respaldo más reciente automáticamente</li>
+            <li>Resumen previo: productos, variantes, ventas, etc.</li>
+            <li>Opción de crear copia local antes de restaurar</li>
+          </ul>
+        </div></div>
+        <div><div class="highlight-box"><strong>Consejo:</strong> tras restaurar, proveedores, categorías e inventario se recargan automáticamente.</div></div>
+      </div>
+    </section>
+
+    <section class="step" id="auto">
+      <h2>4) Auto respaldo</h2>
+      <div class="grid">
+        <div class="mock-frame"><div class="phone-top"></div><div class="screen">
+          <h4>AutoBackup</h4>
+          <ul>
+            <li>Programado cada 6 horas</li>
+            <li>Ejecuta respaldo tras recuperar conectividad</li>
+            <li>Estado e información del próximo respaldo</li>
+          </ul>
+        </div></div>
+        <div><div class="warning-box"><strong>Importante:</strong> habilita/deshabilita desde Ajustes; requiere usuario autenticado.</div></div>
+      </div>
+    </section>
+
+    <section class="step" id="errores">
+      <h2>5) Errores comunes</h2>
+      <ul>
+        <li>“unauthorized” en Firebase: revisa reglas y sesión de usuario.</li>
+        <li>Sin conexión: el respaldo se difiere hasta recuperar conectividad.</li>
+      </ul>
+      <p><a href="index.html">⬅ Volver a Guías</a> · <a class="prev-btn" href="sesiones-caja.html">← Anterior: Sesiones de Caja</a><a class="next-btn" href="paneles-dashboard.html">Siguiente guía: Paneles y Dashboard →</a></p>
+    </section>
+
+      </main>
+    </div>
+
+  </div>
+  <a href="#local" class="back-to-top" title="Ir al inicio">↑</a>
+</body>
+</html>
+

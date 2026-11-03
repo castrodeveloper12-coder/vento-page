@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vento - Guías de uso</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .module-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 18px;
+      margin: 14px 0;
+      background: #fff;
+    }
+    .badge { font-size: 12px; padding: 4px 8px; border-radius: 6px; background:#eef2ff; color:#4338ca; }
+    .muted { color:#6b7280; }
+    .mock {
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 16px;
+      background: linear-gradient(180deg, #f9fafb, #f3f4f6);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 Vento - Guías de uso</h1>
+      <p class="muted">Documentación práctica por módulos con pantallas de ejemplo</p>
+      <p><a href="../index.html">⬅ Volver</a></p>
+    </header>
+
+    <section class="module-card">
+      <h2>🗺️ Mapa del recorrido</h2>
+      <p class="muted">Sigue este orden recomendado para aprender a usar Vento de principio a fin.</p>
+      <ol>
+        <li><a href="configuracion-inicial.html">Configuración Inicial</a></li>
+        <li><a href="nueva-venta.html">Nueva Venta</a></li>
+        <li><a href="gastos.html">Gastos</a></li>
+        <li><a href="productos-variantes.html">Productos y Variantes</a></li>
+        <li><a href="clientes-proveedores.html">Clientes y Proveedores</a></li>
+        <li><a href="sesiones-caja.html">Sesiones de Caja</a></li>
+        <li><a href="respaldo-restauracion.html">Respaldos y Restauración</a></li>
+        <li><a href="paneles-dashboard.html">Paneles y Dashboard</a></li>
+        <li><a href="monedas-iva.html">Monedas e IVA</a></li>
+        <li><a href="autenticacion.html">Autenticación</a></li>
+        <li><a href="fotografias.html">Sistema de Fotografías</a></li>
+        <li><a href="creditos-cliente.html">Créditos por Cliente</a></li>
+        <li><a href="compras.html">Compras</a></li>
+        <li><a href="publicidad-admob.html">Publicidad (AdMob)</a></li>
+        <li><a href="suscripcion-premium.html">Suscripción Premium</a></li>
+        <li><a href="seguridad-pin-biometria.html">Seguridad (PIN y Biométrica)</a></li>
+        <li><a href="configuracion-avanzada.html">Configuración Avanzada</a></li>
+        <li><a href="actualizaciones.html">Gestión de Actualizaciones</a></li>
+        <li><a href="reportes-analisis.html">Reportes y Análisis</a></li>
+      </ol>
+      <p><a class="next-btn" href="configuracion-inicial.html">Empezar recorrido →</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Productos y Variantes <span class="badge">Nuevo</span></h2>
+      <p>Gestión de productos, variantes padre/hijo, IVA por producto y SKU híbrido.</p>
+      <div class="mock">
+        <strong>Mock de pantallas incluidas:</strong>
+        <ul>
+          <li>Crear producto (básico + IVA específico opcional)</li>
+          <li>Configurar variantes (Color, Talla, etc.)</li>
+          <li>SKU sugerido editable y herencia de configuración</li>
+          <li>Detalle con tarjeta de IVA y variantes</li>
+        </ul>
+      </div>
+      <p><a href="productos-variantes.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Configuración Inicial <span class="badge">Nuevo</span></h2>
+      <p>Flujo inicial: PIN, Moneda e IVA global.</p>
+      <div class="mock">
+        <strong>Mock de pantallas incluidas:</strong>
+        <ul>
+          <li>Pantalla PIN</li>
+          <li>Información del negocio</li>
+          <li>Moneda principal</li>
+          <li>Configuración de IVA global</li>
+        </ul>
+      </div>
+      <p><a href="configuracion-inicial.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Nueva Venta</h2>
+      <p>Selección de productos, cliente, método de pago y resumen con IVA.</p>
+      <div class="mock">
+        <strong>Mock de pantallas incluidas:</strong>
+        <ul>
+          <li>Selección de productos (con fotos/placeholder)</li>
+          <li>Selección/creación de cliente</li>
+          <li>Método de pago (incluye opción Crédito)</li>
+          <li>Resumen de venta con IVA</li>
+        </ul>
+      </div>
+      <p><a href="nueva-venta.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Gastos</h2>
+      <p>Registro de gastos con fotos de recibos, categorización y sincronización de imágenes.</p>
+      <div class="mock">
+        <strong>Mock de pantallas incluidas:</strong>
+        <ul>
+          <li>Formulario de gasto (monto, categoría, proveedor opcional)</li>
+          <li>Captura/galería de recibos</li>
+          <li>Estado de sincronización de fotos</li>
+          <li>Lista y filtros por categoría/fecha</li>
+        </ul>
+      </div>
+      <p><a href="gastos.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Clientes y Proveedores</h2>
+      <p>Gestión de contactos, historial y estadísticas básicas por entidad.</p>
+      <div class="mock">
+        <strong>Mock de pantallas incluidas:</strong>
+        <ul>
+          <li>Lista y búsqueda</li>
+          <li>Detalle de cliente/proveedor</li>
+          <li>Historial y métricas</li>
+        </ul>
+      </div>
+      <p><a href="clientes-proveedores.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Sesiones de Caja</h2>
+      <p>Apertura/cierre diario, movimientos y control de discrepancias.</p>
+      <div class="mock">
+        <strong>Mock de pantallas incluidas:</strong>
+        <ul>
+          <li>Abrir sesión (saldo inicial)</li>
+          <li>Cerrar sesión (conteo y discrepancias)</li>
+          <li>Historial de sesiones</li>
+        </ul>
+      </div>
+      <p><a href="sesiones-caja.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Respaldos y Restauración</h2>
+      <p>Exportación/Importación local y respaldo/restauración en Firebase Storage.</p>
+      <div class="mock">
+        <strong>Mock de pantallas incluidas:</strong>
+        <ul>
+          <li>Crear respaldo manual (local/nube)</li>
+          <li>Restaurar respaldo más reciente</li>
+          <li>Estado y fecha del último respaldo</li>
+        </ul>
+      </div>
+      <p><a href="respaldo-restauracion.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Paneles y Dashboard</h2>
+      <p>Navegación principal, tarjetas horizontales y métricas clave.</p>
+      <div class="mock">
+        <strong>Mock de pantallas incluidas:</strong>
+        <ul>
+          <li>Dashboard horizontal (tarjetas lado a lado)</li>
+          <li>Acciones rápidas</li>
+          <li>Panel de ventas y top productos</li>
+        </ul>
+      </div>
+      <p><a href="paneles-dashboard.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Monedas e IVA</h2>
+      <p>Formato de moneda, cambios en tiempo real y jerarquía de IVA sin valores por defecto.</p>
+      <div class="mock">
+        <strong>Mock de pantallas incluidas:</strong>
+        <ul>
+          <li>Selector de moneda y vista previa</li>
+          <li>IVA global (incluido/excluido/sin IVA)</li>
+          <li>IVA por producto con ejemplo</li>
+        </ul>
+      </div>
+      <p><a href="monedas-iva.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Autenticación</h2>
+      <p>Registro/login híbrido, sesión persistente y cierre de sesión.</p>
+      <p><a href="autenticacion.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Sistema de Fotografías</h2>
+      <p>Captura, compresión, sincronización con Firebase y estados.</p>
+      <p><a href="fotografias.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Créditos por Cliente</h2>
+      <p>Activación, límite, interés, ventas a crédito y abonos.</p>
+      <p><a href="creditos-cliente.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Compras</h2>
+      <p>Registro de compras y actualización de inventario.</p>
+      <p><a href="compras.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Publicidad (AdMob)</h2>
+      <p>Banners, interstitials y control de frecuencia.</p>
+      <p><a href="publicidad-admob.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Suscripción Premium</h2>
+      <p>Planes, restauración de compras y beneficios.</p>
+      <p><a href="suscripcion-premium.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Seguridad (PIN y Biométrica)</h2>
+      <p>PIN local, biometría y políticas.</p>
+      <p><a href="seguridad-pin-biometria.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Configuración Avanzada</h2>
+      <p>Preferencias, auto respaldo y opciones de entorno.</p>
+      <p><a href="configuracion-avanzada.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Gestión de Actualizaciones</h2>
+      <p>In-App Update (Android) y buenas prácticas.</p>
+      <p><a href="actualizaciones.html">Abrir guía</a></p>
+    </section>
+
+    <section class="module-card">
+      <h2>Reportes y Análisis</h2>
+      <p>Métricas, rangos y detalle de transacciones.</p>
+      <p><a href="reportes-analisis.html">Abrir guía</a></p>
+    </section>
+
+  </div>
+</body>
+</html>
+
