@@ -43,6 +43,12 @@ svg {
   max-width: 100%;
 }
 
+/* Con width y height en el HTML (para que la página no salte al cargar), la
+   altura la decide la proporción, no el número del atributo */
+img {
+  height: auto;
+}
+
 a {
   color: var(--emerald);
   text-underline-offset: 3px;
