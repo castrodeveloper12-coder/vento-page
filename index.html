@@ -3,14 +3,98 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vueltito, la caja de tu negocio</title>
-  <meta name="description" content="Vueltito es la app gratis para tiendas y negocios de barrio: vende tocando la foto, anota el fiado y cuadra la caja, también sin internet.">
+  <title>Vueltito: app gratis de ventas, inventario y fiados</title>
+  <meta name="description" content="App gratis para tu tienda o negocio de barrio: vende tocando la foto, anota el fiado, lleva el inventario y cuadra la caja. Funciona sin internet.">
+  <link rel="canonical" href="https://vueltito.app/">
+  <link rel="alternate" hreflang="es" href="https://vueltito.app/">
+  <link rel="alternate" hreflang="x-default" href="https://vueltito.app/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="theme-color" content="#f2f5f3">
-  <meta property="og:title" content="Vueltito, la caja de tu negocio">
-  <meta property="og:description" content="Vende tocando la foto, anota el fiado y cuadra la caja. Gratis y también sin internet.">
-  <meta property="og:image" content="https://vueltito.app/assets/icon-512.png">
+  <meta name="application-name" content="Vueltito">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vueltito">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:url" content="https://vueltito.app/">
+  <meta property="og:title" content="Vueltito: la caja de tu negocio, gratis en tu celular">
+  <meta property="og:description" content="Vende tocando la foto, anota el fiado, lleva el inventario y cuadra la caja. Gratis y también sin internet.">
+  <meta property="og:image" content="https://vueltito.app/assets/og-vueltito.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Vueltito, la caja de tu negocio, junto a productos con su precio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vueltito: la caja de tu negocio, gratis en tu celular">
+  <meta name="twitter:description" content="Vende tocando la foto, anota el fiado, lleva el inventario y cuadra la caja. Gratis y también sin internet.">
+  <meta name="twitter:image" content="https://vueltito.app/assets/og-vueltito.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vueltito.app/#organizacion",
+        "name": "Vueltito",
+        "url": "https://vueltito.app/",
+        "logo": "https://vueltito.app/assets/icon-512.png",
+        "email": "soporte@vueltito.app"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vueltito.app/#sitio",
+        "url": "https://vueltito.app/",
+        "name": "Vueltito",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://vueltito.app/#organizacion" }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://vueltito.app/#app",
+        "name": "Vueltito",
+        "alternateName": "Vento",
+        "description": "App gratis para tiendas y negocios de barrio: ventas tocando la foto, fiados con cupo y recordatorio por WhatsApp, inventario, gastos, cierre de caja y comprobante digital por WhatsApp o correo. Funciona sin internet.",
+        "operatingSystem": "Android",
+        "applicationCategory": "BusinessApplication",
+        "inLanguage": "es",
+        "url": "https://vueltito.app/",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.castrodeveloper.vento",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.castrodeveloper.vento",
+        "image": "https://vueltito.app/assets/icon-512.png",
+        "screenshot": "https://vueltito.app/assets/capturas/vender.jpg",
+        "featureList": [
+          "Ventas tocando la foto del producto y cálculo del vuelto",
+          "Fiados con cupo por cliente y recordatorio por WhatsApp",
+          "Inventario con fotos y aviso de productos por acabarse",
+          "Cierre de caja que dice si cuadra, sobra o falta",
+          "Comprobante digital por WhatsApp o correo, sin papel",
+          "Funciona sin internet y respalda los datos cifrados en la nube",
+          "Modo caja en tablet"
+        ],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@id": "https://vueltito.app/#organizacion" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://vueltito.app/#preguntas",
+        "mainEntity": [
+          { "@type": "Question", "name": "¿Vueltito es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes registrar productos y ventas sin límite y sin pagar. La versión gratis muestra anuncios pequeños que nunca interrumpen una venta. Premium quita los anuncios e incluye soporte prioritario." } },
+          { "@type": "Question", "name": "¿Funciona sin internet?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes vender, anotar fiados y cerrar la caja sin conexión. Cuando vuelve la señal, tus datos se respaldan cifrados en la nube." } },
+          { "@type": "Question", "name": "¿Cómo anoto un fiado?", "acceptedAnswer": { "@type": "Answer", "text": "Al cobrar eliges Fiado y el cliente. Vueltito anota lo que se llevó, lo que abona y cuánto debe, con un cupo para cada cliente. Cuando toca cobrar, le mandas un recordatorio por WhatsApp." } },
+          { "@type": "Question", "name": "¿Puedo mandar el comprobante por WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Al terminar la venta tocas Enviar comprobante y lo mandas por WhatsApp o por correo, como lo prefiera tu cliente. No necesitas impresora ni papel." } },
+          { "@type": "Question", "name": "¿En qué países funciona?", "acceptedAnswer": { "@type": "Answer", "text": "En toda Latinoamérica. Al empezar eliges tu país y Vueltito usa su moneda y escribe los precios como se escriben allá: $1.890 en Chile o Colombia, $1,890.00 en México." } },
+          { "@type": "Question", "name": "¿Funciona en tablet, iPhone o computador?", "acceptedAnswer": { "@type": "Answer", "text": "Funciona en teléfonos y tablets Android; en la tablet se usa como caja. La versión para iPhone y iPad llega pronto a la App Store, y la versión web, con Premium, muy pronto en web.vueltito.app." } },
+          { "@type": "Question", "name": "¿Mis datos están seguros?", "acceptedAnswer": { "@type": "Answer", "text": "Entras con tu PIN o tu huella, y los respaldos se cifran en tu teléfono antes de subir a la nube. Puedes eliminar tu cuenta y tus datos cuando quieras." } },
+          { "@type": "Question", "name": "¿Necesito un lector de código de barras?", "acceptedAnswer": { "@type": "Answer", "text": "No. Vendes tocando la foto del producto y, si quieres, escaneas el código de barras con la cámara del teléfono." } },
+          { "@type": "Question", "name": "¿Vueltito antes se llamaba Vento?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Es la misma app con nombre nuevo: si ya usabas Vento, tus datos siguen ahí." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700&family=Kalam&display=swap" rel="stylesheet">
@@ -20,11 +104,11 @@
 <body class="home">
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="index.html"><img class="brand-icon" src="assets/icon.svg" width="40" height="40" alt="">Vueltito</a>
+      <a class="brand" href="/" aria-label="Vueltito, inicio"><img class="brand-icon" src="assets/icon.svg" width="40" height="40" alt="">Vueltito</a>
       <nav aria-label="Principal">
         <a href="#funciones">Qué hace</a>
         <a href="#precio">Precio</a>
-        <a href="privacy-policy.html">Privacidad</a>
+        <a href="#preguntas">Preguntas</a>
       </nav>
       <a class="pill" href="#descargar">Descargar</a>
     </div>
@@ -34,7 +118,7 @@
     <section class="stage-hero">
       <div class="wrap">
         <h1>La caja de tu negocio.</h1>
-        <p class="sub">Vende tocando la foto, anota el fiado y cuadra la caja. Gratis, también sin internet.</p>
+        <p class="sub">Vende tocando la foto, anota el fiado, lleva el inventario y cuadra la caja de tu tienda. Gratis, también sin internet.</p>
         <div class="actions">
           <a class="btn-round" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">Descargar gratis</a>
           <a class="link-more" href="#funciones">Ver qué hace ›</a>
@@ -43,15 +127,18 @@
 
       <div class="counter" aria-label="Vueltito en un teléfono, rodeado de productos con su precio">
         <div class="device">
-          <img src="assets/capturas/vender.jpg" alt="Pantalla Vender de Vueltito con los productos en fotos y el total de la venta">
+          <picture>
+            <source srcset="assets/capturas/vender.webp" type="image/webp">
+            <img src="assets/capturas/vender.jpg" width="640" height="1419" fetchpriority="high" alt="Pantalla Vender de Vueltito con los productos en fotos y el total de la venta">
+          </picture>
         </div>
         <div class="shelf-row">
-          <div class="item"><img src="assets/productos/00_arroz.jpg" alt=""><span class="tag">$1.890</span><div class="name">Arroz blanco 1 kg</div></div>
-          <div class="item"><img src="assets/productos/02_huevos.jpg" alt=""><span class="tag">$3.290</span><div class="name">Huevos, bandeja de 10</div></div>
-          <div class="item"><img src="assets/productos/09_bananos.jpg" alt=""><span class="tag">$1.490/kg</span><div class="name">Plátanos</div></div>
-          <div class="item"><img src="assets/productos/01_aceite.jpg" alt=""><span class="tag">$3.490</span><div class="name">Aceite 900 ml</div></div>
-          <div class="item"><img src="assets/productos/04_pan.jpg" alt=""><span class="tag">$250</span><div class="name">Pan amasado</div></div>
-          <div class="item"><img src="assets/productos/07_cola.jpg" alt=""><span class="tag">$2.190</span><div class="name">Bebida cola 1,5 L</div></div>
+          <div class="item"><img src="assets/productos/00_arroz.jpg" width="480" height="480" decoding="async" alt=""><span class="tag">$1.890</span><div class="name">Arroz blanco 1 kg</div></div>
+          <div class="item"><img src="assets/productos/02_huevos.jpg" width="480" height="480" decoding="async" alt=""><span class="tag">$3.290</span><div class="name">Huevos, bandeja de 10</div></div>
+          <div class="item"><img src="assets/productos/09_bananos.jpg" width="480" height="480" decoding="async" alt=""><span class="tag">$1.490/kg</span><div class="name">Plátanos</div></div>
+          <div class="item"><img src="assets/productos/01_aceite.jpg" width="480" height="480" decoding="async" alt=""><span class="tag">$3.490</span><div class="name">Aceite 900 ml</div></div>
+          <div class="item"><img src="assets/productos/04_pan.jpg" width="480" height="480" decoding="async" alt=""><span class="tag">$250</span><div class="name">Pan amasado</div></div>
+          <div class="item"><img src="assets/productos/07_cola.jpg" width="480" height="480" decoding="async" alt=""><span class="tag">$2.190</span><div class="name">Bebida cola 1,5 L</div></div>
         </div>
       </div>
     </section>
@@ -65,10 +152,10 @@
             <h3>Cobra tocando la foto.</h3>
             <p>Tocas lo que se lleva el cliente, cobras y la app te dice cuánto dar de vuelto. También con código de barras y por kilo.</p>
             <div class="mini-shelf" aria-hidden="true">
-              <figure><img src="assets/productos/03_leche.jpg" alt=""><figcaption>$1.190</figcaption></figure>
-              <figure><img src="assets/productos/05_cafe.jpg" alt=""><figcaption>$3.990</figcaption></figure>
-              <figure><img src="assets/productos/10_tomates.jpg" alt=""><figcaption>$1.990/kg</figcaption></figure>
-              <figure><img src="assets/productos/11_atun.jpg" alt=""><figcaption>$1.690</figcaption></figure>
+              <figure><img src="assets/productos/03_leche.jpg" width="480" height="480" loading="lazy" decoding="async" alt=""><figcaption>$1.190</figcaption></figure>
+              <figure><img src="assets/productos/05_cafe.jpg" width="480" height="480" loading="lazy" decoding="async" alt=""><figcaption>$3.990</figcaption></figure>
+              <figure><img src="assets/productos/10_tomates.jpg" width="480" height="480" loading="lazy" decoding="async" alt=""><figcaption>$1.990/kg</figcaption></figure>
+              <figure><img src="assets/productos/11_atun.jpg" width="480" height="480" loading="lazy" decoding="async" alt=""><figcaption>$1.690</figcaption></figure>
             </div>
           </article>
 
@@ -114,7 +201,10 @@
               <p>Los productos a un lado y la venta del cliente siempre a la vista. El inventario, los clientes y los reportes, en dos columnas.</p>
             </div>
             <div class="tablet">
-              <img src="assets/capturas/tablet-caja.jpg" alt="Vueltito en una tablet en modo caja, con los productos y la venta actual">
+              <picture>
+                <source srcset="assets/capturas/tablet-caja.webp" type="image/webp">
+                <img src="assets/capturas/tablet-caja.jpg" width="1600" height="1000" loading="lazy" decoding="async" alt="Vueltito en una tablet en modo caja, con los productos y la venta actual">
+              </picture>
             </div>
           </article>
 
@@ -145,6 +235,24 @@
             </figure>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="shops" id="negocios">
+      <div class="wrap">
+        <h2>Para el negocio de barrio de toda Latinoamérica.</h2>
+        <p class="sub">Eliges tu país y Vueltito usa tu moneda y escribe los precios como se escriben allá.</p>
+        <ul class="shop-list">
+          <li><strong>Almacenes</strong><span>Chile</span></li>
+          <li><strong>Tiendas de barrio y misceláneas</strong><span>Colombia y Ecuador</span></li>
+          <li><strong>Tiendas de abarrotes</strong><span>México</span></li>
+          <li><strong>Bodegas</strong><span>Perú y Venezuela</span></li>
+          <li><strong>Colmados</strong><span>República Dominicana</span></li>
+          <li><strong>Kioscos y almacenes</strong><span>Argentina y Uruguay</span></li>
+          <li><strong>Despensas</strong><span>Paraguay</span></li>
+          <li><strong>Pulperías</strong><span>Costa Rica, Nicaragua y Honduras</span></li>
+          <li><strong>Minimarkets, panaderías, verdulerías y fruterías</strong><span>En cualquier país</span></li>
+        </ul>
       </div>
     </section>
 
@@ -193,6 +301,51 @@
         </div>
         <a class="btn-round" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">Descargar Vueltito</a>
         <p class="support">¿Te sirve Vueltito? <a href="https://buymeacoffee.com/castrodeveloper" rel="noopener">Apoya su desarrollo con una donación</a>. Es voluntaria y no cambia nada en la app.</p>
+      </div>
+    </section>
+
+    <section class="faq" id="preguntas">
+      <div class="wrap">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-list">
+          <details>
+            <summary>¿Vueltito es gratis?</summary>
+            <p>Sí. Puedes registrar productos y ventas sin límite y sin pagar. La versión gratis muestra anuncios pequeños que nunca interrumpen una venta. Premium quita los anuncios e incluye soporte prioritario.</p>
+          </details>
+          <details>
+            <summary>¿Funciona sin internet?</summary>
+            <p>Sí. Puedes vender, anotar fiados y cerrar la caja sin conexión. Cuando vuelve la señal, tus datos se respaldan cifrados en la nube.</p>
+          </details>
+          <details>
+            <summary>¿Cómo anoto un fiado?</summary>
+            <p>Al cobrar eliges Fiado y el cliente. Vueltito anota lo que se llevó, lo que abona y cuánto debe, con un cupo para cada cliente. Cuando toca cobrar, le mandas un recordatorio por WhatsApp.</p>
+          </details>
+          <details>
+            <summary>¿Puedo mandar el comprobante por WhatsApp?</summary>
+            <p>Sí. Al terminar la venta tocas Enviar comprobante y lo mandas por WhatsApp o por correo, como lo prefiera tu cliente. No necesitas impresora ni papel.</p>
+          </details>
+          <details>
+            <summary>¿En qué países funciona?</summary>
+            <p>En toda Latinoamérica. Al empezar eliges tu país y Vueltito usa su moneda y escribe los precios como se escriben allá: $1.890 en Chile o Colombia, $1,890.00 en México.</p>
+          </details>
+          <details>
+            <summary>¿Funciona en tablet, iPhone o computador?</summary>
+            <p>Funciona en teléfonos y tablets Android; en la tablet se usa como caja. La versión para iPhone y iPad llega pronto a la App Store, y la versión web, con Premium, muy pronto en web.vueltito.app.</p>
+          </details>
+          <details>
+            <summary>¿Mis datos están seguros?</summary>
+            <p>Entras con tu PIN o tu huella, y los respaldos se cifran en tu teléfono antes de subir a la nube. Puedes <a href="eliminar-cuenta.html">eliminar tu cuenta y tus datos</a> cuando quieras.</p>
+          </details>
+          <details>
+            <summary>¿Necesito un lector de código de barras?</summary>
+            <p>No. Vendes tocando la foto del producto y, si quieres, escaneas el código de barras con la cámara del teléfono.</p>
+          </details>
+          <details>
+            <summary>¿Vueltito antes se llamaba Vento?</summary>
+            <p>Sí. Es la misma app con nombre nuevo: si ya usabas Vento, tus datos siguen ahí.</p>
+          </details>
+        </div>
+        <p class="faq-more">¿Otra duda? Escríbenos a <a href="mailto:soporte@vueltito.app">soporte@vueltito.app</a>.</p>
       </div>
     </section>
   </main>

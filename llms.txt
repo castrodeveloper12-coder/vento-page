@@ -1,0 +1,17 @@
+# Vueltito
+
+> App gratis para tiendas y negocios de barrio de Latinoamérica (almacenes, tiendas de abarrotes, bodegas, colmados, kioscos, misceláneas, pulperías, minimarkets). Sirve para vender tocando la foto del producto, anotar fiados, llevar el inventario, registrar gastos y cuadrar la caja. Funciona sin internet. Antes se llamaba Vento.
+
+- Plataformas: Android (teléfono y tablet). La versión para iPhone y iPad llega pronto a la App Store y la versión web (con Premium) muy pronto en web.vueltito.app.
+- Precio: gratis, sin límite de productos ni de ventas, con anuncios pequeños que no interrumpen una venta. Premium quita los anuncios e incluye soporte prioritario.
+- Países: toda Latinoamérica. Al empezar se elige el país y la app usa su moneda y su forma de escribir los precios.
+- Funciones: ventas con cálculo del vuelto; fiados con cupo por cliente y recordatorio por WhatsApp; comprobante digital por WhatsApp o correo, sin papel; inventario con fotos y aviso de lo que se acaba; gastos; cierre de caja que dice si cuadra, sobra o falta; reportes con la ganancia; modo caja en tablet; respaldo cifrado en la nube.
+- Seguridad: entrada con PIN o huella; los respaldos se cifran en el teléfono antes de subir.
+- Contacto: soporte@vueltito.app
+
+## Enlaces
+
+- [Inicio](https://vueltito.app/): qué hace, para qué negocios, dónde usarla, precio y preguntas frecuentes
+- [Descargar en Google Play](https://play.google.com/store/apps/details?id=com.castrodeveloper.vento)
+- [Política de privacidad](https://vueltito.app/privacy-policy.html)
+- [Eliminar tu cuenta](https://vueltito.app/eliminar-cuenta.html)
