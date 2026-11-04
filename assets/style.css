@@ -113,19 +113,9 @@ a:hover {
   height: 34px;
 }
 
-.brand-tile {
-  display: grid;
-  place-items: center;
+.brand img.brand-icon {
   width: 40px;
   height: 40px;
-  border-radius: 11px;
-  background: var(--white);
-  border: 1px solid var(--rule);
-}
-
-.brand-tile img {
-  width: 28px;
-  height: 28px;
 }
 
 .topbar nav {

@@ -360,6 +360,161 @@
   background: var(--paper);
 }
 
+/* Comprobante sin papel: el texto y, al lado, el mensaje que recibe el cliente */
+.tile.eco {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  gap: 40px;
+  align-items: center;
+  background: var(--tint);
+}
+
+.eco-channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.receipt-chat {
+  margin: 0;
+  padding: 28px 24px 18px;
+  border-radius: 26px;
+  background: #e9e1d6;
+}
+
+.receipt-chat .bubble {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: auto;
+  max-width: 320px;
+  padding: 14px 16px 22px;
+  border-radius: 16px 4px 16px 16px;
+  background: #d9fdd3;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.35;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.receipt-chat .meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.receipt-chat ul {
+  margin: 8px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.receipt-chat li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.receipt-chat li.total {
+  margin-top: 6px;
+  font-weight: 800;
+}
+
+.receipt-chat .thanks {
+  margin-top: 6px;
+}
+
+.receipt-chat .time {
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.receipt-chat figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* ── Dónde usarla ─────────────────────────────────────────────── */
+
+.get {
+  padding: 80px 0 0;
+}
+
+.get h2 {
+  margin: 0 auto 48px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-align: center;
+}
+
+.get-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.get-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 36px;
+  border-radius: 32px;
+  background: var(--white);
+}
+
+.get-card h3 {
+  margin: 0 0 10px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(26px, 2.6vw, 32px);
+  letter-spacing: -0.025em;
+}
+
+.get-card p {
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.get-card .btn-round,
+.get-card .soon {
+  margin-top: auto;
+}
+
+.btn-round.small {
+  min-height: 48px;
+  padding: 0 22px;
+  font-size: 16px;
+}
+
+.get-card .soon {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1.5px dashed var(--emerald);
+  color: var(--emerald-deep);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.get .note {
+  margin: 28px auto 0;
+  font-family: var(--body);
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+}
+
 /* ── Precio y cierre ──────────────────────────────────────────── */
 
 .closing {
@@ -442,6 +597,11 @@
   .tablet-tile {
     grid-template-columns: 1fr;
     padding: 36px;
+  }
+
+  .tile.eco,
+  .get-grid {
+    grid-template-columns: 1fr;
   }
 }
 

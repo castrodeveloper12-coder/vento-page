@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vueltito, la caja de tu negocio</title>
   <meta name="description" content="Vueltito es la app gratis para tiendas y negocios de barrio: vende tocando la foto, anota el fiado y cuadra la caja, también sin internet.">
-  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="theme-color" content="#f2f5f3">
   <meta property="og:title" content="Vueltito, la caja de tu negocio">
@@ -20,13 +20,13 @@
 <body class="home">
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="index.html"><span class="brand-tile"><img src="assets/mark.svg" alt=""></span>Vueltito</a>
+      <a class="brand" href="index.html"><img class="brand-icon" src="assets/icon.svg" width="40" height="40" alt="">Vueltito</a>
       <nav aria-label="Principal">
         <a href="#funciones">Qué hace</a>
         <a href="#precio">Precio</a>
         <a href="privacy-policy.html">Privacidad</a>
       </nav>
-      <a class="pill" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">Descargar</a>
+      <a class="pill" href="#descargar">Descargar</a>
     </div>
   </header>
 
@@ -117,7 +117,61 @@
               <img src="assets/capturas/tablet-caja.jpg" alt="Vueltito en una tablet en modo caja, con los productos y la venta actual">
             </div>
           </article>
+
+          <article class="tile full eco">
+            <div class="eco-copy">
+              <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              <h3>Comprobante sin papel.</h3>
+              <p>Al cobrar, mándale el comprobante a tu cliente por WhatsApp o por correo, como lo prefiera. Menos papel, menos rollos de impresora y nada que se pierda en el bolsillo.</p>
+              <div class="eco-channels">
+                <span class="chip">Por WhatsApp</span>
+                <span class="chip">Por correo</span>
+              </div>
+            </div>
+            <figure class="receipt-chat">
+              <div class="bubble">
+                <strong>Almacén La Esquina</strong>
+                <span class="meta">Comprobante de venta N° 128</span>
+                <ul>
+                  <li><span>2 × Arroz blanco 1 kg</span><span>$3.780</span></li>
+                  <li><span>1 × Bebida cola 1,5 L</span><span>$2.190</span></li>
+                  <li class="total"><span>Total</span><span>$5.970</span></li>
+                </ul>
+                <span class="meta">Pago: Efectivo</span>
+                <span class="thanks">¡Gracias por tu compra! Comprobante digital, sin papel.</span>
+                <span class="time">10:31</span>
+              </div>
+              <figcaption>Así le llega a tu cliente.</figcaption>
+            </figure>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <section class="get" id="descargar">
+      <div class="wrap">
+        <h2>Úsala donde vendes.</h2>
+        <div class="get-grid">
+          <article class="get-card">
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            <h3>En tu celular</h3>
+            <p>Para cobrar en el mostrador o donde estés. Gratis para Android.</p>
+            <a class="btn-round small" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">Descargar en Google Play</a>
+          </article>
+          <article class="get-card">
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="2" width="18" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            <h3>En tu tablet</h3>
+            <p>La misma app, convertida en caja: los productos a un lado y la venta a la vista.</p>
+            <a class="btn-round small" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento">Descargar en Google Play</a>
+          </article>
+          <article class="get-card">
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            <h3>En el computador</h3>
+            <p>Desde el navegador, sin instalar nada y con los mismos datos de tu celular. Viene con Premium.</p>
+            <span class="soon">Muy pronto en web.vueltito.app</span>
+          </article>
+        </div>
+        <p class="note">¿Tienes iPhone o iPad? También podrás usar Vueltito desde la versión web.</p>
       </div>
     </section>
 
