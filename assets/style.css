@@ -726,6 +726,17 @@ a:hover {
   color: var(--ink);
 }
 
+.footer .social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+
+.footer .social svg {
+  flex: none;
+}
+
 /* ── Pantallas chicas ─────────────────────────────────────────── */
 
 @media (max-width: 900px) {
