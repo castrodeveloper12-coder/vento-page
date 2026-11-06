@@ -14,4 +14,5 @@
 - [Inicio](https://vueltito.app/): qué hace, para qué negocios, dónde usarla, precio y preguntas frecuentes
 - [Descargar en Google Play](https://play.google.com/store/apps/details?id=com.castrodeveloper.vento)
 - [Política de privacidad](https://vueltito.app/privacy-policy.html)
+- [Términos de uso](https://vueltito.app/terminos.html)
 - [Eliminar tu cuenta](https://vueltito.app/eliminar-cuenta.html)
