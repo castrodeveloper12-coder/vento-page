@@ -39,7 +39,7 @@
     <div class="doc-head">
       <div class="wrap">
         <h1 class="display">Política de privacidad</h1>
-        <p>Qué datos usa Vueltito (antes Vento), para qué, dónde quedan guardados y cómo borrarlos. Última actualización: 3 de noviembre de 2026.</p>
+        <p>Qué datos usa Vueltito (antes Vento), para qué, dónde quedan guardados y cómo borrarlos. Última actualización: 11 de noviembre de 2026.</p>
       </div>
     </div>
 
@@ -108,9 +108,9 @@
               <td data-label="Dónde se guarda">Los recoge Google AdMob</td>
             </tr>
             <tr>
-              <td data-label="Dato">Estadísticas generales de uso (sesiones, pantallas abiertas) y modelo del dispositivo</td>
-              <td data-label="Para qué">Entender cómo se usa la app y mejorarla</td>
-              <td data-label="Dónde se guarda">Google Analytics para Firebase</td>
+              <td data-label="Dato">Reportes de fallos (el error, la versión de la app, el modelo del teléfono y la versión de Android) y avisos de seguridad, como demasiados PIN incorrectos o un intento de abrir tus datos con otra cuenta</td>
+              <td data-label="Para qué">Encontrar y corregir fallos y detectar intentos de acceso indebido</td>
+              <td data-label="Dónde se guarda">Firebase Crashlytics, sin tu nombre, tu correo ni los datos de tu negocio</td>
             </tr>
             <tr>
               <td data-label="Dato">Datos de la factura: comprador, productos y valores. Solo en Colombia y solo si activas la facturación electrónica</td>
@@ -135,12 +135,13 @@
           <li>Las reglas de acceso de la nube solo permiten que tu cuenta lea tus respaldos y tus fotos.</li>
           <li>Todo viaja cifrado entre el teléfono y la nube (HTTPS).</li>
           <li>El PIN de la app protege el acceso en tu teléfono. No se sube a la nube ni va dentro de los respaldos.</li>
+          <li>En Configuración, en Seguridad, ves la actividad de seguridad de tu teléfono de los últimos 90 días: inicios de sesión, PIN incorrectos, restauraciones y borrados. Ese registro no sale del teléfono.</li>
         </ul>
 
         <h2 id="terceros">5. Con quién se comparten</h2>
         <p>No vendemos ni alquilamos tus datos. Solo pasan por estos servicios, que los usan para prestar el servicio y no para fines propios ajenos a la app:</p>
         <ul>
-          <li><strong>Google:</strong> Firebase (cuenta, base de datos y almacenamiento), AdMob (anuncios), Google Analytics para Firebase (estadísticas) y Google Play (pagos de Premium). Puedes leer cómo usa Google estos datos en <a href="https://policies.google.com/technologies/partner-sites?hl=es" rel="noopener">policies.google.com</a>.</li>
+          <li><strong>Google:</strong> Firebase (cuenta, base de datos y almacenamiento), Crashlytics (reportes de fallos), AdMob (anuncios) y Google Play (pagos de Premium). Puedes leer cómo usa Google estos datos en <a href="https://policies.google.com/technologies/partner-sites?hl=es" rel="noopener">policies.google.com</a>.</li>
           <li><strong>Factus:</strong> solo si emites facturas electrónicas en Colombia.</li>
           <li><strong>Autoridades:</strong> cuando una ley o una orden judicial nos obligue.</li>
         </ul>
@@ -151,7 +152,8 @@
 
         <h2 id="plazos">7. Cuánto tiempo los guardamos</h2>
         <ul>
-          <li><strong>Tu cuenta, tus respaldos y tus fotos en la nube:</strong> mientras tengas la cuenta. Si la eliminas, los borramos en un máximo de 30 días.</li>
+          <li><strong>Tu cuenta, tus respaldos y tus fotos en la nube:</strong> mientras tengas la cuenta. Si la eliminas, los borramos en un máximo de 30 días. De los respaldos se guardan los 5 más recientes.</li>
+          <li><strong>Respaldos hechos con versiones anteriores al 3 de noviembre de 2026:</strong> usaban un formato antiguo. La app deja de restaurarlos el 1 de marzo de 2027 y ese día los borramos de la nube. Si abres la app antes, se hace un respaldo nuevo cifrado.</li>
           <li><strong>Los datos en tu teléfono:</strong> hasta que desinstales la app o uses la opción de borrar los datos del teléfono.</li>
           <li><strong>Las facturas electrónicas emitidas:</strong> las conservan Factus y la DIAN por el tiempo que exige la ley colombiana.</li>
         </ul>
