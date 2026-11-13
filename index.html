@@ -41,7 +41,7 @@
         "url": "https://vueltito.app/",
         "logo": "https://vueltito.app/assets/icon-512.png",
         "email": "soporte@vueltito.app",
-        "sameAs": ["https://www.instagram.com/vueltitoapp", "https://www.tiktok.com/@vueltitoapp"]
+        "sameAs": ["https://www.instagram.com/vueltitoapp", "https://www.tiktok.com/@vueltitoapp", "https://www.youtube.com/@vueltitoapp"]
       },
       {
         "@type": "WebSite",
@@ -91,6 +91,58 @@
           { "@type": "Question", "name": "¿Necesito un lector de código de barras?", "acceptedAnswer": { "@type": "Answer", "text": "No. Vendes tocando la foto del producto y, si quieres, escaneas el código de barras con la cámara del teléfono." } },
           { "@type": "Question", "name": "¿Vueltito antes se llamaba Vento?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Es la misma app con nombre nuevo: si ya usabas Vento, tus datos siguen ahí." } }
         ]
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://vueltito.app/#video-00",
+        "name": "Cómo usar Vueltito: Bienvenida",
+        "description": "Qué vas a aprender en la guía de Vueltito y los cinco botones de abajo con los que llegas a todo: Inicio, Movimientos, el botón verde, Inventario y Más.",
+        "thumbnailUrl": "https://vueltito.app/assets/videos/guia/00-bienvenida.jpg",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/LVAdSUxlMXY",
+        "url": "https://www.youtube.com/watch?v=LVAdSUxlMXY",
+        "uploadDate": "2026-11-13",
+        "duration": "PT32S",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://vueltito.app/#organizacion" }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://vueltito.app/#video-02",
+        "name": "Cómo usar Vueltito: Abre la caja",
+        "description": "Cómo abrir la caja en Vueltito antes de vender: en Inicio tocas Abrir caja y escribes con cuánto dinero empiezas el día.",
+        "thumbnailUrl": "https://vueltito.app/assets/videos/guia/02-abre-la-caja.jpg",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/odVowN7kTTE",
+        "url": "https://www.youtube.com/watch?v=odVowN7kTTE",
+        "uploadDate": "2026-11-13",
+        "duration": "PT22S",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://vueltito.app/#organizacion" }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://vueltito.app/#video-03",
+        "name": "Cómo usar Vueltito: Carga un producto que vendes por unidad",
+        "description": "Cómo agregar un producto en Vueltito con foto, precio de venta, costo, categoría, unidades, fecha de vencimiento y lote, y ver cuánto ganarías si vendes todo.",
+        "thumbnailUrl": "https://vueltito.app/assets/videos/guia/03-producto-por-unidad.jpg",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/cIYPFC2cTpc",
+        "url": "https://www.youtube.com/watch?v=cIYPFC2cTpc",
+        "uploadDate": "2026-11-13",
+        "duration": "PT1M2S",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://vueltito.app/#organizacion" }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://vueltito.app/#video-05",
+        "name": "Cómo usar Vueltito: Vende y da el vuelto",
+        "description": "Cómo vender en Vueltito tocando la foto del producto, por unidad o por kilo, cobrar en efectivo y ver cuánto devolver sin calculadora.",
+        "thumbnailUrl": "https://vueltito.app/assets/videos/guia/05-vende-y-da-el-vuelto.jpg",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/JOrms4ARD2A",
+        "url": "https://www.youtube.com/watch?v=JOrms4ARD2A",
+        "uploadDate": "2026-11-13",
+        "duration": "PT43S",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://vueltito.app/#organizacion" }
       }
     ]
   }
@@ -108,6 +160,7 @@
       <a class="brand" href="/" aria-label="Vueltito, inicio"><img class="brand-icon" src="assets/icon.svg" width="40" height="40" alt="">Vueltito</a>
       <nav aria-label="Principal">
         <a href="#funciones">Qué hace</a>
+        <a href="#como-usar">Cómo usar</a>
         <a href="#precio">Precio</a>
         <a href="#preguntas">Preguntas</a>
       </nav>
@@ -239,6 +292,93 @@
       </div>
     </section>
 
+    <section class="guide" id="como-usar">
+      <div class="wrap">
+        <h2>Cómo usar Vueltito</h2>
+        <p class="sub">Videos cortos, paso a paso, con voz y subtítulos. Mira solo el que necesitas.</p>
+
+        <!-- Cada capítulo muestra su póster y un enlace a YouTube. Al tocarlo, el script de abajo
+             lo cambia por el reproductor de youtube-nocookie.com: la página no carga YouTube antes. -->
+        <div class="guide-grid">
+          <article class="guide-card">
+            <div class="guide-media">
+              <a class="guide-play" href="https://www.youtube.com/watch?v=LVAdSUxlMXY&amp;list=PLEvX3kKRpSMg" data-youtube-id="LVAdSUxlMXY" aria-label="Ver «Bienvenida» en YouTube">
+                <img src="assets/videos/guia/00-bienvenida.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+                <span class="guide-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>
+              </a>
+            </div>
+            <div class="guide-copy">
+              <p class="guide-meta">Capítulo 00 · <time datetime="PT32S">0:32</time></p>
+              <h3 id="cap-00">Bienvenida</h3>
+              <p>Qué vas a aprender y los cinco botones de abajo con los que llegas a todo.</p>
+            </div>
+          </article>
+
+          <article class="guide-card">
+            <div class="guide-media">
+              <a class="guide-play" href="https://www.youtube.com/watch?v=odVowN7kTTE&amp;list=PLEvX3kKRpSMg" data-youtube-id="odVowN7kTTE" aria-label="Ver «Abre la caja» en YouTube">
+                <img src="assets/videos/guia/02-abre-la-caja.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+                <span class="guide-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>
+              </a>
+            </div>
+            <div class="guide-copy">
+              <p class="guide-meta">Capítulo 02 · <time datetime="PT22S">0:22</time></p>
+              <h3 id="cap-02">Abre la caja</h3>
+              <p>Escribe con cuánto sencillo empiezas el día y quedas listo para cobrar.</p>
+            </div>
+          </article>
+
+          <article class="guide-card">
+            <div class="guide-media">
+              <a class="guide-play" href="https://www.youtube.com/watch?v=cIYPFC2cTpc&amp;list=PLEvX3kKRpSMg" data-youtube-id="cIYPFC2cTpc" aria-label="Ver «Carga un producto que vendes por unidad» en YouTube">
+                <img src="assets/videos/guia/03-producto-por-unidad.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+                <span class="guide-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>
+              </a>
+            </div>
+            <div class="guide-copy">
+              <p class="guide-meta">Capítulo 03 · <time datetime="PT1M2S">1:02</time></p>
+              <h3 id="cap-03">Carga un producto que vendes por unidad</h3>
+              <p>Foto, precio, costo, cuántos tienes y cuándo se vence. La app te dice cuánto ganarías.</p>
+            </div>
+          </article>
+
+          <article class="guide-card">
+            <div class="guide-media">
+              <a class="guide-play" href="https://www.youtube.com/watch?v=JOrms4ARD2A&amp;list=PLEvX3kKRpSMg" data-youtube-id="JOrms4ARD2A" aria-label="Ver «Vende y da el vuelto» en YouTube">
+                <img src="assets/videos/guia/05-vende-y-da-el-vuelto.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+                <span class="guide-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>
+              </a>
+            </div>
+            <div class="guide-copy">
+              <p class="guide-meta">Capítulo 05 · <time datetime="PT43S">0:43</time></p>
+              <h3 id="cap-05">Vende y da el vuelto</h3>
+              <p>Tocas la foto, cobras y la app te dice cuánto devolver. Sin calculadora.</p>
+            </div>
+          </article>
+        </div>
+        <p class="guide-all"><a class="pill" href="https://www.youtube.com/playlist?list=PLEvX3kKRpSMg" rel="noopener">Ver la guía completa en YouTube</a></p>
+
+        <div class="guide-soon">
+          <h3>Próximamente</h3>
+          <ol>
+            <li><span>01</span>Configura tu tienda por primera vez</li>
+            <li><span>04</span>Carga un producto que vendes por kilo</li>
+            <li><span>06</span>Crea un cliente y actívale el fiado</li>
+            <li><span>07</span>Vende fiado</li>
+            <li><span>08</span>Cobra un fiado</li>
+            <li><span>09</span>Registra un gasto</li>
+            <li><span>10</span>Registra mercancía que llega del proveedor</li>
+            <li><span>11</span>Revisa tu inventario</li>
+            <li><span>12</span>Cierra y cuadra la caja</li>
+            <li><span>13</span>Mira cómo te va: reportes</li>
+            <li><span>14</span>Comparte tu lista de precios en PDF</li>
+            <li><span>15</span>Usa una tablet como caja</li>
+            <li><span>16</span>Tus datos seguros</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
     <section class="shops" id="negocios">
       <div class="wrap">
         <h2>Para el negocio de barrio de toda Latinoamérica.</h2>
@@ -364,8 +504,31 @@
       <nav class="social" aria-label="Redes sociales">
         <a href="https://www.instagram.com/vueltitoapp" rel="noopener" aria-label="Vueltito en Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a>
         <a href="https://www.tiktok.com/@vueltitoapp" rel="noopener" aria-label="Vueltito en TikTok"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok</a>
+        <a href="https://www.youtube.com/@vueltitoapp" rel="noopener" aria-label="Vueltito en YouTube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>YouTube</a>
       </nav>
     </div>
   </footer>
+  <script>
+    // Cómo usar: el capítulo se cambia por el reproductor de YouTube solo cuando lo tocan.
+    // Si ya había otro abierto, vuelve a su póster para que no suenen dos a la vez.
+    (function () {
+      var abierto = null;
+      document.querySelectorAll(".guide-play").forEach(function (enlace) {
+        enlace.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (abierto) abierto.marco.replaceWith(abierto.enlace);
+          var marco = document.createElement("iframe");
+          marco.src = "https://www.youtube-nocookie.com/embed/" + enlace.dataset.youtubeId +
+            "?autoplay=1&rel=0&hl=es&cc_lang_pref=es&cc_load_policy=1";
+          marco.title = enlace.getAttribute("aria-label").replace(" en YouTube", "");
+          marco.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+          marco.allowFullscreen = true;
+          marco.referrerPolicy = "strict-origin-when-cross-origin";
+          enlace.replaceWith(marco);
+          abierto = { enlace: enlace, marco: marco };
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
