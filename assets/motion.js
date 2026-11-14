@@ -75,7 +75,9 @@
     var alto = barra ? barra.offsetHeight : 64;
     var fijar = function () {
       alto = barra ? barra.offsetHeight : 64;
-      secciones.forEach(function (sec) {
+      secciones.forEach(function (sec, i) {
+        var cabe = sec.offsetHeight <= window.innerHeight - alto;
+        sec.classList.toggle("no-stack", i === 0 && !cabe);
         sec.style.top = Math.min(alto, window.innerHeight - sec.offsetHeight) + "px";
       });
     };

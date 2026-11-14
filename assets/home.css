@@ -26,39 +26,58 @@
   color: var(--white);
 }
 
-/* ── Portada ──────────────────────────────────────────────────── */
+/* ── Portada: el texto a un lado y el teléfono con la vitrina al otro ──
+   Todo cabe en una pantalla, así la sección que sigue lo tapa completo. */
 
 .stage-hero {
-  padding: 88px 0 0;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  min-height: min(calc(100vh - 64px), 920px);
+  padding: 48px 0 64px;
 }
 
-.stage-hero h1 {
-  margin: 0 auto;
-  max-width: 11ch;
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: 40px 56px;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  max-width: 10ch;
   font-family: var(--display);
   font-variation-settings: "opsz" 96;
   font-weight: 800;
-  font-size: clamp(3.5rem, 10vw, 8.25rem);
+  font-size: clamp(3rem, 6.2vw, 6rem);
   line-height: 0.95;
   letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
-.stage-hero .sub {
-  margin: 28px auto 0;
-  max-width: 30ch;
-  font-size: clamp(1.1875rem, 2.2vw, 1.5rem);
-  line-height: 1.4;
+.hero-copy .sub {
+  margin: 24px 0 0;
+  max-width: 34ch;
+  font-size: clamp(1.1875rem, 1.7vw, 1.4375rem);
+  line-height: 1.45;
   color: var(--muted);
 }
 
-.stage-hero .actions {
+.hero-copy .actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   gap: 12px 28px;
-  margin-top: 36px;
+  margin-top: 32px;
+}
+
+/* En computador, la franja de confianza en dos columnas parejas */
+.hero-copy .trust {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: start;
+  gap: 10px 28px;
+  margin-top: 28px;
 }
 
 .btn-round {
@@ -99,23 +118,38 @@
   text-decoration: underline;
 }
 
-/* El mostrador: el teléfono al centro y la vitrina alrededor */
+/* La vitrina: un teléfono chico con cuatro productos de la tienda alrededor.
+   Los productos son los mismos que se ven en la pantalla, con su precio. */
 .counter {
+  --phone: clamp(220px, calc((100vh - 64px) * 0.36), 280px);
+  --card: calc(var(--phone) * 0.5);
   position: relative;
-  height: 640px;
-  margin-top: 72px;
+  height: calc((var(--phone) - 20px) * 2.1667 + 20px);
+}
+
+/* Un halo verde suave detrás del teléfono, para darle profundidad */
+.counter::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--phone) * 2.2);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: radial-gradient(closest-side, rgba(4, 120, 87, 0.16), rgba(4, 120, 87, 0));
+  pointer-events: none;
 }
 
 .device {
   position: absolute;
-  left: 50%;
+  left: calc(50% - var(--phone) / 2);
   top: 0;
-  width: 300px;
+  z-index: 1;
+  width: var(--phone);
   padding: 10px;
-  transform: translateX(-50%);
   background: #101814;
-  border-radius: 46px;
-  box-shadow: 0 50px 80px -30px rgba(6, 78, 59, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  border-radius: 44px;
+  box-shadow: 0 40px 70px -30px rgba(6, 78, 59, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
 .device img {
@@ -123,70 +157,91 @@
   aspect-ratio: 9 / 19.5;
   object-fit: cover;
   object-position: top;
-  border-radius: 37px;
+  border-radius: 34px;
   background: var(--paper);
 }
 
 .item {
   position: absolute;
-  width: 168px;
-  padding: 10px 10px 14px;
+  z-index: 2;
+  width: var(--card);
+  padding: 8px 8px 12px;
   background: var(--white);
-  border-radius: 22px;
-  box-shadow: 0 18px 40px -18px rgba(14, 26, 20, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 18px 36px -16px rgba(14, 26, 20, 0.35), 0 0 0 1px rgba(14, 26, 20, 0.04);
 }
 
 .item img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
 .item .tag {
   position: absolute;
   right: -10px;
-  top: 132px;
-  padding: 4px 12px;
+  top: calc(var(--card) - 40px);
+  padding: 3px 10px;
   background: var(--price-tag);
-  border-radius: 10px;
+  border-radius: 9px;
   font-family: var(--display);
   font-weight: 800;
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   transform: rotate(-7deg);
   box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .item .name {
-  margin-top: 14px;
-  font-size: 0.875rem;
+  margin-top: 10px;
+  font-size: 0.8125rem;
   font-weight: 600;
+  line-height: 1.25;
   text-align: left;
 }
 
-.item:nth-of-type(1) { left: calc(50% - 470px); top: 40px; transform: rotate(-6deg); }
-.item:nth-of-type(2) { left: calc(50% - 400px); top: 330px; transform: rotate(4deg); }
-.item:nth-of-type(3) { left: calc(50% - 640px); top: 220px; transform: rotate(-2deg); }
-.item:nth-of-type(4) { left: calc(50% + 300px); top: 30px; transform: rotate(5deg); }
-.item:nth-of-type(5) { left: calc(50% + 240px); top: 330px; transform: rotate(-4deg); }
-.item:nth-of-type(6) { left: calc(50% + 470px); top: 200px; transform: rotate(3deg); }
+/* Cuánto de cada tarjeta queda fuera del teléfono (--out) y su giro */
+.counter > .item:nth-child(2) { --out: 0.84; left: calc(50% - var(--phone) / 2 - var(--card) * var(--out)); top: 7%; rotate: -7deg; }
+.counter > .item:nth-child(3) { --out: 0.9; left: calc(50% - var(--phone) / 2 - var(--card) * var(--out)); top: 52%; rotate: 5deg; }
+.counter > .item:nth-child(4) { --out: 0.86; left: calc(50% + var(--phone) / 2 - var(--card) * (1 - var(--out))); top: 17%; rotate: 6deg; }
+.counter > .item:nth-child(5) { --out: 0.88; left: calc(50% + var(--phone) / 2 - var(--card) * (1 - var(--out))); top: 59%; rotate: -4deg; }
 
-/* Una sola entrada orquestada: la vitrina se acomoda alrededor del teléfono */
+/* Una sola entrada al cargar: el texto sube en cascada, el teléfono aparece
+   y los productos salen de él hacia los lados. Después nada se mueve. */
 @media (prefers-reduced-motion: no-preference) {
-  .item {
-    animation: settle 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  .hero-copy > * {
+    animation: hero-entra 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 
-  .item:nth-of-type(2) { animation-delay: 0.08s; }
-  .item:nth-of-type(3) { animation-delay: 0.16s; }
-  .item:nth-of-type(4) { animation-delay: 0.04s; }
-  .item:nth-of-type(5) { animation-delay: 0.12s; }
-  .item:nth-of-type(6) { animation-delay: 0.2s; }
+  .hero-copy > :nth-child(2) { animation-delay: 0.08s; }
+  .hero-copy > :nth-child(3) { animation-delay: 0.16s; }
+  .hero-copy > :nth-child(4) { animation-delay: 0.24s; }
 
-  @keyframes settle {
+  .counter .device {
+    animation: hero-entra 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+  }
+
+  .counter .item {
+    animation: hero-producto 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .counter > .item:nth-child(2) { --dx: 56px; animation-delay: 0.34s; }
+  .counter > .item:nth-child(3) { --dx: 64px; animation-delay: 0.42s; }
+  .counter > .item:nth-child(4) { --dx: -56px; animation-delay: 0.38s; }
+  .counter > .item:nth-child(5) { --dx: -64px; animation-delay: 0.46s; }
+
+  @keyframes hero-entra {
     from {
       opacity: 0;
-      translate: 0 24px;
+      translate: 0 18px;
+    }
+  }
+
+  @keyframes hero-producto {
+    from {
+      opacity: 0;
+      translate: var(--dx, 0) 12px;
+      scale: 0.72;
     }
   }
 }
@@ -905,15 +960,64 @@
 /* ── Pantallas medianas y chicas ──────────────────────────────── */
 
 @media (max-width: 1100px) {
-  .item:nth-of-type(3),
-  .item:nth-of-type(6) {
-    display: none;
+  /* Pantallas medianas: tarjetas más chicas y más pegadas al teléfono */
+  .counter {
+    --card: calc(var(--phone) * 0.44);
   }
 
-  .item:nth-of-type(1) { left: calc(50% - 360px); }
-  .item:nth-of-type(2) { left: calc(50% - 330px); }
-  .item:nth-of-type(4) { left: calc(50% + 190px); }
-  .item:nth-of-type(5) { left: calc(50% + 170px); }
+  .counter > .item:nth-child(n) {
+    --out: 0.72;
+  }
+}
+
+@media (max-width: 960px) {
+  /* Tablet vertical y teléfono: el texto arriba, centrado, y la vitrina debajo */
+  .stage-hero {
+    display: block;
+    min-height: 0;
+    padding: 40px 0 56px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-copy h1 {
+    margin-inline: auto;
+    font-size: clamp(2.75rem, 11vw, 4.25rem);
+  }
+
+  .hero-copy .sub {
+    margin-inline: auto;
+  }
+
+  .hero-copy .actions {
+    justify-content: center;
+  }
+
+  .hero-copy .trust {
+    display: flex;
+    justify-content: center;
+  }
+
+  .counter {
+    --phone: min(220px, 54vw);
+    --card: calc(var(--phone) * 0.48);
+  }
+
+  .counter > .item:nth-child(n) {
+    --out: 0.58;
+  }
+
+  .item .name {
+    font-size: 0.75rem;
+  }
+
+  .item .tag {
+    font-size: 0.8125rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -943,48 +1047,6 @@
 }
 
 @media (max-width: 720px) {
-  .stage-hero {
-    padding-top: 56px;
-  }
-
-  .counter {
-    height: auto;
-    margin-top: 48px;
-  }
-
-  .device {
-    position: relative;
-    left: auto;
-    transform: none;
-    width: min(280px, 78vw);
-    margin: 0 auto;
-  }
-
-  /* En el teléfono la vitrina va en fila debajo, como un estante */
-  .counter .shelf-row {
-    display: flex;
-    gap: 14px;
-    margin-top: 32px;
-    padding: 8px 16px 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-
-  .item .tag {
-    top: 112px;
-  }
-
-  .item,
-  .item:nth-of-type(n) {
-    position: relative;
-    display: block;
-    left: auto;
-    top: auto;
-    flex: 0 0 148px;
-    transform: none;
-    scroll-snap-align: start;
-  }
-
   .tile {
     padding: 28px;
     border-radius: 26px;
@@ -1504,78 +1566,6 @@
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    /* Inicio, como en apple.com: el título queda fijo en su lugar y se
-       desvanece sin moverse mientras el teléfono sube por encima de él.
-       "top" es exactamente donde ya está, así que no da ningún salto. */
-    .stage-hero .wrap {
-      position: sticky;
-      top: calc(64px + 88px);
-      z-index: 0;
-      animation: hero-titulo linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0 55vh;
-    }
-
-    .counter {
-      z-index: 1;
-    }
-
-    .counter .device {
-      z-index: 2;
-    }
-
-    /* Los productos terminan de salir antes de que la sección se quede
-       fija (con las secciones apiladas, su posición deja de cambiar) */
-    .counter .item {
-      animation: hero-producto linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0 38vh;
-    }
-
-    @keyframes hero-titulo {
-      to {
-        opacity: 0;
-        scale: 0.96;
-        visibility: hidden;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .stage-hero .wrap {
-        top: calc(64px + 56px);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .stage-hero .wrap {
-        top: calc(88px + 56px);
-      }
-    }
-
-    /* Desde dónde sale cada producto: casi en el centro, detrás del teléfono */
-    .item:nth-of-type(1) { --dx: 310px; --dy: 140px; }
-    .item:nth-of-type(2) { --dx: 250px; --dy: -90px; }
-    .item:nth-of-type(3) { --dx: 445px; --dy: 0px; }
-    .item:nth-of-type(4) { --dx: -305px; --dy: 150px; }
-    .item:nth-of-type(5) { --dx: -260px; --dy: -90px; }
-    .item:nth-of-type(6) { --dx: -445px; --dy: 15px; }
-
-    @keyframes hero-producto {
-      from {
-        opacity: 0;
-        translate: var(--dx, 0) var(--dy, 0);
-        scale: 0.55;
-      }
-    }
-
-    /* En el teléfono la vitrina va en otra disposición: solo aparecen */
-    @media (max-width: 720px) {
-      .item:nth-of-type(n) {
-        --dx: 0px;
-        --dy: 40px;
-      }
-    }
-
     /* Títulos que se iluminan de gris a tinta mientras los lees */
     .story-title,
     .bento-wrap > .wrap > h2,
@@ -1676,6 +1666,14 @@
 .stack main > section.get,
 .stack main > section.story {
   padding-bottom: 120px;
+}
+
+/* Si el inicio no cabe en la pantalla (en el teléfono), se desplaza normal:
+   fijarlo haría que la sección siguiente tape el teléfono por la mitad */
+.stack main > section.no-stack {
+  position: relative;
+  top: auto !important;
+  animation: none !important;
 }
 
 @keyframes se-va {
