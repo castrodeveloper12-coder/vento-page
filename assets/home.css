@@ -11,7 +11,7 @@
 .pill {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
+  min-height: 44px;
   padding: 0 16px;
   border-radius: 999px;
   background: var(--ink);
@@ -87,6 +87,9 @@
 }
 
 .link-more {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: 1.125rem;
   font-weight: 600;
   text-decoration: none;
@@ -516,7 +519,7 @@
 }
 
 .guide-play:focus-visible {
-  outline: 3px solid var(--amber);
+  outline: 3px solid var(--ink);
   outline-offset: 3px;
 }
 
@@ -535,8 +538,32 @@
 }
 
 .guide-all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
   margin: 24px 0 0;
-  text-align: center;
+}
+
+/* Se ven los primeros capítulos; el resto, al tocar "Ver los N capítulos más".
+   Sin JavaScript no se oculta nada */
+.guide-grid.is-collapsed > .guide-card:nth-child(n + 5) {
+  display: none;
+}
+
+.guide-more {
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: 600 0.875rem/1 var(--body);
+  cursor: pointer;
+}
+
+.guide-more:hover {
+  background: var(--white);
 }
 
 .guide-copy {

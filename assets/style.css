@@ -59,8 +59,10 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 3px solid var(--amber);
-  outline-offset: 2px;
+  /* Tinta y no ámbar: el ámbar sobre el fondo claro da 2:1 y no se ve.
+     La tinta pasa 3:1 sobre papel, blanco, esmeralda y ámbar */
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
   border-radius: 4px;
 }
 
@@ -107,6 +109,7 @@ a:hover {
 .brand {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   gap: 10px;
   color: var(--ink);
   text-decoration: none;
@@ -712,6 +715,7 @@ a:hover {
 .footer .wrap {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
   gap: 16px 32px;
 }
@@ -724,6 +728,28 @@ a:hover {
 
 .footer a {
   color: var(--ink);
+}
+
+/* Cada enlace del pie se puede tocar con el dedo: 44 px de alto */
+.footer nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* El canal de YouTube va como botón, no como un enlace más */
+.footer .social a.yt {
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer .social a.yt:hover {
+  background: var(--emerald-deep);
+  color: var(--white);
 }
 
 .footer .social a {
@@ -780,8 +806,37 @@ a:hover {
     font-size: 1rem;
   }
 
+  /* En el teléfono el menú no desaparece: baja a una segunda fila que se
+     desliza de lado si no cabe */
+  html {
+    scroll-padding-top: 104px;
+  }
+
+  .topbar .wrap {
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
+
   .topbar nav {
+    order: 3;
+    width: 100%;
+    gap: 0;
+    margin-inline: -8px;
+    padding-inline: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .topbar nav::-webkit-scrollbar {
     display: none;
+  }
+
+  .topbar nav a {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 8px;
   }
 
   .plain {
