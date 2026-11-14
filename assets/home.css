@@ -1518,17 +1518,18 @@
 
     .counter {
       z-index: 1;
-      view-timeline-name: --vitrina;
     }
 
     .counter .device {
       z-index: 2;
     }
 
+    /* Los productos terminan de salir antes de que la sección se quede
+       fija (con las secciones apiladas, su posición deja de cambiar) */
     .counter .item {
       animation: hero-producto linear both;
-      animation-timeline: --vitrina;
-      animation-range: cover 8% cover 45%;
+      animation-timeline: scroll(root);
+      animation-range: 0 38vh;
     }
 
     @keyframes hero-titulo {

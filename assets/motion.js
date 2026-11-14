@@ -64,7 +64,9 @@
     document.body.style.setProperty("timeline-scope", nombres.join(", "));
     capas.forEach(function (c, i) {
       c.style.setProperty("view-timeline-name", nombres[i]);
-      if (i < capas.length - 1 && secciones.indexOf(c) >= 0) {
+      // Solo se va la sección que tiene otra sección detrás; la última no,
+      // porque el pie es corto y la dejaría desaparecer del todo
+      if (i < secciones.length - 1) {
         c.style.setProperty("animation", "se-va linear both");
         c.style.setProperty("animation-timeline", nombres[i + 1]);
         c.style.setProperty("animation-range", "entry 0% entry 100%");
