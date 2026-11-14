@@ -12,7 +12,7 @@
 ## Enlaces
 
 - [Inicio](https://vueltito.app/): qué hace, para qué negocios, dónde usarla, precio y preguntas frecuentes
-- [Cómo usar Vueltito](https://vueltito.app/#como-usar): guía en video paso a paso, con voz y subtítulos en español, también en YouTube (https://www.youtube.com/@vueltitoapp) (bienvenida, abrir la caja, cargar un producto por unidad, vender y dar el vuelto; el resto de capítulos llega pronto)
+- [Cómo usar Vueltito](https://vueltito.app/#como-usar): guía en video paso a paso, con voz y subtítulos en español, también en YouTube (https://www.youtube.com/@vueltitoapp) (configurar la tienda, abrir la caja, cargar productos por unidad y por kilo, vender y dar el vuelto, fiar, cobrar fiados y registrar gastos; el resto de capítulos llega pronto)
 - [Descargar en Google Play](https://play.google.com/store/apps/details?id=com.castrodeveloper.vento)
 - [Política de privacidad](https://vueltito.app/privacy-policy.html)
 - [Términos de uso](https://vueltito.app/terminos.html)
