@@ -18,7 +18,42 @@
     window.addEventListener("scroll", marcar, { passive: true });
   }
 
-  if (reducir || !("IntersectionObserver" in window)) return;
+  if (!("IntersectionObserver" in window)) return;
+
+  // Escena "Tu día en la tienda": el paso que cruza la mitad de la pantalla
+  // es el activo, y el teléfono muestra su pantalla
+  var pasos = [].slice.call(document.querySelectorAll(".story-step"));
+  var pantallas = [].slice.call(document.querySelectorAll(".story-device img"));
+  if (pasos.length && pantallas.length) {
+    document.querySelector(".story").classList.add("story-js");
+    var activar = function (i) {
+      pasos.forEach(function (p) { p.classList.toggle("is-on", p.dataset.i === i); });
+      pantallas.forEach(function (img) { img.classList.toggle("is-on", img.dataset.i === i); });
+    };
+    var actual = null;
+    var pendiente = false;
+    var revisar = function () {
+      pendiente = false;
+      var mitad = window.innerHeight / 2;
+      var elegido = pasos[0];
+      pasos.forEach(function (p) {
+        if (p.getBoundingClientRect().top <= mitad) elegido = p;
+      });
+      if (elegido.dataset.i !== actual) {
+        actual = elegido.dataset.i;
+        activar(actual);
+      }
+    };
+    revisar();
+    window.addEventListener("scroll", function () {
+      if (!pendiente) { pendiente = true; requestAnimationFrame(revisar); }
+    }, { passive: true });
+    window.addEventListener("resize", revisar);
+  }
+
+  // Donde el navegador anima con el scroll (CSS animation-timeline), lo hace el CSS
+  var porScroll = window.CSS && CSS.supports && CSS.supports("animation-timeline: view()");
+  if (reducir || porScroll) return;
 
   var grupos = [
     "main section h2", "main section > .wrap > .sub",

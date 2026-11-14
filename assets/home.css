@@ -1331,3 +1331,302 @@
     width: 132px;
   }
 }
+
+/* ── Escena fija: "Tu día en la tienda" ───────────────────────────
+   El teléfono se queda quieto y su pantalla cambia según el paso que
+   estás leyendo (assets/motion.js marca el paso activo). */
+
+.story {
+  padding: 120px 0 40px;
+}
+
+.story-title {
+  margin: 0 auto 24px;
+  max-width: 16ch;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-align: center;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+}
+
+.story-phone {
+  order: 2;
+  position: sticky;
+  top: 88px;
+  height: calc(100vh - 104px);
+  display: grid;
+  place-items: center;
+}
+
+.story-device {
+  position: relative;
+  width: min(320px, calc((100vh - 160px) * 0.45));
+  padding: 10px;
+  border-radius: 46px;
+  background: #101814;
+  box-shadow: 0 50px 80px -30px rgba(6, 78, 59, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.story-device img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 640 / 1422;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 37px;
+  background: var(--paper);
+}
+
+/* Las pantallas van una encima de otra; la activa se ve */
+.story-device img + img {
+  position: absolute;
+  inset: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+}
+
+.story-device img {
+  opacity: 0;
+  scale: 1.04;
+  transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), scale 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.story-device img.is-on {
+  opacity: 1;
+  scale: 1;
+}
+
+.story-steps {
+  order: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.story-step {
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 30rem;
+  margin-left: auto;
+  transition: opacity 0.4s ease;
+}
+
+/* Con JavaScript, los pasos que no estás leyendo quedan atenuados */
+.story-js .story-step {
+  opacity: 0.28;
+}
+
+.story-js .story-step.is-on {
+  opacity: 1;
+}
+
+.story-kicker {
+  margin: 0 0 12px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--emerald);
+}
+
+.story-step h2 {
+  margin: 0 0 16px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 4.4vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.story-step p:not(.story-kicker) {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* La pantalla dentro de cada paso solo se usa en el teléfono */
+.story-inline {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .story {
+    padding-top: 80px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .story-phone {
+    display: none;
+  }
+
+  .story-step {
+    min-height: 0;
+    max-width: none;
+    margin: 0 0 56px;
+    text-align: center;
+  }
+
+  .story-js .story-step {
+    opacity: 1;
+  }
+
+  .story-inline {
+    display: block;
+    width: min(260px, 72%);
+    height: auto;
+    margin: 28px auto 0;
+    padding: 8px;
+    border-radius: 36px;
+    background: #101814;
+    box-shadow: 0 40px 60px -30px rgba(6, 78, 59, 0.45);
+  }
+}
+
+/* ── Animaciones ligadas al scroll, al estilo de las páginas de Apple ──
+   Solo donde el navegador las soporta (Chrome y Edge, incluido Android)
+   y si la persona no pidió reducir el movimiento. En el resto, la página
+   usa la aparición simple de assets/motion.js. */
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* Inicio: el texto sube y se va, el teléfono crece y la vitrina se aleja */
+    .stage-hero .wrap > * {
+      animation: hero-sale linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 55vh;
+    }
+
+    .counter .device {
+      animation: hero-crece linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 80vh;
+    }
+
+    .counter .item {
+      animation:
+        settle 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both,
+        hero-vitrina linear both;
+      animation-timeline: auto, scroll(root);
+      animation-range: normal, 0 70vh;
+    }
+
+    @keyframes hero-sale {
+      to {
+        opacity: 0;
+        translate: 0 -48px;
+      }
+    }
+
+    @keyframes hero-crece {
+      to {
+        scale: 1.1;
+      }
+    }
+
+    @keyframes hero-vitrina {
+      to {
+        opacity: 0.1;
+        scale: 0.82;
+      }
+    }
+
+    /* Títulos que se iluminan de gris a tinta mientras los lees */
+    .story-title,
+    .bento-wrap > .wrap > h2,
+    .guide h2,
+    .shops h2,
+    .get h2,
+    .closing h2,
+    .faq h2 {
+      background: linear-gradient(90deg, var(--ink) 0 50%, #aebcb4 50% 100%) 100% 0 / 200% 100% no-repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: ilumina linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 45%;
+    }
+
+    .safe h2 {
+      background: linear-gradient(90deg, var(--white) 0 50%, rgba(255, 255, 255, 0.32) 50% 100%) 100% 0 / 200% 100% no-repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: ilumina linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 45%;
+    }
+
+    @keyframes ilumina {
+      to {
+        background-position: 0 0;
+      }
+    }
+
+    /* Tarjetas que suben y crecen al ritmo del dedo */
+    .tile,
+    .guide-card,
+    .shop-list > li,
+    .get-card,
+    .plans > div,
+    .safe-grid > li {
+      animation: sube linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 85%;
+    }
+
+    @keyframes sube {
+      from {
+        opacity: 0;
+        translate: 0 56px;
+        scale: 0.96;
+      }
+    }
+
+    /* La tablet se acerca mientras bajas */
+    .tablet-tile .tablet {
+      animation: acerca linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 45%;
+    }
+
+    @keyframes acerca {
+      from {
+        scale: 0.86;
+        translate: 0 48px;
+      }
+    }
+
+    /* La banda de seguridad se abre de tarjeta a todo el ancho */
+    .safe {
+      animation: abre linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 75%;
+    }
+
+    @keyframes abre {
+      from {
+        clip-path: inset(0 4% round 48px);
+      }
+
+      to {
+        clip-path: inset(0 0 round 0);
+      }
+    }
+  }
+}
