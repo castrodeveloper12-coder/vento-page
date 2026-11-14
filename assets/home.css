@@ -1504,23 +1504,51 @@
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    /* Inicio: el texto se queda quieto. Al bajar, el teléfono sube y se
-       asienta, y los productos salen de detrás de él hacia su lugar. */
+    /* Inicio, como en apple.com: el título queda fijo en su lugar y se
+       desvanece sin moverse mientras el teléfono sube por encima de él.
+       "top" es exactamente donde ya está, así que no da ningún salto. */
+    .stage-hero .wrap {
+      position: sticky;
+      top: calc(64px + 88px);
+      z-index: 0;
+      animation: hero-titulo linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 55vh;
+    }
+
     .counter {
+      z-index: 1;
       view-timeline-name: --vitrina;
     }
 
     .counter .device {
       z-index: 2;
-      animation: hero-telefono linear both;
-      animation-timeline: --vitrina;
-      animation-range: cover 6% cover 40%;
     }
 
     .counter .item {
       animation: hero-producto linear both;
       animation-timeline: --vitrina;
       animation-range: cover 8% cover 45%;
+    }
+
+    @keyframes hero-titulo {
+      to {
+        opacity: 0;
+        scale: 0.96;
+        visibility: hidden;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .stage-hero .wrap {
+        top: calc(64px + 56px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .stage-hero .wrap {
+        top: calc(88px + 56px);
+      }
     }
 
     /* Desde dónde sale cada producto: casi en el centro, detrás del teléfono */
@@ -1530,13 +1558,6 @@
     .item:nth-of-type(4) { --dx: -305px; --dy: 150px; }
     .item:nth-of-type(5) { --dx: -260px; --dy: -90px; }
     .item:nth-of-type(6) { --dx: -445px; --dy: 15px; }
-
-    @keyframes hero-telefono {
-      from {
-        translate: 0 72px;
-        scale: 0.94;
-      }
-    }
 
     @keyframes hero-producto {
       from {
@@ -1621,21 +1642,44 @@
       }
     }
 
-    /* La banda de seguridad se abre de tarjeta a todo el ancho */
-    .safe {
-      animation: abre linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 75%;
-    }
+  }
+}
 
-    @keyframes abre {
-      from {
-        clip-path: inset(0 4% round 48px);
-      }
+/* ── Secciones apiladas (assets/motion.js pone la clase .stack) ────
+   Cada sección queda fija al llegar a su final y la siguiente la tapa.
+   La que se va se desvanece y se aleja un poco, como una hoja de iOS. */
+.stack .home main > section,
+.stack main > section {
+  position: sticky;
+  background: var(--paper);
+  box-shadow: 0 -30px 60px -40px rgba(14, 26, 20, 0.28);
+  transform-origin: 50% 0;
+}
 
-      to {
-        clip-path: inset(0 0 round 0);
-      }
-    }
+.stack main > section.safe {
+  background: var(--emerald-deep);
+}
+
+.stack .footer {
+  position: relative;
+  background: var(--paper);
+}
+
+/* Los márgenes entre secciones dejarían ver la de atrás: pasan a relleno */
+.stack main > section.safe {
+  margin-top: 0;
+}
+
+.stack main > section.guide,
+.stack main > section.shops,
+.stack main > section.get,
+.stack main > section.story {
+  padding-bottom: 120px;
+}
+
+@keyframes se-va {
+  to {
+    opacity: 0;
+    scale: 0.94;
   }
 }

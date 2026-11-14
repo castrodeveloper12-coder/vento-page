@@ -53,6 +53,39 @@
 
   // Donde el navegador anima con el scroll (CSS animation-timeline), lo hace el CSS
   var porScroll = window.CSS && CSS.supports && CSS.supports("animation-timeline: view()");
+
+  // Secciones apiladas (portada): cada sección se queda quieta cuando su final
+  // llega al borde de abajo de la pantalla, y la siguiente sube por encima
+  // mientras ella se desvanece. Así se lee completa antes de irse.
+  var secciones = [].slice.call(document.querySelectorAll(".home main > section"));
+  if (porScroll && !reducir && secciones.length > 1) {
+    var capas = secciones.concat([document.querySelector(".footer")]).filter(Boolean);
+    var nombres = capas.map(function (c, i) { return "--capa" + i; });
+    document.body.style.setProperty("timeline-scope", nombres.join(", "));
+    capas.forEach(function (c, i) {
+      c.style.setProperty("view-timeline-name", nombres[i]);
+      if (i < capas.length - 1 && secciones.indexOf(c) >= 0) {
+        c.style.setProperty("animation", "se-va linear both");
+        c.style.setProperty("animation-timeline", nombres[i + 1]);
+        c.style.setProperty("animation-range", "entry 0% entry 100%");
+      }
+    });
+    var alto = barra ? barra.offsetHeight : 64;
+    var fijar = function () {
+      alto = barra ? barra.offsetHeight : 64;
+      secciones.forEach(function (sec) {
+        sec.style.top = Math.min(alto, window.innerHeight - sec.offsetHeight) + "px";
+      });
+    };
+    raiz.classList.add("stack");
+    fijar();
+    window.addEventListener("resize", fijar);
+    if ("ResizeObserver" in window) {
+      var ro = new ResizeObserver(function () { fijar(); });
+      secciones.forEach(function (sec) { ro.observe(sec); });
+    }
+  }
+
   if (reducir || porScroll) return;
 
   var grupos = [
