@@ -237,7 +237,7 @@
         <a href="/#precio">Precio</a>
         <a href="/#preguntas">Preguntas</a>
       </nav>
-      <a class="pill" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento&referrer=utm_source%3Dweb%26utm_content%3Dguia">Descargar</a>
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.castrodeveloper.vento&referrer=utm_source%3Dweb%26utm_content%3Dguia"><img src="https://play.google.com/intl/es-419/badges/static/images/badges/es-419_badge_web_generic.png" width="646" height="250" alt="Descargar en Google Play"></a>
     </div>
   </header>
 
@@ -721,13 +721,38 @@
         if (abierto) { abierto.marco.replaceWith(abierto.enlace); abierto = null; }
       }
 
+      var reducir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var actual = null;
+
+      // Al cambiar de capítulo, el nuevo entra desde el lado hacia donde vas:
+      // Siguiente desde la derecha, Anterior desde la izquierda. Si tocas rápido,
+      // la animación en curso se cancela y la nueva parte de inmediato.
+      function entrar(cap, dir) {
+        if (!cap.animate) return;
+        cap.getAnimations().forEach(function (a) { a.cancel(); });
+        var desde = reducir ? [{ opacity: 0 }, { opacity: 1 }]
+          : [{ opacity: 0, translate: (dir * 28) + "px 0" }, { opacity: 1, translate: "0 0" }];
+        cap.animate(desde, { duration: reducir ? 160 : 420, easing: "cubic-bezier(0.2, 0.8, 0.2, 1)" });
+      }
+
       function mostrar(id, mover) {
         var cap = document.getElementById(id) || caps[0];
+        if (cap === actual) return;
         cerrarVideo();
+        var dir = actual ? (caps.indexOf(cap) > caps.indexOf(actual) ? 1 : -1) : 0;
         caps.forEach(function (c) { c.classList.toggle("is-active", c === cap); });
+        if (actual) entrar(cap, dir);
+        actual = cap;
         enlaces.forEach(function (a) {
-          if (a.getAttribute("href") === "#" + cap.id) a.setAttribute("aria-current", "true");
-          else a.removeAttribute("aria-current");
+          if (a.getAttribute("href") === "#" + cap.id) {
+            a.setAttribute("aria-current", "true");
+            // En escritorio la lista tiene su propio scroll: que se vea el elegido
+            var lista = a.closest(".gp-list");
+            if (lista.scrollHeight > lista.clientHeight) {
+              var arriba = a.offsetTop - lista.clientHeight / 2 + a.offsetHeight / 2;
+              lista.scrollTop = Math.max(0, arriba);
+            }
+          } else a.removeAttribute("aria-current");
         });
         if (mover) {
           var arriba = cap.getBoundingClientRect().top;
@@ -761,5 +786,6 @@
       mostrar(location.hash.slice(1), false);
     })();
   </script>
+  <script src="assets/motion.js" defer></script>
 </body>
 </html>

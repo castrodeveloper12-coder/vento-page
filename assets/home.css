@@ -1292,3 +1292,42 @@
     font-size: 0.875rem;
   }
 }
+
+/* ── Respuesta al tocar (Apple: en el momento de presionar) ────── */
+
+.store-badge,
+.guide-link,
+.gp-list a,
+.gp-pager a,
+.gp-yt,
+.get-card .btn-round,
+.faq summary {
+  transition: transform 0.1s ease-out;
+}
+
+.store-badge:active,
+.gp-pager a:active,
+.gp-yt:active {
+  transform: scale(0.97);
+}
+
+.guide-link:active,
+.gp-list a:active,
+.faq summary:active {
+  transform: scale(0.985);
+}
+
+/* Insignia de Play chica, en la barra de arriba */
+.topbar .store-badge {
+  margin: -6px -6px -6px 0;
+}
+
+.topbar .store-badge img {
+  width: 150px;
+}
+
+@media (max-width: 640px) {
+  .topbar .store-badge img {
+    width: 132px;
+  }
+}
