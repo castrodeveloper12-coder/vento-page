@@ -1504,44 +1504,53 @@
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    /* Inicio: el texto sube y se va, el teléfono crece y la vitrina se aleja */
-    .stage-hero .wrap > * {
-      animation: hero-sale linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0 55vh;
+    /* Inicio: el texto se queda quieto. Al bajar, el teléfono sube y se
+       asienta, y los productos salen de detrás de él hacia su lugar. */
+    .counter {
+      view-timeline-name: --vitrina;
     }
 
     .counter .device {
-      animation: hero-crece linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0 80vh;
+      z-index: 2;
+      animation: hero-telefono linear both;
+      animation-timeline: --vitrina;
+      animation-range: cover 6% cover 40%;
     }
 
     .counter .item {
-      animation:
-        settle 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both,
-        hero-vitrina linear both;
-      animation-timeline: auto, scroll(root);
-      animation-range: normal, 0 70vh;
+      animation: hero-producto linear both;
+      animation-timeline: --vitrina;
+      animation-range: cover 8% cover 45%;
     }
 
-    @keyframes hero-sale {
-      to {
+    /* Desde dónde sale cada producto: casi en el centro, detrás del teléfono */
+    .item:nth-of-type(1) { --dx: 310px; --dy: 140px; }
+    .item:nth-of-type(2) { --dx: 250px; --dy: -90px; }
+    .item:nth-of-type(3) { --dx: 445px; --dy: 0px; }
+    .item:nth-of-type(4) { --dx: -305px; --dy: 150px; }
+    .item:nth-of-type(5) { --dx: -260px; --dy: -90px; }
+    .item:nth-of-type(6) { --dx: -445px; --dy: 15px; }
+
+    @keyframes hero-telefono {
+      from {
+        translate: 0 72px;
+        scale: 0.94;
+      }
+    }
+
+    @keyframes hero-producto {
+      from {
         opacity: 0;
-        translate: 0 -48px;
+        translate: var(--dx, 0) var(--dy, 0);
+        scale: 0.55;
       }
     }
 
-    @keyframes hero-crece {
-      to {
-        scale: 1.1;
-      }
-    }
-
-    @keyframes hero-vitrina {
-      to {
-        opacity: 0.1;
-        scale: 0.82;
+    /* En el teléfono la vitrina va en otra disposición: solo aparecen */
+    @media (max-width: 720px) {
+      .item:nth-of-type(n) {
+        --dx: 0px;
+        --dy: 40px;
       }
     }
 
