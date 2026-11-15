@@ -39,7 +39,7 @@
     <div class="doc-head">
       <div class="wrap">
         <h1 class="display">Política de privacidad</h1>
-        <p>Qué datos usa Vueltito (antes Vento), para qué, dónde quedan guardados y cómo borrarlos. Última actualización: 11 de noviembre de 2026.</p>
+        <p>Qué datos usa Vueltito (antes Vento), para qué, dónde quedan guardados y cómo borrarlos. Última actualización: 15 de noviembre de 2026.</p>
       </div>
     </div>
 
@@ -98,9 +98,9 @@
               <td data-label="Dónde se guarda">En tu teléfono y en tu espacio privado de Firebase Storage</td>
             </tr>
             <tr>
-              <td data-label="Dato">Estado de Premium (activo y fecha de vencimiento)</td>
-              <td data-label="Para qué">Quitar los anuncios y activar las funciones Premium</td>
-              <td data-label="Dónde se guarda">Firebase. El pago lo procesa Google Play: no vemos los datos de tu tarjeta</td>
+              <td data-label="Dato">Estado de Premium (plan, si está activo y cuándo vence) y el comprobante de compra de Google Play</td>
+              <td data-label="Para qué">Quitar los anuncios, activar las funciones Premium y confirmar con Google Play que la suscripción está pagada, renovada, cancelada o reembolsada</td>
+              <td data-label="Dónde se guarda">Firebase. El pago lo procesa Google Play: no vemos los datos de tu tarjeta. Al comprar, la app le pasa a Google Play un código de tu cuenta que no revela tu nombre ni tu correo</td>
             </tr>
             <tr>
               <td data-label="Dato">Identificador de publicidad, dirección IP (de ella sale una ubicación aproximada), interacción con los anuncios y datos de diagnóstico</td>
@@ -131,8 +131,10 @@
         <p>El respaldo automático en la nube viene activado para que no pierdas tu información si se pierde o se daña el teléfono. Puedes apagarlo en Configuración, en la sección de respaldos.</p>
         <ul>
           <li>Antes de subirlo, la app <strong>cifra el respaldo en tu teléfono</strong> con AES-256-GCM y una llave aleatoria propia de tu cuenta.</li>
-          <li>La llave se guarda en el almacenamiento seguro de tu teléfono y en tu cuenta, para que puedas restaurar en otro teléfono. El archivo y la llave quedan en servicios distintos.</li>
+          <li>La llave se guarda en el almacenamiento seguro de tu teléfono y en tu cuenta de Vueltito, para que puedas restaurar en otro teléfono. El archivo y la llave quedan en servicios distintos: quien consiga solo el archivo no puede leerlo.</li>
+          <li>Como la llave está en tu cuenta, el cifrado no impide que quien administra el servicio pueda abrir un respaldo. No lo hacemos: solo entraríamos a tus datos si tú nos lo pides para ayudarte, o si una ley o una orden judicial nos obliga.</li>
           <li>Las reglas de acceso de la nube solo permiten que tu cuenta lea tus respaldos y tus fotos.</li>
+          <li>La nube solo atiende a la app original instalada desde Google Play: la app lo demuestra con Play Integrity, de Google. Esa comprobación no envía datos de tu negocio.</li>
           <li>Todo viaja cifrado entre el teléfono y la nube (HTTPS).</li>
           <li>El PIN de la app protege el acceso en tu teléfono. No se sube a la nube ni va dentro de los respaldos.</li>
           <li>En Configuración, en Seguridad, ves la actividad de seguridad de tu teléfono de los últimos 90 días: inicios de sesión, PIN incorrectos, restauraciones y borrados. Ese registro no sale del teléfono.</li>
@@ -141,7 +143,7 @@
         <h2 id="terceros">5. Con quién se comparten</h2>
         <p>No vendemos ni alquilamos tus datos. Solo pasan por estos servicios, que los usan para prestar el servicio y no para fines propios ajenos a la app:</p>
         <ul>
-          <li><strong>Google:</strong> Firebase (cuenta, base de datos y almacenamiento), Crashlytics (reportes de fallos), AdMob (anuncios) y Google Play (pagos de Premium). Puedes leer cómo usa Google estos datos en <a href="https://policies.google.com/technologies/partner-sites?hl=es" rel="noopener">policies.google.com</a>.</li>
+          <li><strong>Google:</strong> Firebase (cuenta, base de datos, almacenamiento y la comprobación de Premium), Crashlytics (reportes de fallos), AdMob (anuncios), Google Play (pagos de Premium) y Play Integrity (comprobar que la app es la original). Puedes leer cómo usa Google estos datos en <a href="https://policies.google.com/technologies/partner-sites?hl=es" rel="noopener">policies.google.com</a>.</li>
           <li><strong>Factus:</strong> solo si emites facturas electrónicas en Colombia.</li>
           <li><strong>Autoridades:</strong> cuando una ley o una orden judicial nos obligue.</li>
         </ul>
