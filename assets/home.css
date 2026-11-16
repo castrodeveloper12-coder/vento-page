@@ -49,7 +49,7 @@
   font-family: var(--display);
   font-variation-settings: "opsz" 96;
   font-weight: 800;
-  font-size: clamp(3rem, 6.2vw, 6rem);
+  font-size: clamp(3rem, 0.5rem + 5.511vw, 6rem);
   line-height: 0.95;
   letter-spacing: -0.045em;
   text-wrap: balance;
@@ -58,7 +58,7 @@
 .hero-copy .sub {
   margin: 24px 0 0;
   max-width: 34ch;
-  font-size: clamp(1.1875rem, 1.7vw, 1.4375rem);
+  font-size: clamp(1.1875rem, 0.297rem + 1.315vw, 1.4375rem);
   line-height: 1.45;
   color: var(--muted);
 }
@@ -182,7 +182,11 @@
   position: absolute;
   color: var(--on-amber);
   right: -10px;
-  top: calc(var(--card) - 40px);
+  /* Se ubica por su borde de abajo (cerca del final de la foto): si la letra
+     del teléfono es más grande, el cartelito crece hacia la foto y no tapa
+     el nombre del producto */
+  top: calc(var(--card) - 12px);
+  translate: 0 -100%;
   padding: 3px 10px;
   background: var(--price-tag);
   border-radius: 9px;
@@ -194,6 +198,8 @@
 }
 
 .item .name {
+  /* Con la letra grande la tarjeta es angosta: mejor "Pláta-nos" que cortar sin guion */
+  hyphens: auto;
   margin-top: 10px;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -267,7 +273,7 @@
   max-width: 16ch;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-size: clamp(2.5rem, 0.5rem + 5.172vw, 4.75rem);
   line-height: 1;
   letter-spacing: -0.035em;
   text-align: center;
@@ -300,7 +306,7 @@
   margin: 0 0 10px;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(1.75rem, 3vw, 2.375rem);
+  font-size: clamp(1.75rem, 0.438rem + 2.363vw, 2.375rem);
   line-height: 1.05;
   letter-spacing: -0.025em;
 }
@@ -363,7 +369,7 @@
   margin-top: 28px;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(3.5rem, 7vw, 5.75rem);
+  font-size: clamp(3.5rem, 0.5rem + 6.243vw, 5.75rem);
   line-height: 1;
   letter-spacing: -0.04em;
   color: var(--emerald);
@@ -518,7 +524,7 @@
   max-width: 18ch;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-size: clamp(2.5rem, 0.5rem + 5.172vw, 4.75rem);
   line-height: 1;
   letter-spacing: -0.035em;
   text-align: center;
@@ -647,7 +653,7 @@
   margin: 0 0 8px;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+  font-size: clamp(1.5rem, 0.375rem + 1.867vw, 1.875rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -712,7 +718,7 @@
   max-width: 18ch;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-size: clamp(2.5rem, 0.5rem + 5.172vw, 4.75rem);
   line-height: 1;
   letter-spacing: -0.035em;
 }
@@ -846,7 +852,7 @@
   margin: 0 auto 48px;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-size: clamp(2.5rem, 0.5rem + 5.172vw, 4.75rem);
   line-height: 1;
   letter-spacing: -0.035em;
   text-align: center;
@@ -871,7 +877,7 @@
   margin: 0 0 10px;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(1.625rem, 2.6vw, 2rem);
+  font-size: clamp(1.625rem, 0.406rem + 2.018vw, 2rem);
   letter-spacing: -0.025em;
 }
 
@@ -995,7 +1001,7 @@
 
   .hero-copy h1 {
     margin-inline: auto;
-    font-size: clamp(2.75rem, 11vw, 4.25rem);
+    font-size: clamp(2.75rem, 0.5rem + 9.429vw, 4.25rem);
   }
 
   .hero-copy .sub {
@@ -1263,7 +1269,7 @@
   max-width: 16ch;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-size: clamp(2.5rem, 0.5rem + 5.111vw, 4.25rem);
   line-height: 1;
   letter-spacing: -0.035em;
   text-align: center;
@@ -1421,7 +1427,7 @@
   max-width: 16ch;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-size: clamp(2.5rem, 0.5rem + 5.172vw, 4.75rem);
   line-height: 1;
   letter-spacing: -0.035em;
   text-align: center;
@@ -1525,7 +1531,7 @@
   margin: 0 0 16px;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(2.25rem, 4.4vw, 3.5rem);
+  font-size: clamp(2.25rem, 0.5rem + 3.635vw, 3.5rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
 }

@@ -201,6 +201,10 @@ body {
   font-family: var(--body);
   font-size: 1.0625rem;
   line-height: 1.6;
+  /* Con la letra del sistema muy grande, una palabra larga de un título
+     ("Latinoamérica.") puede no caber en el teléfono: se corta en vez de
+     salirse. Con la letra normal nada cambia */
+  overflow-wrap: break-word;
 }
 
 img,
@@ -449,7 +453,7 @@ a:hover {
 
 .hero h1 {
   margin: 0 0 20px;
-  font-size: clamp(2.625rem, 6.4vw, 4.75rem);
+  font-size: clamp(2.625rem, 0.5rem + 5.532vw, 4.75rem);
 }
 
 .hero .lead {
@@ -594,7 +598,7 @@ a:hover {
 
 .section h2 {
   margin: 0 0 16px;
-  font-size: clamp(2rem, 4.4vw, 3rem);
+  font-size: clamp(2rem, 0.5rem + 3.52vw, 3rem);
 }
 
 .section .intro {
@@ -619,7 +623,7 @@ a:hover {
 
 .feature h3 {
   margin: 0 0 12px;
-  font-size: clamp(1.625rem, 3.2vw, 2.125rem);
+  font-size: clamp(1.625rem, 0.406rem + 2.507vw, 2.125rem);
 }
 
 .feature p {
@@ -746,7 +750,7 @@ a:hover {
 
 .doc-head h1 {
   margin: 0 0 12px;
-  font-size: clamp(2.25rem, 5.4vw, 3.75rem);
+  font-size: clamp(2.25rem, 0.5rem + 4.5vw, 3.75rem);
 }
 
 .doc-head p {
@@ -1012,7 +1016,8 @@ a:hover {
   .hero .wrap,
   .feature,
   .doc {
-    grid-template-columns: 1fr;
+    /* minmax(0, …): una palabra o tabla ancha no estira la columna */
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .hero .wrap {
