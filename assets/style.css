@@ -153,13 +153,44 @@ a:hover {
   background: rgba(242, 245, 243, 0.72);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
-  /* Sin borde arriba del todo; aparece cuando hay contenido pasando por debajo */
-  box-shadow: 0 1px 0 rgba(14, 26, 20, 0);
-  transition: box-shadow 0.25s ease;
+  /* La barra misma es la que se consulta: ¿está pegada arriba con contenido
+     pasando por debajo? (consulta scroll-state, sin JavaScript) */
+  container: barra / scroll-state;
 }
 
-.topbar.is-scrolled {
+/* Sin borde arriba del todo; aparece cuando hay contenido pasando por debajo.
+   Va en un pseudo-elemento porque la consulta no le da estilo al propio
+   contenedor, y así se anima solo la opacidad. */
+.topbar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   box-shadow: 0 1px 0 rgba(14, 26, 20, 0.08), 0 10px 24px -18px rgba(14, 26, 20, 0.35);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+@container barra scroll-state(stuck: top) {
+  .topbar::after {
+    opacity: 1;
+  }
+}
+
+/* Respaldo donde no existe la consulta: assets/motion.js pone .is-scrolled
+   con un IntersectionObserver que mira esta marca invisible de 8 px */
+.topbar.is-scrolled::after {
+  opacity: 1;
+}
+
+.marca-scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 8px;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .topbar .wrap {
@@ -222,7 +253,11 @@ a:hover {
   font-weight: 750;
   font-size: 1.125rem;
   text-decoration: none;
-  transition: transform 0.15s ease, background-color 0.15s ease;
+  transition: background-color 0.15s ease;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.15s ease, background-color 0.15s ease;
+  }
 }
 
 .btn:active {
@@ -949,12 +984,6 @@ a:hover {
     font-size: 0.8125rem;
     font-weight: 700;
     color: var(--muted);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
   }
 }
 

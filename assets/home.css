@@ -93,7 +93,7 @@
   font-weight: 750;
   font-size: 1.125rem;
   text-decoration: none;
-  transition: background-color 0.15s ease, transform 0.15s ease;
+  transition: background-color 0.15s ease;
 }
 
 .btn-round:hover {
@@ -213,9 +213,17 @@
     animation: hero-entra 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 
-  .hero-copy > :nth-child(2) { animation-delay: 0.08s; }
-  .hero-copy > :nth-child(3) { animation-delay: 0.16s; }
-  .hero-copy > :nth-child(4) { animation-delay: 0.24s; }
+  /* Cascada según la posición entre hermanos: 0, 80, 160, 240 ms */
+  @supports (animation-delay: calc(sibling-index() * 0.1s)) {
+    .hero-copy > * { animation-delay: calc((sibling-index() - 1) * 0.08s); }
+  }
+
+  /* Donde sibling-index() no existe, los mismos retrasos uno por uno */
+  @supports not (animation-delay: calc(sibling-index() * 0.1s)) {
+    .hero-copy > :nth-child(2) { animation-delay: 0.08s; }
+    .hero-copy > :nth-child(3) { animation-delay: 0.16s; }
+    .hero-copy > :nth-child(4) { animation-delay: 0.24s; }
+  }
 
   .counter .device {
     animation: hero-entra 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
@@ -803,7 +811,10 @@
   font-family: var(--body);
   font-size: 1.375rem;
   line-height: 1;
-  transition: transform 0.2s ease-out;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.2s ease-out;
+  }
 }
 
 .faq details[open] summary::after {
@@ -821,12 +832,6 @@
   margin: 28px auto 0;
   text-align: center;
   color: var(--muted);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .faq summary::after {
-    transition: none;
-  }
 }
 
 /* ── Dónde usarla ─────────────────────────────────────────────── */
@@ -1096,7 +1101,11 @@
 /* La respuesta va al presionar, no al soltar */
 .pill,
 .btn-round {
-  transition: background-color 0.15s ease, transform 0.1s ease-out;
+  transition: background-color 0.15s ease;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: background-color 0.15s ease, transform 0.1s ease-out;
+  }
 }
 
 .pill:active,
@@ -1194,7 +1203,6 @@
 .guide-link {
   color: var(--ink);
   text-decoration: none;
-  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .guide-link:hover {
@@ -1366,7 +1374,9 @@
 .gp-yt,
 .get-card .btn-round,
 .faq summary {
-  transition: transform 0.1s ease-out;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.1s ease-out;
+  }
 }
 
 .store-badge:active,
@@ -1460,7 +1470,11 @@
 .story-device img {
   opacity: 0;
   scale: 1.04;
-  transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), scale 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: opacity 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), scale 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
 }
 
 .story-device img.is-on {
@@ -1482,16 +1496,18 @@
   justify-content: center;
   max-width: 30rem;
   margin-left: auto;
-  transition: opacity 0.4s ease;
 }
 
-/* Con JavaScript, los pasos que no estás leyendo quedan atenuados */
-.story-js .story-step {
-  opacity: 0.28;
+/* Con JavaScript, el título del paso que estás leyendo pasa de gris a tinta.
+   Se cambia el color y no la opacidad: el gris (--muted) sigue dando más de
+   4,5:1 sobre el fondo, así todo el texto se lee */
+.story-js .story-step h2 {
+  color: var(--muted);
+  transition: color 0.4s ease;
 }
 
-.story-js .story-step.is-on {
-  opacity: 1;
+.story-js .story-step.is-on h2 {
+  color: var(--ink);
 }
 
 .story-kicker {
@@ -1545,8 +1561,9 @@
     text-align: center;
   }
 
-  .story-js .story-step {
-    opacity: 1;
+  /* En el teléfono no hay pantalla fija: todos los títulos en tinta */
+  .story-js .story-step h2 {
+    color: var(--ink);
   }
 
   .story-inline {
@@ -1566,38 +1583,30 @@
    y si la persona no pidió reducir el movimiento. En el resto, la página
    usa la aparición simple de assets/motion.js. */
 
-@supports (animation-timeline: view()) {
+/* La condición incluye animation-range: deja afuera a los navegadores que
+   solo soportan una parte (sin rangos las tarjetas quedarían a medio aparecer) */
+@supports ((animation-timeline: view()) and (animation-range: entry)) {
   @media (prefers-reduced-motion: no-preference) {
-    /* Títulos que se iluminan de gris a tinta mientras los lees */
+    /* Títulos que se encienden mientras entran a la pantalla. Se anima solo la
+       opacidad (la hace la tarjeta gráfica, sin trabajo en cada scroll) y parte
+       en 0,5, donde el título ya pasa 3:1 de contraste; está entero apenas
+       termina de entrar. */
     .story-title,
     .bento-wrap > .wrap > h2,
     .guide h2,
     .shops h2,
     .get h2,
     .closing h2,
-    .faq h2 {
-      background: linear-gradient(90deg, var(--ink) 0 50%, #aebcb4 50% 100%) 100% 0 / 200% 100% no-repeat;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: ilumina linear both;
-      animation-timeline: view();
-      animation-range: entry 15% cover 45%;
-    }
-
+    .faq h2,
     .safe h2 {
-      background: linear-gradient(90deg, var(--white) 0 50%, rgba(255, 255, 255, 0.32) 50% 100%) 100% 0 / 200% 100% no-repeat;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
       animation: ilumina linear both;
       animation-timeline: view();
-      animation-range: entry 15% cover 45%;
+      animation-range: entry 0% entry 100%;
     }
 
     @keyframes ilumina {
-      to {
-        background-position: 0 0;
+      from {
+        opacity: 0.5;
       }
     }
 
