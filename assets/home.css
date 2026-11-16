@@ -34,6 +34,13 @@
   align-items: center;
   min-height: min(calc(100vh - 64px), 920px);
   padding: 48px 0 64px;
+  /* El halo verde detrás del teléfono (.counter::before) es más ancho que la
+     pantalla del celular. El overflow-x: clip de .home no lo frena porque el
+     del body pasa a la ventana; aquí se recorta en el borde de la sección,
+     que es el ancho completo de la pantalla: no se ve distinto y la página ya
+     no queda más ancha que el teléfono. Solo el eje x, y clip (no hidden) para
+     no crear un contenedor de scroll. */
+  overflow-x: clip;
 }
 
 .hero-grid {
