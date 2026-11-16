@@ -5,7 +5,7 @@
 }
 
 .home .topbar {
-  background: rgba(242, 245, 243, 0.72);
+  background: var(--topbar-bg);
 }
 
 .pill {
@@ -15,7 +15,7 @@
   padding: 0 16px;
   border-radius: 999px;
   background: var(--ink);
-  color: var(--white);
+  color: var(--on-ink);
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
@@ -88,7 +88,7 @@
   padding: 0 28px;
   border-radius: 999px;
   background: var(--amber);
-  color: var(--ink);
+  color: var(--on-amber);
   font-family: var(--display);
   font-weight: 750;
   font-size: 1.125rem;
@@ -98,7 +98,7 @@
 
 .btn-round:hover {
   background: #fbbf24;
-  color: var(--ink);
+  color: var(--on-amber);
 }
 
 .btn-round:active {
@@ -149,7 +149,7 @@
   padding: 10px;
   background: #101814;
   border-radius: 44px;
-  box-shadow: 0 40px 70px -30px rgba(6, 78, 59, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 40px 70px -30px rgba(6, 78, 59, 0.5), 0 0 0 1px var(--bezel-ring);
 }
 
 .device img {
@@ -166,7 +166,7 @@
   z-index: 2;
   width: var(--card);
   padding: 8px 8px 12px;
-  background: var(--white);
+  background: var(--surface);
   border-radius: 18px;
   box-shadow: 0 18px 36px -16px rgba(14, 26, 20, 0.35), 0 0 0 1px rgba(14, 26, 20, 0.04);
 }
@@ -180,6 +180,7 @@
 
 .item .tag {
   position: absolute;
+  color: var(--on-amber);
   right: -10px;
   top: calc(var(--card) - 40px);
   padding: 3px 10px;
@@ -284,7 +285,7 @@
   grid-column: span 2;
   padding: 36px;
   border-radius: 32px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .tile.wide {
@@ -346,6 +347,7 @@
 
 .mini-shelf figcaption {
   position: absolute;
+  color: var(--on-amber);
   right: -6px;
   bottom: -8px;
   padding: 3px 10px;
@@ -388,8 +390,8 @@
   margin-top: 18px;
   padding: 8px 14px;
   border-radius: 999px;
-  background: #dcfce7;
-  color: #166534;
+  background: var(--chip);
+  color: var(--chip-ink);
   font-size: 0.875rem;
   font-weight: 700;
 }
@@ -445,7 +447,7 @@
   margin: 0;
   padding: 28px 24px 18px;
   border-radius: 26px;
-  background: #e9e1d6;
+  background: var(--chat);
 }
 
 .receipt-chat .bubble {
@@ -457,7 +459,7 @@
   max-width: 320px;
   padding: 14px 16px 22px;
   border-radius: 16px 4px 16px 16px;
-  background: #d9fdd3;
+  background: var(--bubble);
   color: var(--ink);
   font-size: 0.9375rem;
   line-height: 1.35;
@@ -465,7 +467,7 @@
 }
 
 .receipt-chat .meta {
-  color: var(--muted);
+  color: var(--bubble-muted);
   font-size: 0.875rem;
 }
 
@@ -495,13 +497,13 @@
   right: 12px;
   bottom: 6px;
   font-size: 0.75rem;
-  color: var(--muted);
+  color: var(--bubble-muted);
 }
 
 .receipt-chat figcaption {
   margin-top: 12px;
   font-size: 0.875rem;
-  color: var(--muted);
+  color: var(--chat-caption);
   text-align: right;
 }
 
@@ -541,7 +543,7 @@
   flex-direction: column;
   padding: 14px;
   border-radius: 32px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 /* El póster y luego el reproductor ocupan el mismo marco 16:9.
@@ -555,7 +557,7 @@
   overflow: hidden;
   border: 0;
   border-radius: 20px;
-  background: var(--emerald);
+  background: var(--poster-bg);
 }
 
 .guide-play img {
@@ -577,7 +579,7 @@
   padding-left: 4px;
   border-radius: 999px;
   background: var(--amber);
-  color: var(--ink);
+  color: var(--on-amber);
   box-shadow: 0 8px 24px rgba(14, 26, 20, 0.28);
 }
 
@@ -626,7 +628,7 @@
 }
 
 .guide-more:hover {
-  background: var(--white);
+  background: var(--surface);
 }
 
 .guide-copy {
@@ -738,7 +740,7 @@
   gap: 2px;
   padding: 20px 24px;
   border-radius: 22px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .shop-list strong {
@@ -773,7 +775,7 @@
 
 .faq details {
   border-radius: 22px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .faq summary {
@@ -807,7 +809,7 @@
   height: 32px;
   border-radius: 50%;
   background: var(--tint);
-  color: var(--emerald-deep);
+  color: var(--link-hover);
   font-family: var(--body);
   font-size: 1.375rem;
   line-height: 1;
@@ -862,7 +864,7 @@
   align-items: flex-start;
   padding: 36px;
   border-radius: 32px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .get-card h3 {
@@ -897,7 +899,7 @@
   padding: 0 22px;
   border-radius: 999px;
   border: 1.5px dashed var(--emerald);
-  color: var(--emerald-deep);
+  color: var(--link-hover);
   font-weight: 700;
   font-size: 0.9375rem;
 }
@@ -936,7 +938,7 @@
 .plans > div {
   padding: 32px;
   border-radius: 28px;
-  background: var(--white);
+  background: var(--surface);
 }
 
 .plans h3 {
@@ -1142,7 +1144,7 @@
 
 @media (prefers-contrast: more) {
   :root {
-    --muted: #34413b;
+    --muted: var(--muted-strong);
   }
 
   .tile,
@@ -1446,7 +1448,7 @@
   padding: 10px;
   border-radius: 46px;
   background: #101814;
-  box-shadow: 0 50px 80px -30px rgba(6, 78, 59, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 50px 80px -30px rgba(6, 78, 59, 0.45), 0 0 0 1px var(--bezel-ring);
 }
 
 .story-device img {

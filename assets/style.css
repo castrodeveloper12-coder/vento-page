@@ -24,21 +24,163 @@
 }
 
 :root {
-  --ink: #0e1a14;
-  --emerald: #047857;
-  --emerald-deep: #064e3b;
+  /* Modo claro y oscuro: los mismos pares que la app. Cada color se guarda
+     en su versión clara (-light) y oscura (-dark); abajo se elige según el
+     teléfono. Todo el texto da al menos 4,5:1 en los dos modos. */
+  --ink-light: #0e1a14;
+  --ink-dark: #e6eee9;
+  --emerald-light: #047857;
+  --emerald-dark: #34d399;
+  --emerald-deep-light: #064e3b;
+  --emerald-deep-dark: #0f3d30;
+  --amber-ink-light: #92400e;
+  --amber-ink-dark: #fbbf24;
+  --paper-light: #f2f5f3;
+  --paper-dark: #0d1411;
+  --surface-light: #ffffff;
+  --surface-dark: #151f1a;
+  --tint-light: #e3eee8;
+  --tint-dark: #1b2a23;
+  --muted-light: #5b6b63;
+  --muted-dark: #9db0a6;
+  --muted-strong-light: #34413b;
+  --muted-strong-dark: #c4d1ca;
+  --rule-light: #dde5e0;
+  --rule-dark: #26352e;
+  --leader-light: #b9c9c1;
+  --leader-dark: #3f5047;
+  /* Texto sobre un relleno de --ink o --emerald (en oscuro esos rellenos son claros) */
+  --on-ink-light: #ffffff;
+  --on-ink-dark: #0e1a14;
+  /* Enlaces al pasar el mouse y detalles en verde fuerte */
+  --link-hover-light: #064e3b;
+  --link-hover-dark: #6ee7b7;
+  --amber-soft-light: #fef3c7;
+  --amber-soft-dark: #3a2c0e;
+  --chip-light: #dcfce7;
+  --chip-dark: #065f46;
+  --chip-ink-light: #166534;
+  --chip-ink-dark: #d1fae5;
+  /* El comprobante por WhatsApp: fondo del chat y burbuja */
+  --chat-light: #e9e1d6;
+  --chat-dark: #0b141a;
+  --chat-caption-light: #53625b;
+  --chat-caption-dark: #9db0a6;
+  --bubble-light: #d9fdd3;
+  --bubble-dark: #005c4b;
+  --bubble-muted-light: #5b6b63;
+  --bubble-muted-dark: #b6c9c1;
+  --pager-hover-light: #d4e6dc;
+  --pager-hover-dark: #22332b;
+  --topbar-bg-light: rgba(242, 245, 243, 0.72);
+  --topbar-bg-dark: rgba(13, 20, 17, 0.72);
+  --hairline-light: rgba(14, 26, 20, 0.08);
+  --hairline-dark: rgba(230, 238, 233, 0.1);
+  --bezel-ring-light: rgba(0, 0, 0, 0.05);
+  --bezel-ring-dark: rgba(230, 238, 233, 0.14);
+
+  /* Iguales en los dos modos: ámbar, cartelito de precio, resaltado y blanco
+     (texto sobre los bloques verde oscuro). --on-amber: texto sobre amarillos */
   --amber: #f59e0b;
-  --amber-ink: #92400e;
   --price-tag: #fde047;
   --highlight: #fcd34d;
-  --paper: #f2f5f3;
-  --tint: #e3eee8;
-  --muted: #5b6b63;
-  --rule: #dde5e0;
   --white: #ffffff;
+  --on-amber: #0e1a14;
+  /* Fondo de los pósters de la guía mientras cargan: el verde de su tarjeta de título */
+  --poster-bg: #047857;
+
+  /* Por defecto, claro */
+  --ink: var(--ink-light);
+  --emerald: var(--emerald-light);
+  --emerald-deep: var(--emerald-deep-light);
+  --amber-ink: var(--amber-ink-light);
+  --paper: var(--paper-light);
+  --surface: var(--surface-light);
+  --tint: var(--tint-light);
+  --muted: var(--muted-light);
+  --muted-strong: var(--muted-strong-light);
+  --rule: var(--rule-light);
+  --leader: var(--leader-light);
+  --on-ink: var(--on-ink-light);
+  --link-hover: var(--link-hover-light);
+  --amber-soft: var(--amber-soft-light);
+  --chip: var(--chip-light);
+  --chip-ink: var(--chip-ink-light);
+  --chat: var(--chat-light);
+  --chat-caption: var(--chat-caption-light);
+  --bubble: var(--bubble-light);
+  --bubble-muted: var(--bubble-muted-light);
+  --pager-hover: var(--pager-hover-light);
+  --topbar-bg: var(--topbar-bg-light);
+  --hairline: var(--hairline-light);
+  --bezel-ring: var(--bezel-ring-light);
+
   --radius: 18px;
   --display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
   --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Controles, barras de desplazamiento y el fondo inicial siguen al teléfono */
+  color-scheme: light dark;
+}
+
+/* Respaldo para navegadores sin light-dark(): la preferencia del sistema */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: var(--ink-dark);
+    --emerald: var(--emerald-dark);
+    --emerald-deep: var(--emerald-deep-dark);
+    --amber-ink: var(--amber-ink-dark);
+    --paper: var(--paper-dark);
+    --surface: var(--surface-dark);
+    --tint: var(--tint-dark);
+    --muted: var(--muted-dark);
+    --muted-strong: var(--muted-strong-dark);
+    --rule: var(--rule-dark);
+    --leader: var(--leader-dark);
+    --on-ink: var(--on-ink-dark);
+    --link-hover: var(--link-hover-dark);
+    --amber-soft: var(--amber-soft-dark);
+    --chip: var(--chip-dark);
+    --chip-ink: var(--chip-ink-dark);
+    --chat: var(--chat-dark);
+    --chat-caption: var(--chat-caption-dark);
+    --bubble: var(--bubble-dark);
+    --bubble-muted: var(--bubble-muted-dark);
+    --pager-hover: var(--pager-hover-dark);
+    --topbar-bg: var(--topbar-bg-dark);
+    --hairline: var(--hairline-dark);
+    --bezel-ring: var(--bezel-ring-dark);
+  }
+}
+
+/* Con light-dark(), cada color sigue al color-scheme del elemento */
+@supports (color: light-dark(white, black)) {
+  :root {
+    --ink: light-dark(var(--ink-light), var(--ink-dark));
+    --emerald: light-dark(var(--emerald-light), var(--emerald-dark));
+    --emerald-deep: light-dark(var(--emerald-deep-light), var(--emerald-deep-dark));
+    --amber-ink: light-dark(var(--amber-ink-light), var(--amber-ink-dark));
+    --paper: light-dark(var(--paper-light), var(--paper-dark));
+    --surface: light-dark(var(--surface-light), var(--surface-dark));
+    --tint: light-dark(var(--tint-light), var(--tint-dark));
+    --muted: light-dark(var(--muted-light), var(--muted-dark));
+    --muted-strong: light-dark(var(--muted-strong-light), var(--muted-strong-dark));
+    --rule: light-dark(var(--rule-light), var(--rule-dark));
+    --leader: light-dark(var(--leader-light), var(--leader-dark));
+    --on-ink: light-dark(var(--on-ink-light), var(--on-ink-dark));
+    --link-hover: light-dark(var(--link-hover-light), var(--link-hover-dark));
+    --amber-soft: light-dark(var(--amber-soft-light), var(--amber-soft-dark));
+    --chip: light-dark(var(--chip-light), var(--chip-dark));
+    --chip-ink: light-dark(var(--chip-ink-light), var(--chip-ink-dark));
+    --chat: light-dark(var(--chat-light), var(--chat-dark));
+    --chat-caption: light-dark(var(--chat-caption-light), var(--chat-caption-dark));
+    --bubble: light-dark(var(--bubble-light), var(--bubble-dark));
+    --bubble-muted: light-dark(var(--bubble-muted-light), var(--bubble-muted-dark));
+    --pager-hover: light-dark(var(--pager-hover-light), var(--pager-hover-dark));
+    --topbar-bg: light-dark(var(--topbar-bg-light), var(--topbar-bg-dark));
+    --hairline: light-dark(var(--hairline-light), var(--hairline-dark));
+    --bezel-ring: light-dark(var(--bezel-ring-light), var(--bezel-ring-dark));
+  }
 }
 
 *,
@@ -79,7 +221,7 @@ a {
 }
 
 a:hover {
-  color: var(--emerald-deep);
+  color: var(--link-hover);
 }
 
 /* Oculto a la vista pero presente para lectores de pantalla; si recibe el
@@ -106,13 +248,13 @@ a:hover {
   padding: 12px 18px;
   border-radius: 12px;
   background: var(--ink);
-  color: var(--white);
+  color: var(--on-ink);
   font-weight: 600;
   text-decoration: none;
 }
 
 .skip-link:hover {
-  color: var(--white);
+  color: var(--on-ink);
 }
 
 :focus-visible {
@@ -150,7 +292,7 @@ a:hover {
   top: 0;
   z-index: 10;
   /* Material translúcido: el contenido pasa por debajo, desenfocado */
-  background: rgba(242, 245, 243, 0.72);
+  background: var(--topbar-bg);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
   /* La barra misma es la que se consulta: ¿está pegada arriba con contenido
@@ -166,7 +308,7 @@ a:hover {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: 0 1px 0 rgba(14, 26, 20, 0.08), 0 10px 24px -18px rgba(14, 26, 20, 0.35);
+  box-shadow: 0 1px 0 var(--hairline), 0 10px 24px -18px rgba(14, 26, 20, 0.35);
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -266,12 +408,12 @@ a:hover {
 
 .btn-amber {
   background: var(--amber);
-  color: var(--ink);
+  color: var(--on-amber);
 }
 
 .btn-amber:hover {
   background: #fbbf24;
-  color: var(--ink);
+  color: var(--on-amber);
 }
 
 .btn-ghost {
@@ -336,7 +478,7 @@ a:hover {
   justify-self: center;
   width: min(380px, 100%);
   padding: 28px 28px 32px;
-  background: var(--white);
+  background: var(--surface);
   color: var(--ink);
   border-radius: 6px 6px 0 0;
   transform: rotate(2deg);
@@ -351,7 +493,7 @@ a:hover {
   right: 0;
   bottom: -12px;
   height: 12px;
-  background: radial-gradient(circle at 10px -2px, transparent 10px, var(--white) 10.5px) 0 0 / 20px 12px repeat-x;
+  background: radial-gradient(circle at 10px -2px, transparent 10px, var(--surface) 10.5px) 0 0 / 20px 12px repeat-x;
 }
 
 .ticket-head {
@@ -371,6 +513,7 @@ a:hover {
 
 .ticket .tag {
   position: absolute;
+  color: var(--on-amber);
   top: -18px;
   right: -14px;
   padding: 6px 14px;
@@ -403,7 +546,7 @@ a:hover {
   order: 1;
   flex: 1;
   min-width: 24px;
-  border-bottom: 2px dotted #b9c9c1;
+  border-bottom: 2px dotted var(--leader);
   transform: translateY(-5px);
 }
 
@@ -429,6 +572,7 @@ a:hover {
 .ledger .total .value {
   padding: 0 8px;
   background: var(--highlight);
+  color: var(--on-amber);
   border-radius: 6px;
   font-size: 1.25rem;
 }
@@ -486,7 +630,7 @@ a:hover {
 
 .feature-art {
   padding: 28px;
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
 }
 
@@ -518,7 +662,7 @@ a:hover {
   right: -6px;
   bottom: -10px;
   padding: 3px 9px;
-  color: var(--ink);
+  color: var(--on-amber);
   background: var(--price-tag);
   border-radius: 8px;
   font-family: var(--display);
@@ -562,7 +706,7 @@ a:hover {
 .plain > div {
   padding: 28px;
   border-radius: var(--radius);
-  background: var(--white);
+  background: var(--surface);
 }
 
 .plain h3 {
@@ -686,7 +830,7 @@ a:hover {
 .summary {
   margin: 0 0 48px;
   padding: 24px 28px;
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius);
 }
 
@@ -711,7 +855,7 @@ a:hover {
   margin: 8px 0 24px;
   border-collapse: collapse;
   font-size: 0.9375rem;
-  background: var(--white);
+  background: var(--surface);
   border-radius: 14px;
   overflow: hidden;
 }
@@ -737,7 +881,7 @@ a:hover {
   margin: 24px 0;
   padding: 18px 20px;
   border-radius: 14px;
-  background: #fef3c7;
+  background: var(--amber-soft);
   color: var(--amber-ink);
 }
 
@@ -756,7 +900,7 @@ a:hover {
   position: relative;
   margin: 0 0 14px;
   padding: 16px 18px 16px 64px;
-  background: var(--white);
+  background: var(--surface);
   border-radius: 14px;
 }
 
@@ -772,7 +916,7 @@ a:hover {
   height: 32px;
   border-radius: 50%;
   background: var(--emerald);
-  color: var(--white);
+  color: var(--on-ink);
   font-family: var(--display);
   font-weight: 800;
 }
@@ -841,7 +985,7 @@ a:hover {
   padding: 0 18px;
   border-radius: 999px;
   background: var(--ink);
-  color: var(--white);
+  color: var(--on-ink);
   font-weight: 600;
   text-decoration: none;
 }
@@ -887,7 +1031,7 @@ a:hover {
   .toc {
     position: static;
     padding: 18px 20px;
-    background: var(--white);
+    background: var(--surface);
     border-radius: 14px;
   }
 
@@ -966,7 +1110,7 @@ a:hover {
   .data-table tr {
     margin-bottom: 12px;
     padding: 6px 16px;
-    background: var(--white);
+    background: var(--surface);
     border-radius: 14px;
   }
 
