@@ -1011,7 +1011,7 @@
 
   .hero-copy h1 {
     margin-inline: auto;
-    font-size: clamp(2.75rem, 0.5rem + 9.429vw, 4.25rem);
+    font-size: clamp(2.75rem, 0.5rem + 9vw, 4.25rem);
   }
 
   .hero-copy .sub {
