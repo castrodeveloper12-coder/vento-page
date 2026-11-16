@@ -261,6 +261,11 @@
   }
 }
 
+/* Página 404: un poco más de aire abajo */
+.stage-hero.no-encontrada {
+  padding-bottom: 120px;
+}
+
 /* ── Mosaico ──────────────────────────────────────────────────── */
 
 .bento-wrap {
@@ -373,6 +378,11 @@
   line-height: 1;
   letter-spacing: -0.04em;
   color: var(--emerald);
+}
+
+/* "3 productos para pedir": en ámbar, como el aviso de la app */
+.big-word.aviso {
+  color: var(--amber-ink);
 }
 
 .big-word small {

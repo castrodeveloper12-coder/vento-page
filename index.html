@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-63k9Gf3LGvCGmQ0i6MmvSNpgKhtAuRwWKMpo0GXNqm4='; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="text-scale" content="scale">
   <title>Vueltito: app gratis de ventas, inventario y fiados</title>
   <meta name="description" content="App gratis para tu tienda o negocio de barrio: vende tocando la foto, anota el fiado, lleva el inventario y cuadra la caja. Funciona sin internet.">
@@ -244,7 +246,7 @@
           <article class="tile">
             <h3>Te avisa qué pedir.</h3>
             <p>Cada venta descuenta del inventario y sabes qué se está acabando.</p>
-            <div class="big-word" style="color: var(--amber-ink)">3<small>productos para pedir</small></div>
+            <div class="big-word aviso">3<small>productos para pedir</small></div>
           </article>
 
           <article class="tile wide deep tablet-tile">
@@ -486,6 +488,8 @@
       </nav>
     </div>
   </footer>
+  <!-- La guía se prepara en segundo plano cuando es probable que la abras (Chrome y Edge). Si cambias este script, actualiza su sha256 en la Content-Security-Policy del <head> -->
+  <script type="speculationrules">{"prerender":[{"where":{"selector_matches":"a[href^='guia.html']"},"eagerness":"moderate"}]}</script>
   <script src="assets/motion.js" defer></script>
 </body>
 </html>
