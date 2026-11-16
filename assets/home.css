@@ -789,7 +789,9 @@
 
 /* Un "+" que gira a "×" al abrir: dice qué va a pasar al tocar */
 .faq summary::after {
+  /* Decorativo: el "/ ''" evita que el lector de pantalla diga "más" */
   content: "+";
+  content: "+" / "";
   flex: none;
   display: grid;
   place-items: center;

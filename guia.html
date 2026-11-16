@@ -346,6 +346,7 @@
   <link rel="stylesheet" href="assets/guia.css">
 </head>
 <body class="guide-body">
+  <a class="skip-link visually-hidden" href="#contenido">Saltar al contenido</a>
   <header class="topbar">
     <div class="wrap">
       <a class="brand" href="/" aria-label="Vueltito, inicio"><img class="brand-icon" src="assets/icon.svg" width="40" height="40" alt="">Vueltito</a>
@@ -363,35 +364,11 @@
     <div class="wrap">
       <header class="gp-head">
         <p class="gp-eyebrow">Guía de Vueltito</p>
-        <h1>Cómo usar Vueltito</h1>
+        <h1 id="contenido" tabindex="-1">Cómo usar Vueltito</h1>
         <p class="sub">17 capítulos cortos, cada uno con su video y los pasos por escrito. Elige el tema en la lista.</p>
       </header>
 
       <div class="gp-layout">
-        <nav class="gp-list" aria-label="Capítulos de la guía">
-          <p class="gp-list-title">Capítulos <span>17 de 17 en video</span></p>
-          <ol>
-          <li><a href="#cap-00" data-cap="00"><span class="gp-num">00</span><span class="gp-name">Bienvenida</span><span class="gp-dur">0:32</span></a></li>
-          <li><a href="#cap-01" data-cap="01"><span class="gp-num">01</span><span class="gp-name">Configura tu tienda por primera vez</span><span class="gp-dur">0:44</span></a></li>
-          <li><a href="#cap-02" data-cap="02"><span class="gp-num">02</span><span class="gp-name">Abre la caja</span><span class="gp-dur">0:22</span></a></li>
-          <li><a href="#cap-03" data-cap="03"><span class="gp-num">03</span><span class="gp-name">Carga un producto que vendes por unidad</span><span class="gp-dur">1:02</span></a></li>
-          <li><a href="#cap-04" data-cap="04"><span class="gp-num">04</span><span class="gp-name">Carga un producto que vendes por kilo</span><span class="gp-dur">0:27</span></a></li>
-          <li><a href="#cap-05" data-cap="05"><span class="gp-num">05</span><span class="gp-name">Vende y da el vuelto</span><span class="gp-dur">0:43</span></a></li>
-          <li><a href="#cap-06" data-cap="06"><span class="gp-num">06</span><span class="gp-name">Crea un cliente y actívale el fiado</span><span class="gp-dur">0:38</span></a></li>
-          <li><a href="#cap-07" data-cap="07"><span class="gp-num">07</span><span class="gp-name">Vende fiado</span><span class="gp-dur">0:31</span></a></li>
-          <li><a href="#cap-08" data-cap="08"><span class="gp-num">08</span><span class="gp-name">Cobra un fiado</span><span class="gp-dur">0:45</span></a></li>
-          <li><a href="#cap-09" data-cap="09"><span class="gp-num">09</span><span class="gp-name">Registra un gasto</span><span class="gp-dur">0:23</span></a></li>
-          <li><a href="#cap-10" data-cap="10"><span class="gp-num">10</span><span class="gp-name">Registra la mercancía que llega del proveedor</span><span class="gp-dur">0:25</span></a></li>
-          <li><a href="#cap-11" data-cap="11"><span class="gp-num">11</span><span class="gp-name">Revisa tu inventario</span><span class="gp-dur">0:26</span></a></li>
-          <li><a href="#cap-12" data-cap="12"><span class="gp-num">12</span><span class="gp-name">Cierra y cuadra la caja</span><span class="gp-dur">0:57</span></a></li>
-          <li><a href="#cap-13" data-cap="13"><span class="gp-num">13</span><span class="gp-name">Mira cómo te va: reportes</span><span class="gp-dur">0:23</span></a></li>
-          <li><a href="#cap-14" data-cap="14"><span class="gp-num">14</span><span class="gp-name">Comparte tu lista de precios en PDF</span><span class="gp-dur">0:22</span></a></li>
-          <li><a href="#cap-15" data-cap="15"><span class="gp-num">15</span><span class="gp-name">Usa una tablet como caja</span><span class="gp-dur">0:26</span></a></li>
-          <li><a href="#cap-16" data-cap="16"><span class="gp-num">16</span><span class="gp-name">Tus datos seguros</span><span class="gp-dur">0:20</span></a></li>
-          </ol>
-          <a class="gp-yt" href="https://www.youtube.com/playlist?list=PLEvX3kKRpSMg" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>Ver la lista en YouTube</a>
-        </nav>
-
         <div class="gp-main">
         <article class="gp-cap" id="cap-00" aria-labelledby="t-00">
           <div class="gp-player">
@@ -798,6 +775,30 @@
           </nav>
         </article>
         </div>
+
+        <nav class="gp-list" aria-label="Capítulos de la guía">
+          <p class="gp-list-title">Capítulos <span>17 de 17 en video</span></p>
+          <ol>
+          <li><a href="#cap-00" data-cap="00"><span class="gp-num">00</span><span class="gp-name">Bienvenida</span><span class="gp-dur">0:32</span></a></li>
+          <li><a href="#cap-01" data-cap="01"><span class="gp-num">01</span><span class="gp-name">Configura tu tienda por primera vez</span><span class="gp-dur">0:44</span></a></li>
+          <li><a href="#cap-02" data-cap="02"><span class="gp-num">02</span><span class="gp-name">Abre la caja</span><span class="gp-dur">0:22</span></a></li>
+          <li><a href="#cap-03" data-cap="03"><span class="gp-num">03</span><span class="gp-name">Carga un producto que vendes por unidad</span><span class="gp-dur">1:02</span></a></li>
+          <li><a href="#cap-04" data-cap="04"><span class="gp-num">04</span><span class="gp-name">Carga un producto que vendes por kilo</span><span class="gp-dur">0:27</span></a></li>
+          <li><a href="#cap-05" data-cap="05"><span class="gp-num">05</span><span class="gp-name">Vende y da el vuelto</span><span class="gp-dur">0:43</span></a></li>
+          <li><a href="#cap-06" data-cap="06"><span class="gp-num">06</span><span class="gp-name">Crea un cliente y actívale el fiado</span><span class="gp-dur">0:38</span></a></li>
+          <li><a href="#cap-07" data-cap="07"><span class="gp-num">07</span><span class="gp-name">Vende fiado</span><span class="gp-dur">0:31</span></a></li>
+          <li><a href="#cap-08" data-cap="08"><span class="gp-num">08</span><span class="gp-name">Cobra un fiado</span><span class="gp-dur">0:45</span></a></li>
+          <li><a href="#cap-09" data-cap="09"><span class="gp-num">09</span><span class="gp-name">Registra un gasto</span><span class="gp-dur">0:23</span></a></li>
+          <li><a href="#cap-10" data-cap="10"><span class="gp-num">10</span><span class="gp-name">Registra la mercancía que llega del proveedor</span><span class="gp-dur">0:25</span></a></li>
+          <li><a href="#cap-11" data-cap="11"><span class="gp-num">11</span><span class="gp-name">Revisa tu inventario</span><span class="gp-dur">0:26</span></a></li>
+          <li><a href="#cap-12" data-cap="12"><span class="gp-num">12</span><span class="gp-name">Cierra y cuadra la caja</span><span class="gp-dur">0:57</span></a></li>
+          <li><a href="#cap-13" data-cap="13"><span class="gp-num">13</span><span class="gp-name">Mira cómo te va: reportes</span><span class="gp-dur">0:23</span></a></li>
+          <li><a href="#cap-14" data-cap="14"><span class="gp-num">14</span><span class="gp-name">Comparte tu lista de precios en PDF</span><span class="gp-dur">0:22</span></a></li>
+          <li><a href="#cap-15" data-cap="15"><span class="gp-num">15</span><span class="gp-name">Usa una tablet como caja</span><span class="gp-dur">0:26</span></a></li>
+          <li><a href="#cap-16" data-cap="16"><span class="gp-num">16</span><span class="gp-name">Tus datos seguros</span><span class="gp-dur">0:20</span></a></li>
+          </ol>
+          <a class="gp-yt" href="https://www.youtube.com/playlist?list=PLEvX3kKRpSMg" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>Ver la lista en YouTube</a>
+        </nav>
       </div>
 
       <aside class="gp-cta">
@@ -827,13 +828,15 @@
   <script>
     // Guía: un capítulo a la vez. La dirección (#cap-05) dice cuál, así el botón
     // Atrás del navegador vuelve al anterior. Sin JavaScript se ven todos seguidos.
+    // Los capítulos que no se ven llevan hidden="until-found": "Buscar en la página"
+    // y los enlaces con #:~:text= los encuentran y los abren. Donde el navegador no
+    // lo soporta (Safari), se ven todos seguidos, como sin JavaScript.
     (function () {
-      var raiz = document.documentElement;
-      raiz.classList.add("js");
+      var unoALaVez = "onbeforematch" in HTMLElement.prototype;
+      if (unoALaVez) document.documentElement.classList.add("js");
       var caps = [].slice.call(document.querySelectorAll(".gp-cap"));
       var enlaces = [].slice.call(document.querySelectorAll(".gp-list a"));
       var abierto = null;
-      var layout = document.querySelector(".gp-layout");
 
       function cerrarVideo() {
         if (abierto) { abierto.marco.replaceWith(abierto.enlace); abierto = null; }
@@ -853,24 +856,40 @@
         cap.animate(desde, { duration: reducir ? 160 : 420, easing: "cubic-bezier(0.2, 0.8, 0.2, 1)" });
       }
 
-      function mostrar(id, mover) {
-        var cap = document.getElementById(id) || caps[0];
-        if (cap === actual) return;
+      // Solo cuentan los capítulos: #contenido (saltar al contenido) no cambia nada
+      function capitulo(id) {
+        for (var i = 0; i < caps.length; i++) if (caps[i].id === id) return caps[i];
+        return null;
+      }
+
+      function mostrar(id, mover, animar) {
+        var cap = capitulo(id) || (actual ? null : caps[0]);
+        if (!cap || cap === actual) return;
+        var primera = !actual;
         // Al abrir la guía en otro capítulo (#cap-05), su póster es lo más grande
         // de la pantalla: se pide ya y con prioridad alta, no al hacer scroll
-        if (!actual) {
+        if (primera) {
           var poster = cap.querySelector(".guide-play img");
           if (poster && poster.loading === "lazy") { poster.loading = "eager"; poster.fetchPriority = "high"; }
         }
         cerrarVideo();
         var dir = actual ? (caps.indexOf(cap) > caps.indexOf(actual) ? 1 : -1) : 0;
-        caps.forEach(function (c) { c.classList.toggle("is-active", c === cap); });
-        if (actual) entrar(cap, dir);
+        if (unoALaVez) {
+          caps.forEach(function (c) {
+            var activo = c === cap;
+            c.classList.toggle("is-active", activo);
+            if (activo) c.removeAttribute("hidden");
+            else c.hidden = "until-found";
+          });
+          if (!primera && animar !== false) entrar(cap, dir);
+        }
         actual = cap;
         enlaces.forEach(function (a) {
           if (a.getAttribute("href") === "#" + cap.id) {
             a.setAttribute("aria-current", "true");
-            // En escritorio la lista tiene su propio scroll: que se vea el elegido
+            // En escritorio la lista tiene su propio scroll: que se vea el elegido.
+            // Al abrir en el primer capítulo no hace falta medir nada.
+            if (primera && cap === caps[0]) return;
             var lista = a.closest(".gp-list");
             if (lista.scrollHeight > lista.clientHeight) {
               var arriba = a.offsetTop - lista.clientHeight / 2 + a.offsetHeight / 2;
@@ -878,7 +897,7 @@
             }
           } else a.removeAttribute("aria-current");
         });
-        if (mover) {
+        if (mover && unoALaVez) {
           var arriba = cap.getBoundingClientRect().top;
           if (arriba < 0 || arriba > window.innerHeight * 0.5) {
             cap.scrollIntoView({ block: "start" });
@@ -886,6 +905,15 @@
         }
         document.title = cap.querySelector("h2").textContent + " · Guía de Vueltito";
       }
+
+      // "Buscar en la página" (o un enlace #:~:text=) encontró texto en un
+      // capítulo oculto: ese pasa a ser el capítulo elegido, sin animación
+      document.addEventListener("beforematch", function (ev) {
+        var cap = ev.target.closest ? ev.target.closest(".gp-cap") : null;
+        if (!cap) return;
+        history.replaceState(null, "", "#" + cap.id);
+        mostrar(cap.id, false, false);
+      });
 
       document.addEventListener("click", function (ev) {
         var a = ev.target.closest(".guide-play[data-youtube-id]");
@@ -897,7 +925,6 @@
           "?autoplay=1&rel=0&hl=es&cc_lang_pref=es&cc_load_policy=1";
         marco.title = a.getAttribute("aria-label").replace(" en YouTube", "");
         marco.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-        marco.allowFullscreen = true;
         marco.referrerPolicy = "strict-origin-when-cross-origin";
         a.replaceWith(marco);
         marco.focus();

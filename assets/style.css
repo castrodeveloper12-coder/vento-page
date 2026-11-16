@@ -82,6 +82,39 @@ a:hover {
   color: var(--emerald-deep);
 }
 
+/* Oculto a la vista pero presente para lectores de pantalla; si recibe el
+   foco (el enlace para saltar al contenido), se muestra */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Enlace "Saltar al contenido": primero en el orden del teclado, fijo arriba
+   a la izquierda cuando tiene el foco, para que la página no se mueva */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:hover {
+  color: var(--white);
+}
+
 :focus-visible {
   /* Tinta y no ámbar: el ámbar sobre el fondo claro da 2:1 y no se ve.
      La tinta pasa 3:1 sobre papel, blanco, esmeralda y ámbar */
@@ -858,12 +891,9 @@ a:hover {
     gap: 0;
     margin-inline: -8px;
     padding-inline: 0;
+    /* Con su barra de desplazamiento normal: si no caben los enlaces,
+       la barra avisa que hay más (en Android solo aparece al deslizar) */
     overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .topbar nav::-webkit-scrollbar {
-    display: none;
   }
 
   .topbar nav a {

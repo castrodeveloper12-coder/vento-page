@@ -33,11 +33,24 @@
   color: var(--muted);
 }
 
+/* En el HTML el capítulo va antes que la lista: así en el teléfono (video
+   arriba, lista abajo) el orden de lectura y de foco es el mismo que se ve.
+   En pantallas anchas la lista se ubica a la izquierda con la cuadrícula. */
 .gp-layout {
   display: grid;
   grid-template-columns: 330px minmax(0, 1fr);
   gap: 28px;
   align-items: start;
+}
+
+.gp-layout > .gp-list {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.gp-layout > .gp-main {
+  grid-column: 2;
+  grid-row: 1;
 }
 
 /* ── Lista de capítulos ───────────────────────────────────────── */
@@ -171,14 +184,19 @@
   margin-top: 24px;
 }
 
-/* Con JavaScript se ve un capítulo a la vez */
-.js .gp-cap {
-  display: none;
+/* Con JavaScript se ve un capítulo a la vez. Los demás llevan
+   hidden="until-found": no se ven, pero "Buscar en la página" y los enlaces
+   con #:~:text= los encuentran y los abren. Mientras están ocultos no llevan
+   relleno, margen ni fondo, para que no quede un recuadro vacío (nunca
+   display: none, que los sacaría de la búsqueda). */
+.js .gp-cap.is-active {
+  margin-top: 0;
 }
 
-.js .gp-cap.is-active {
-  display: block;
-  margin-top: 0;
+.js .gp-cap[hidden] {
+  margin: 0;
+  padding: 0;
+  background: none;
 }
 
 .gp-player .guide-play,
@@ -315,8 +333,10 @@
   color: var(--muted);
 }
 
+/* Flechas decorativas: el "/ ''" evita que el lector de pantalla las lea */
 .gp-pager span::before {
   content: "‹ ";
+  content: "‹ " / "";
 }
 
 .gp-next {
@@ -330,6 +350,7 @@
 
 .gp-next span::after {
   content: " ›";
+  content: " ›" / "";
 }
 
 /* ── Descarga al final ────────────────────────────────────────── */
@@ -365,8 +386,13 @@
     grid-template-columns: 1fr;
   }
 
+  .gp-layout > .gp-list,
+  .gp-layout > .gp-main {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .gp-list {
-    order: 2;
     position: static;
     max-height: none;
     overflow: visible;
