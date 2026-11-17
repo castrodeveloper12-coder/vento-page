@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Habla directo con Firebase Authentication (identitytoolkit) para usar el enlace del correo -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://identitytoolkit.googleapis.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; require-trusted-types-for 'script'">
+  <!-- El enlace trae un código de un solo uso: no se envía a otros sitios ni se indexa -->
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <meta name="text-scale" content="scale">
+  <title>Tu cuenta | Vueltito</title>
+  <meta name="description" content="Crea una contraseña nueva o confirma el correo de tu cuenta de Vueltito.">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#064e3b" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1411" media="(prefers-color-scheme: dark)">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/cuenta.css">
+  <script src="assets/cuenta.js" defer></script>
+</head>
+<body>
+  <a class="skip-link visually-hidden" href="#contenido">Saltar al contenido</a>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Vueltito, inicio"><img class="brand-icon" src="assets/icon.svg" width="40" height="40" alt="">Vueltito</a>
+    </div>
+  </header>
+
+  <main id="contenido" class="cuenta" tabindex="-1">
+    <div class="wrap">
+      <section class="cuenta-card">
+
+        <!-- Mientras se revisa el enlace -->
+        <div class="estado" id="revisando">
+          <h1 class="display">Revisando el enlace…</h1>
+          <p>Un momento.</p>
+        </div>
+
+        <!-- Restablecer contraseña -->
+        <div class="estado" id="nueva-clave" hidden>
+          <h1 class="display">Crea tu contraseña nueva</h1>
+          <p>Para la cuenta <strong id="correo-cuenta"></strong>.</p>
+          <form id="form-clave">
+            <!-- Para que el gestor de contraseñas guarde la nueva con el correo correcto -->
+            <input type="email" id="usuario" name="username" autocomplete="username" readonly hidden>
+            <div class="campo">
+              <label for="new-password">Contraseña nueva</label>
+              <span class="pista" id="pista-clave">Al menos 6 caracteres. Puedes usar la que te sugiera tu teléfono.</span>
+              <div class="clave">
+                <input type="password" id="new-password" name="new-password" autocomplete="new-password"
+                       required minlength="6" enterkeyhint="done" aria-describedby="pista-clave" data-error="error-clave">
+                <button type="button" class="ver-clave" id="ver-clave" aria-pressed="false" aria-controls="new-password">Mostrar</button>
+              </div>
+              <p class="error" id="error-clave"><span role="img" aria-label="Error">✕</span> Escribe una contraseña de al menos 6 caracteres.</p>
+            </div>
+            <p class="aviso" id="aviso-form" role="status"></p>
+            <button type="submit" class="btn btn-amber enviar" id="guardar">Guardar contraseña nueva</button>
+          </form>
+        </div>
+
+        <!-- Listo: contraseña cambiada -->
+        <div class="estado" id="clave-lista" hidden>
+          <h1 class="display">Listo, tu contraseña cambió</h1>
+          <p>Abre Vueltito en tu teléfono y entra con tu correo y la contraseña nueva.</p>
+          <a class="btn btn-amber" href="/">Ir a vueltito.app</a>
+        </div>
+
+        <!-- Correo confirmado -->
+        <div class="estado" id="correo-listo" hidden>
+          <h1 class="display">Tu correo quedó confirmado</h1>
+          <p>Ya puedes volver a Vueltito y seguir usando tu cuenta.</p>
+          <a class="btn btn-amber" href="/">Ir a vueltito.app</a>
+        </div>
+
+        <!-- Correo recuperado tras un cambio que no hizo el dueño -->
+        <div class="estado" id="correo-recuperado" hidden>
+          <h1 class="display">Tu correo volvió a ser el de antes</h1>
+          <p>La cuenta usa otra vez <strong id="correo-recuperado-dir"></strong>. Si tú no pediste el cambio, crea una contraseña nueva para que nadie más pueda entrar.</p>
+          <button type="button" class="btn btn-amber" id="pedir-clave">Enviarme un enlace para cambiar la contraseña</button>
+          <p class="aviso" id="aviso-recuperado" role="status"></p>
+        </div>
+
+        <!-- Enlace usado, vencido o incompleto -->
+        <div class="estado" id="error-enlace" hidden>
+          <h1 class="display" id="error-titulo">Este enlace ya no sirve</h1>
+          <p id="error-texto">Ya se usó o venció. Pide uno nuevo desde la app: en la pantalla para entrar, toca «¿Olvidaste tu contraseña?».</p>
+          <a class="btn btn-amber" href="/">Ir a vueltito.app</a>
+        </div>
+
+        <p class="ayuda">¿Dudas? Escríbenos a <a href="mailto:soporte@vueltito.app">soporte@vueltito.app</a>.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

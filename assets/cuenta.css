@@ -1,0 +1,158 @@
+/* Página de la cuenta (cuenta.html): crear contraseña nueva y confirmar correo.
+   Usa los colores y piezas de style.css. */
+
+.cuenta {
+  padding-block: clamp(2rem, 1rem + 5vw, 4.5rem);
+}
+
+.cuenta-card {
+  max-width: 34rem;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--hairline);
+}
+
+.cuenta-card h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.25rem);
+  line-height: 1.1;
+}
+
+.cuenta-card h1:focus {
+  outline: none;
+}
+
+.cuenta-card p {
+  margin: 0 0 1rem;
+  color: var(--muted-strong);
+  line-height: 1.5;
+}
+
+.cuenta-card strong {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* ── Formulario ───────────────────────────────────────────────── */
+
+.campo {
+  margin-block: 1.5rem 0.5rem;
+}
+
+.campo label {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* La pista va arriba del campo: el teclado del teléfono no la tapa */
+.pista {
+  display: block;
+  margin-block: 0.25rem 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.clave {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.clave input {
+  flex: 1;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  font-size: max(1rem, 1em);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1.5px solid var(--leader);
+  border-radius: 14px;
+}
+
+.clave input:focus-visible {
+  outline: 3px solid var(--emerald);
+  outline-offset: 2px;
+}
+
+.ver-clave {
+  min-height: 52px;
+  min-width: 6.5rem;
+  padding: 0 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--emerald);
+  background: var(--tint);
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.ver-clave:focus-visible {
+  outline: 3px solid var(--emerald);
+  outline-offset: 2px;
+}
+
+/* El error aparece recién cuando la persona terminó de escribir (:user-invalid),
+   no mientras escribe. Va con texto, no solo con color. */
+.error {
+  display: none;
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+  color: var(--amber-ink);
+}
+
+.campo:has(input:user-invalid) .error {
+  display: block;
+}
+
+.clave input:user-invalid {
+  border-color: var(--amber-ink);
+  background: var(--amber-soft);
+}
+
+.aviso:empty {
+  display: none;
+}
+
+.aviso {
+  margin: 1rem 0 0;
+  font-weight: 600;
+  color: var(--amber-ink);
+}
+
+.aviso.ok {
+  color: var(--emerald);
+}
+
+.enviar {
+  width: 100%;
+  margin-top: 1rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.enviar[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.cuenta-card .btn {
+  margin-top: 0.5rem;
+}
+
+.cuenta-card button.btn {
+  border: 0;
+  cursor: pointer;
+  font-size: 1.0625rem;
+}
+
+.ayuda {
+  margin: 2rem 0 0 !important;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9375rem;
+}
