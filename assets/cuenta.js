@@ -45,7 +45,8 @@
     if (c.startsWith('INVALID_OOB_CODE')) return { enlace: true, titulo: 'Este enlace ya no sirve', texto: `Ya se usó o no está completo. ${PEDIR_OTRO}` };
     if (c.startsWith('USER_DISABLED')) return { enlace: true, titulo: 'Esta cuenta está desactivada', texto: 'Escríbenos a soporte@vueltito.app y lo revisamos.' };
     if (c.startsWith('USER_NOT_FOUND') || c.startsWith('EMAIL_NOT_FOUND')) return { enlace: true, titulo: 'No encontramos la cuenta', texto: 'Puede que se haya eliminado. Escríbenos a soporte@vueltito.app si necesitas ayuda.' };
-    if (c.startsWith('WEAK_PASSWORD')) return { texto: 'Elige una contraseña más larga: al menos 6 caracteres.' };
+    // Firebase pide al menos 10 caracteres (política de contraseñas del proyecto)
+    if (c.startsWith('WEAK_PASSWORD') || c.startsWith('PASSWORD_DOES_NOT_MEET_REQUIREMENTS')) return { texto: 'Elige una contraseña más larga: al menos 10 caracteres.' };
     if (c.startsWith('TOO_MANY_ATTEMPTS_TRY_LATER')) return { texto: 'Hubo muchos intentos seguidos. Espera unos minutos y vuelve a intentar.' };
     return { texto: 'No se pudo completar. Intenta de nuevo en un momento.' };
   };
@@ -104,7 +105,7 @@
     campo.setAttribute('aria-invalid', 'false');
     campo.addEventListener('blur', sincronizar);
     campo.addEventListener('invalid', () => {
-      campo.setCustomValidity('Escribe una contraseña de al menos 6 caracteres.');
+      campo.setCustomValidity('Escribe una contraseña de al menos 10 caracteres.');
       sincronizar();
     });
     campo.addEventListener('input', () => {

@@ -49,13 +49,13 @@
             <input type="email" id="usuario" name="username" autocomplete="username" readonly hidden>
             <div class="campo">
               <label for="new-password">Contraseña nueva</label>
-              <span class="pista" id="pista-clave">Al menos 6 caracteres. Puedes usar la que te sugiera tu teléfono.</span>
+              <span class="pista" id="pista-clave">Al menos 10 caracteres. Puedes usar la que te sugiera tu teléfono.</span>
               <div class="clave">
                 <input type="password" id="new-password" name="new-password" autocomplete="new-password"
-                       required minlength="6" enterkeyhint="done" aria-describedby="pista-clave" data-error="error-clave">
+                       required minlength="10" enterkeyhint="done" aria-describedby="pista-clave" data-error="error-clave">
                 <button type="button" class="ver-clave" id="ver-clave" aria-pressed="false" aria-controls="new-password">Mostrar</button>
               </div>
-              <p class="error" id="error-clave"><span role="img" aria-label="Error">✕</span> Escribe una contraseña de al menos 6 caracteres.</p>
+              <p class="error" id="error-clave"><span role="img" aria-label="Error">✕</span> Escribe una contraseña de al menos 10 caracteres.</p>
             </div>
             <p class="aviso" id="aviso-form" role="status"></p>
             <button type="submit" class="btn btn-amber enviar" id="guardar">Guardar contraseña nueva</button>
