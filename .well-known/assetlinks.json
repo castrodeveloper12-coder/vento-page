@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.castrodeveloper.vento",
+      "sha256_cert_fingerprints": [
+        "3E:93:17:E1:6D:EA:B4:6A:1D:9D:5F:E5:68:F8:85:E4:0F:9F:0A:5D:B5:F2:D3:B5:52:7A:05:0C:24:7C:12:96",
+        "AC:83:A6:B5:E7:9D:BB:B4:70:B1:92:B6:B5:2E:1E:5E:0D:26:83:B3:19:F9:94:4E:3C:24:11:AA:69:81:88:AD"
+      ]
+    }
+  }
+]
