@@ -44,7 +44,7 @@
     <div class="doc-head">
       <div class="wrap">
         <h1 class="display" id="contenido" tabindex="-1">Política de privacidad</h1>
-        <p>Qué datos usa Vueltito (antes Vento), para qué, dónde quedan guardados y cómo borrarlos. Última actualización: 18 de noviembre de 2026.</p>
+        <p>Qué datos usa Vueltito (antes Vento), para qué, dónde quedan guardados y cómo borrarlos. Última actualización: 19 de noviembre de 2026.</p>
       </div>
     </div>
 
@@ -79,7 +79,7 @@
 
         <h2 id="quienes">1. Quiénes somos</h2>
         <p>Vueltito, que antes se llamaba Vento, es una app para registrar ventas, inventario, fiados, gastos y la caja de un negocio. La desarrolla CastroDeveloper, responsable de los datos de las cuentas que se crean en la app.</p>
-        <p>Los datos de tus clientes y proveedores (nombres, teléfonos, lo que te deben) los anotas tú para administrar tu negocio. Nosotros solo los guardamos y respaldamos por ti, y no los usamos para nada más.</p>
+        <p>Los datos de tus clientes y proveedores (nombres, teléfonos, lo que te deben) los anotas tú para administrar tu negocio. Nosotros solo los guardamos y respaldamos por ti, cifrados en el respaldo, y no los usamos para nada más.</p>
         <p>Si usas la tarjeta de cliente fiel (Sellitos), antes de darle la tarjeta a un cliente la app te pide confirmar que le preguntaste y aceptó, y guarda esa fecha. Si un cliente te pide salir, le quitas la tarjeta y se borran sus sellitos.</p>
 
         <h2 id="datos">2. Qué datos usamos</h2>
@@ -147,6 +147,7 @@
         <p>El respaldo automático en la nube viene activado para que no pierdas tu información si se pierde o se daña el teléfono. Puedes apagarlo en Configuración, en la sección de respaldos.</p>
         <ul>
           <li>Antes de subirlo, la app <strong>cifra el respaldo en tu teléfono</strong> con AES-256-GCM y una llave aleatoria propia de tu cuenta.</li>
+          <li><strong>Los datos de tus clientes van cifrados en el respaldo:</strong> sus nombres, teléfonos, lo que te deben, sus compras y su tarjeta de cliente fiel van dentro del mismo archivo cifrado. En la nube nadie los ve sin la llave. En tu teléfono quedan en el espacio privado de la app, que Android no deja leer a otras apps.</li>
           <li>La llave se guarda en el almacenamiento seguro de tu teléfono y en tu cuenta de Vueltito, para que puedas restaurar en otro teléfono. El archivo y la llave quedan en servicios distintos: quien consiga solo el archivo no puede leerlo.</li>
           <li>Como la llave está en tu cuenta, el cifrado no impide que quien administra el servicio pueda abrir un respaldo. No lo hacemos: solo entraríamos a tus datos si tú nos lo pides para ayudarte, o si una ley o una orden judicial nos obliga.</li>
           <li>Las reglas de acceso de la nube solo permiten que tu cuenta lea tus respaldos y tus fotos.</li>
