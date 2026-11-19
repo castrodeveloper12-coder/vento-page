@@ -12,7 +12,8 @@
 ## Enlaces
 
 - [Inicio](https://vueltito.app/): qué hace, para qué negocios, dónde usarla, precio y preguntas frecuentes
-- [Cómo usar Vueltito](https://vueltito.app/guia.html): guía en video paso a paso, con voz y subtítulos en español, también en YouTube (https://www.youtube.com/@vueltitoapp) (configurar la tienda, abrir la caja, cargar productos por unidad y por kilo, vender y dar el vuelto, fiar, cobrar fiados y registrar gastos; el resto de capítulos llega pronto)
+- [Cómo usar Vueltito](https://vueltito.app/guia.html): guía en video paso a paso, con voz y subtítulos en español, también en YouTube (https://www.youtube.com/@vueltitoapp): 23 capítulos cortos, desde crear la cuenta hasta vender, fiar, cerrar la caja y la tarjeta de cliente fiel
+- [Sellitos](https://vueltito.app/sellitos.html): la tarjeta de cliente fiel de la tienda. Cada compra suma un sellito y, al completarla, el cliente gana el premio que elige la tienda; se manda por WhatsApp. Gratis, desde la versión 2.0.22
 - [Descargar en Google Play](https://play.google.com/store/apps/details?id=com.castrodeveloper.vento)
 - [Política de privacidad](https://vueltito.app/privacy-policy.html)
 - [Términos de uso](https://vueltito.app/terminos.html)

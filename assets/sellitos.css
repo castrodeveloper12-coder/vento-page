@@ -1,0 +1,199 @@
+/* Página de Sellitos: la tarjeta de cliente fiel. Usa los colores y las letras
+   de style.css y las preguntas frecuentes y el botón redondo de home.css. */
+
+.sl-hero {
+  padding: 56px 0 72px;
+  background: var(--emerald-deep);
+  color: var(--on-ink-light);
+}
+
+.sl-hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.sl-hero h1 {
+  margin: 0 0 20px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 2rem + 3vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.sl-hero .sl-lead {
+  max-width: 34em;
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: #e3f2ea;
+}
+
+.sl-hero .sl-new {
+  display: inline-block;
+  margin: 0 0 28px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #78350f;
+  font-weight: 600;
+}
+
+.sl-card {
+  justify-self: center;
+  width: min(100%, 420px);
+}
+
+.sl-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 7.5% / 6%;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.35);
+  rotate: 2deg;
+}
+
+.sl-section {
+  padding: 72px 0 24px;
+}
+
+.sl-section h2 {
+  margin: 0 0 12px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.875rem, 1.5rem + 1.6vw, 2.75rem);
+  letter-spacing: -0.02em;
+}
+
+.sl-section .sl-intro {
+  max-width: 42em;
+  margin: 0 0 36px;
+  font-size: 1.125rem;
+  color: var(--muted);
+}
+
+/* Los cuatro pasos van en orden: por eso llevan número */
+.sl-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.sl-steps li {
+  counter-increment: paso;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.sl-steps li::before {
+  content: counter(paso);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--amber-soft);
+  color: var(--amber-ink);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.sl-steps h3,
+.sl-premios h3 {
+  margin: 0 0 8px;
+  font-family: var(--display);
+  font-weight: 750;
+  font-size: 1.3125rem;
+}
+
+.sl-steps p,
+.sl-premios p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.sl-premios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sl-premios li {
+  padding: 24px;
+  border-left: 4px solid var(--emerald);
+  border-radius: 6px var(--radius) var(--radius) 6px;
+  background: var(--surface);
+}
+
+.sl-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 960px;
+}
+
+.sl-video {
+  display: block;
+  border-radius: var(--radius);
+  overflow: clip;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.sl-video img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sl-video span {
+  display: block;
+  padding: 16px 20px 20px;
+  font-family: var(--display);
+  font-weight: 750;
+  font-size: 1.1875rem;
+}
+
+.sl-video small {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.sl-video:hover span,
+.sl-video:focus-visible span {
+  color: var(--link-hover);
+}
+
+.sl-get {
+  padding: 56px 0 8px;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .sl-hero .wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sl-card {
+    width: min(100%, 340px);
+  }
+}
