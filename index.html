@@ -88,12 +88,17 @@
         "mainEntity": [
           { "@type": "Question", "name": "¿Vueltito es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes registrar productos y ventas sin límite y sin pagar. La versión gratis muestra anuncios pequeños que nunca interrumpen una venta. Premium quita los anuncios e incluye soporte prioritario." } },
           { "@type": "Question", "name": "¿Funciona sin internet?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes vender, anotar fiados y cerrar la caja sin conexión. Cuando vuelve la señal, tus datos se respaldan cifrados en la nube." } },
-          { "@type": "Question", "name": "¿Cómo anoto un fiado?", "acceptedAnswer": { "@type": "Answer", "text": "Al cobrar eliges Fiado y el cliente. Vueltito anota lo que se llevó, lo que abona y cuánto debe, con un cupo para cada cliente. Cuando toca cobrar, le mandas un recordatorio por WhatsApp." } },
+          { "@type": "Question", "name": "¿Cómo anoto un fiado?", "acceptedAnswer": { "@type": "Answer", "text": "Al cobrar eliges Fiado y el cliente. Vueltito anota lo que se llevó, lo que abona y cuánto debe, con un cupo para cada cliente. Cuando toca cobrar, le mandas un recordatorio por WhatsApp. En la ficha del cliente ves su historial de compras." } },
           { "@type": "Question", "name": "¿Puedo mandar el comprobante por WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Al terminar la venta tocas Enviar comprobante y lo mandas por WhatsApp o por correo, como lo prefiera tu cliente. No necesitas impresora ni papel." } },
           { "@type": "Question", "name": "¿En qué países funciona?", "acceptedAnswer": { "@type": "Answer", "text": "En toda Latinoamérica. Al empezar eliges tu país y Vueltito usa su moneda y escribe los precios como se escriben allá: $1.890 en Chile o Colombia, $1,890.00 en México." } },
           { "@type": "Question", "name": "¿Funciona en tablet, iPhone o computador?", "acceptedAnswer": { "@type": "Answer", "text": "Funciona en teléfonos y tablets Android; en la tablet se usa como caja. La versión para iPhone y iPad llega pronto a la App Store, y la versión web, con Premium, muy pronto en web.vueltito.app." } },
-          { "@type": "Question", "name": "¿Mis datos están seguros?", "acceptedAnswer": { "@type": "Answer", "text": "Entras con tu PIN o tu huella, y los respaldos se cifran en tu teléfono antes de subir a la nube. Puedes eliminar tu cuenta y tus datos cuando quieras." } },
+          { "@type": "Question", "name": "¿Mis datos están seguros?", "acceptedAnswer": { "@type": "Answer", "text": "Si quieres, proteges la entrada con tu PIN o tu huella. Los respaldos se cifran en tu teléfono antes de subir a la nube. Puedes eliminar tu cuenta y tus datos cuando quieras." } },
           { "@type": "Question", "name": "¿Necesito un lector de código de barras?", "acceptedAnswer": { "@type": "Answer", "text": "No. Vendes tocando la foto del producto y, si quieres, escaneas el código de barras con la cámara del teléfono." } },
+          { "@type": "Question", "name": "¿Puedo pasar mis productos desde Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. En Productos tocas Cargar productos desde Excel, escribes tus productos en la plantilla y la cargas, en Excel (.xlsx) o CSV, hasta 5.000 productos por archivo. Desde la versión 2.0.23." } },
+          { "@type": "Question", "name": "¿Y si me equivoco en una venta?", "acceptedAnswer": { "@type": "Answer", "text": "La anulas: abres la venta y tocas Anular venta. Deja de contar en las ventas y en la caja, y los productos vuelven al inventario. Si era fiada, se corrige la cuenta del cliente. Desde la versión 2.0.23." } },
+          { "@type": "Question", "name": "¿Me pueden pagar por transferencia?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Guardas una vez tus datos para transferencias y, al cobrar, los copias o se los mandas al cliente por WhatsApp, sin dictarlos. Desde la versión 2.0.23." } },
+          { "@type": "Question", "name": "¿Puedo hacer ofertas?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. En Más, Promociones, creas un descuento por porcentaje o por monto para un producto, una categoría o toda la tienda, y eliges hasta cuándo dura. Al vender, la app lo aplica sola. Desde la versión 2.0.22." } },
+          { "@type": "Question", "name": "¿Puedo premiar a mis clientes fieles?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, con Sellitos, la tarjeta de cliente fiel de tu tienda: cada compra suma un sellito y, al completarla, tu cliente se gana el premio que tú elijas. Se la mandas por WhatsApp con el nombre y el logo de tu tienda. Desde la versión 2.0.22." } },
           { "@type": "Question", "name": "¿Vueltito antes se llamaba Vento?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Es la misma app con nombre nuevo: si ya usabas Vento, tus datos siguen ahí." } }
         ]
       }
@@ -239,13 +244,13 @@
 
           <article class="tile">
             <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>
-            <h3>Con tu huella o tu PIN.</h3>
-            <p>Solo tú entras a tu caja. Tus respaldos se cifran en tu teléfono.</p>
+            <h3>Tu caja, solo para ti.</h3>
+            <p>Si quieres, la proteges con tu PIN o tu huella. Tus respaldos se cifran en tu teléfono.</p>
           </article>
 
           <article class="tile">
             <h3>Te avisa qué pedir.</h3>
-            <p>Cada venta descuenta del inventario y sabes qué se está acabando.</p>
+            <p>Cada venta descuenta del inventario. Si lo activas, una vez al día te avisa lo que se está acabando, y te arma el pedido para mandárselo al proveedor por WhatsApp.</p>
             <div class="big-word aviso">3<small>productos para pedir</small></div>
           </article>
 
@@ -354,7 +359,7 @@
           <li>
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>
             <h3>Solo entras tú</h3>
-            <p>Con tu PIN o tu huella. La huella la maneja Android y nunca sale de tu teléfono.</p>
+            <p>Si quieres, con tu PIN o tu huella. La huella la maneja Android y nunca sale de tu teléfono.</p>
           </li>
           <li>
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -412,7 +417,7 @@
           <div>
             <h3>Gratis</h3>
             <p class="price">$0, para siempre</p>
-            <p>Ventas, inventario con fotos, fiados, gastos, caja, reportes y respaldo en la nube.</p>
+            <p>Ventas, inventario con fotos, fiados, gastos, caja, reportes, Sellitos, promociones y respaldo en la nube.</p>
           </div>
           <div>
             <h3>Premium</h3>
@@ -439,7 +444,7 @@
           </details>
           <details>
             <summary>¿Cómo anoto un fiado?</summary>
-            <p>Al cobrar eliges Fiado y el cliente. Vueltito anota lo que se llevó, lo que abona y cuánto debe, con un cupo para cada cliente. Cuando toca cobrar, le mandas un recordatorio por WhatsApp.</p>
+            <p>Al cobrar eliges Fiado y el cliente. Vueltito anota lo que se llevó, lo que abona y cuánto debe, con un cupo para cada cliente. Cuando toca cobrar, le mandas un recordatorio por WhatsApp. En la ficha del cliente ves su historial de compras.</p>
           </details>
           <details>
             <summary>¿Puedo mandar el comprobante por WhatsApp?</summary>
@@ -455,15 +460,31 @@
           </details>
           <details>
             <summary>¿Mis datos están seguros?</summary>
-            <p>Entras con tu PIN o tu huella, y los respaldos se cifran en tu teléfono antes de subir a la nube. Puedes <a href="eliminar-cuenta.html">eliminar tu cuenta y tus datos</a> cuando quieras.</p>
+            <p>Si quieres, proteges la entrada con tu PIN o tu huella. Los respaldos se cifran en tu teléfono antes de subir a la nube. Puedes <a href="eliminar-cuenta.html">eliminar tu cuenta y tus datos</a> cuando quieras.</p>
           </details>
           <details>
             <summary>¿Necesito un lector de código de barras?</summary>
             <p>No. Vendes tocando la foto del producto y, si quieres, escaneas el código de barras con la cámara del teléfono.</p>
           </details>
           <details>
+            <summary>¿Puedo pasar mis productos desde Excel?</summary>
+            <p>Sí. En Productos tocas Cargar productos desde Excel, escribes tus productos en la plantilla y la cargas, en Excel (.xlsx) o CSV, hasta 5.000 productos por archivo. Desde la versión 2.0.23.</p>
+          </details>
+          <details>
+            <summary>¿Y si me equivoco en una venta?</summary>
+            <p>La anulas: abres la venta y tocas Anular venta. Deja de contar en las ventas y en la caja, y los productos vuelven al inventario. Si era fiada, se corrige la cuenta del cliente. Desde la versión 2.0.23.</p>
+          </details>
+          <details>
+            <summary>¿Me pueden pagar por transferencia?</summary>
+            <p>Sí. Guardas una vez tus datos para transferencias y, al cobrar, los copias o se los mandas al cliente por WhatsApp, sin dictarlos. Desde la versión 2.0.23.</p>
+          </details>
+          <details>
+            <summary>¿Puedo hacer ofertas?</summary>
+            <p>Sí. En Más, Promociones, creas un descuento por porcentaje o por monto para un producto, una categoría o toda la tienda, y eliges hasta cuándo dura. Al vender, la app lo aplica sola. Desde la versión 2.0.22.</p>
+          </details>
+          <details>
             <summary>¿Puedo premiar a mis clientes fieles?</summary>
-            <p>Sí, con <a href="sellitos.html">Sellitos</a>, la tarjeta de cliente fiel de tu tienda: cada compra suma un sellito y, al completarla, tu cliente se gana el premio que tú elijas. Se la mandas por WhatsApp con el nombre y el logo de tu tienda. Llega con la versión 2.0.22.</p>
+            <p>Sí, con <a href="sellitos.html">Sellitos</a>, la tarjeta de cliente fiel de tu tienda: cada compra suma un sellito y, al completarla, tu cliente se gana el premio que tú elijas. Se la mandas por WhatsApp con el nombre y el logo de tu tienda. Desde la versión 2.0.22.</p>
           </details>
           <details>
             <summary>¿Vueltito antes se llamaba Vento?</summary>

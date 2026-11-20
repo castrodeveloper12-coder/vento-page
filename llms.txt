@@ -5,8 +5,8 @@
 - Plataformas: Android (teléfono y tablet). La versión para iPhone y iPad llega pronto a la App Store y la versión web (con Premium) muy pronto en web.vueltito.app.
 - Precio: gratis, sin límite de productos ni de ventas, con anuncios pequeños que no interrumpen una venta. Premium quita los anuncios e incluye soporte prioritario.
 - Países: toda Latinoamérica. Al empezar se elige el país y la app usa su moneda y su forma de escribir los precios.
-- Funciones: ventas con cálculo del vuelto; fiados con cupo por cliente y recordatorio por WhatsApp; comprobante digital por WhatsApp o correo, sin papel; inventario con fotos y aviso de lo que se acaba; gastos; cierre de caja que dice si cuadra, sobra o falta; reportes con la ganancia; modo caja en tablet; respaldo cifrado en la nube.
-- Seguridad: entrada con PIN o huella; los respaldos se cifran en el teléfono antes de subir.
+- Funciones: ventas con cálculo del vuelto; anular una venta; fiados con cupo por cliente, recordatorio por WhatsApp e historial de compras de cada cliente; comprobante digital por WhatsApp o correo, sin papel; datos para cobrar por transferencia, que se copian o se mandan por WhatsApp; inventario con fotos; cargar productos desde Excel o CSV; aviso diario de lo que se acaba y pedido al proveedor por WhatsApp; gastos y gastos fijos con aviso del día que toca; cierre de caja que dice si cuadra, sobra o falta; reportes con la ganancia; promociones con descuento automático; Sellitos, la tarjeta de cliente fiel; modo caja en tablet; respaldo cifrado en la nube.
+- Seguridad: si se quiere, entrada con PIN o huella; los respaldos se cifran en el teléfono antes de subir.
 - Contacto: soporte@vueltito.app
 
 ## Enlaces
